@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		416D79A7210534D400683119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D79A6210534D400683119 /* AppDelegate.swift */; };
+		416D79A9210534D400683119 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D79A8210534D400683119 /* ViewController.swift */; };
+		416D79AC210534D400683119 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 416D79AA210534D400683119 /* Main.storyboard */; };
+		416D79AF210534D400683119 /* wypok.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 416D79AD210534D400683119 /* wypok.xcdatamodeld */; };
+		416D79B1210534DD00683119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 416D79B0210534DD00683119 /* Assets.xcassets */; };
+		416D79B4210534DD00683119 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 416D79B2210534DD00683119 /* LaunchScreen.storyboard */; };
+		416D79BF210534DE00683119 /* wypokTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D79BE210534DE00683119 /* wypokTests.swift */; };
+		416D79CA210534DE00683119 /* wypokUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D79C9210534DE00683119 /* wypokUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		416D79BB210534DE00683119 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 416D799B210534D300683119 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 416D79A2210534D400683119;
+			remoteInfo = wypok;
+		};
+		416D79C6210534DE00683119 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 416D799B210534D300683119 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 416D79A2210534D400683119;
+			remoteInfo = wypok;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		416D79A3210534D400683119 /* wypok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wypok.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		416D79A6210534D400683119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		416D79A8210534D400683119 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		416D79AB210534D400683119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		416D79AE210534D400683119 /* wypok.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wypok.xcdatamodel; sourceTree = "<group>"; };
+		416D79B0210534DD00683119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		416D79B3210534DD00683119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		416D79B5210534DD00683119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		416D79BA210534DE00683119 /* wypokTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wypokTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		416D79BE210534DE00683119 /* wypokTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wypokTests.swift; sourceTree = "<group>"; };
+		416D79C0210534DE00683119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		416D79C5210534DE00683119 /* wypokUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wypokUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		416D79C9210534DE00683119 /* wypokUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wypokUITests.swift; sourceTree = "<group>"; };
+		416D79CB210534DE00683119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		416D79A0210534D400683119 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		416D79B7210534DE00683119 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		416D79C2210534DE00683119 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		416D799A210534D300683119 = {
+			isa = PBXGroup;
+			children = (
+				416D79A5210534D400683119 /* wypok */,
+				416D79BD210534DE00683119 /* wypokTests */,
+				416D79C8210534DE00683119 /* wypokUITests */,
+				416D79A4210534D400683119 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		416D79A4210534D400683119 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				416D79A3210534D400683119 /* wypok.app */,
+				416D79BA210534DE00683119 /* wypokTests.xctest */,
+				416D79C5210534DE00683119 /* wypokUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		416D79A5210534D400683119 /* wypok */ = {
+			isa = PBXGroup;
+			children = (
+				416D79A6210534D400683119 /* AppDelegate.swift */,
+				416D79A8210534D400683119 /* ViewController.swift */,
+				416D79AA210534D400683119 /* Main.storyboard */,
+				416D79B0210534DD00683119 /* Assets.xcassets */,
+				416D79B2210534DD00683119 /* LaunchScreen.storyboard */,
+				416D79B5210534DD00683119 /* Info.plist */,
+				416D79AD210534D400683119 /* wypok.xcdatamodeld */,
+			);
+			path = wypok;
+			sourceTree = "<group>";
+		};
+		416D79BD210534DE00683119 /* wypokTests */ = {
+			isa = PBXGroup;
+			children = (
+				416D79BE210534DE00683119 /* wypokTests.swift */,
+				416D79C0210534DE00683119 /* Info.plist */,
+			);
+			path = wypokTests;
+			sourceTree = "<group>";
+		};
+		416D79C8210534DE00683119 /* wypokUITests */ = {
+			isa = PBXGroup;
+			children = (
+				416D79C9210534DE00683119 /* wypokUITests.swift */,
+				416D79CB210534DE00683119 /* Info.plist */,
+			);
+			path = wypokUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		416D79A2210534D400683119 /* wypok */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 416D79CE210534DE00683119 /* Build configuration list for PBXNativeTarget "wypok" */;
+			buildPhases = (
+				416D799F210534D400683119 /* Sources */,
+				416D79A0210534D400683119 /* Frameworks */,
+				416D79A1210534D400683119 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wypok;
+			productName = wypok;
+			productReference = 416D79A3210534D400683119 /* wypok.app */;
+			productType = "com.apple.product-type.application";
+		};
+		416D79B9210534DE00683119 /* wypokTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 416D79D1210534DF00683119 /* Build configuration list for PBXNativeTarget "wypokTests" */;
+			buildPhases = (
+				416D79B6210534DE00683119 /* Sources */,
+				416D79B7210534DE00683119 /* Frameworks */,
+				416D79B8210534DE00683119 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				416D79BC210534DE00683119 /* PBXTargetDependency */,
+			);
+			name = wypokTests;
+			productName = wypokTests;
+			productReference = 416D79BA210534DE00683119 /* wypokTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		416D79C4210534DE00683119 /* wypokUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 416D79D4210534DF00683119 /* Build configuration list for PBXNativeTarget "wypokUITests" */;
+			buildPhases = (
+				416D79C1210534DE00683119 /* Sources */,
+				416D79C2210534DE00683119 /* Frameworks */,
+				416D79C3210534DE00683119 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				416D79C7210534DE00683119 /* PBXTargetDependency */,
+			);
+			name = wypokUITests;
+			productName = wypokUITests;
+			productReference = 416D79C5210534DE00683119 /* wypokUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		416D799B210534D300683119 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Przemyslaw Jablonski";
+				TargetAttributes = {
+					416D79A2210534D400683119 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					416D79B9210534DE00683119 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 416D79A2210534D400683119;
+					};
+					416D79C4210534DE00683119 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 416D79A2210534D400683119;
+					};
+				};
+			};
+			buildConfigurationList = 416D799E210534D300683119 /* Build configuration list for PBXProject "wypok" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 416D799A210534D300683119;
+			productRefGroup = 416D79A4210534D400683119 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				416D79A2210534D400683119 /* wypok */,
+				416D79B9210534DE00683119 /* wypokTests */,
+				416D79C4210534DE00683119 /* wypokUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		416D79A1210534D400683119 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				416D79B4210534DD00683119 /* LaunchScreen.storyboard in Resources */,
+				416D79B1210534DD00683119 /* Assets.xcassets in Resources */,
+				416D79AC210534D400683119 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		416D79B8210534DE00683119 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		416D79C3210534DE00683119 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		416D799F210534D400683119 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				416D79A9210534D400683119 /* ViewController.swift in Sources */,
+				416D79A7210534D400683119 /* AppDelegate.swift in Sources */,
+				416D79AF210534D400683119 /* wypok.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		416D79B6210534DE00683119 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				416D79BF210534DE00683119 /* wypokTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		416D79C1210534DE00683119 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				416D79CA210534DE00683119 /* wypokUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		416D79BC210534DE00683119 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 416D79A2210534D400683119 /* wypok */;
+			targetProxy = 416D79BB210534DE00683119 /* PBXContainerItemProxy */;
+		};
+		416D79C7210534DE00683119 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 416D79A2210534D400683119 /* wypok */;
+			targetProxy = 416D79C6210534DE00683119 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		416D79AA210534D400683119 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				416D79AB210534D400683119 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		416D79B2210534DD00683119 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				416D79B3210534DD00683119 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		416D79CC210534DE00683119 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		416D79CD210534DE00683119 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		416D79CF210534DE00683119 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
+				INFOPLIST_FILE = wypok/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypok;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		416D79D0210534DE00683119 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
+				INFOPLIST_FILE = wypok/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypok;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		416D79D2210534DF00683119 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
+				INFOPLIST_FILE = wypokTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypokTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wypok.app/wypok";
+			};
+			name = Debug;
+		};
+		416D79D3210534DF00683119 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
+				INFOPLIST_FILE = wypokTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypokTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wypok.app/wypok";
+			};
+			name = Release;
+		};
+		416D79D5210534DF00683119 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
+				INFOPLIST_FILE = wypokUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypokUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = wypok;
+			};
+			name = Debug;
+		};
+		416D79D6210534DF00683119 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
+				INFOPLIST_FILE = wypokUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypokUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = wypok;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		416D799E210534D300683119 /* Build configuration list for PBXProject "wypok" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				416D79CC210534DE00683119 /* Debug */,
+				416D79CD210534DE00683119 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		416D79CE210534DE00683119 /* Build configuration list for PBXNativeTarget "wypok" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				416D79CF210534DE00683119 /* Debug */,
+				416D79D0210534DE00683119 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		416D79D1210534DF00683119 /* Build configuration list for PBXNativeTarget "wypokTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				416D79D2210534DF00683119 /* Debug */,
+				416D79D3210534DF00683119 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		416D79D4210534DF00683119 /* Build configuration list for PBXNativeTarget "wypokUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				416D79D5210534DF00683119 /* Debug */,
+				416D79D6210534DF00683119 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		416D79AD210534D400683119 /* wypok.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				416D79AE210534D400683119 /* wypok.xcdatamodel */,
+			);
+			currentVersion = 416D79AE210534D400683119 /* wypok.xcdatamodel */;
+			path = wypok.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 416D799B210534D300683119 /* Project object */;
+}

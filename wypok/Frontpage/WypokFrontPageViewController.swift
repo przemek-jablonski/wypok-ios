@@ -7,13 +7,25 @@
 //
 
 import UIKit
+import Alamofire
 
 //typealias VS = WypokFrontPageViewState
 
-class WypokFrontPageViewController : UIViewController/*, FrontPageView*/ {
+class WypokFrontPageViewController : UIViewController {
+    
     
     private func render(_ viewState : WypokFrontPageViewState) {
         print("render, viewState: \(viewState)")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        Alamofire
+            .validate()
+            .responseString(completionHandler: { dataResponse in
+                print("dataResponse: \(dataResponse)")
+                print("dataResponse: \(dataResponse.result.value!)")
+            }
+        )
     }
 
 }

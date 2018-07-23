@@ -1,0 +1,6 @@
+framework module Pods_wypok {
+  umbrella header "Pods-wypok-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,5 +1,5 @@
 //
-//  FrontPageView.swift
+//  WypokDigsiteViewController.swift
 //  wypok
 //
 //  Created by Przemyslaw Jablonski on 23/07/2018.
@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import UIKit
 
-protocol WypokFrontPageView {
-    func render(with viewState: WypokFrontPageViewState)
+class WypokDigsiteViewController: UIViewController {
+    
 }

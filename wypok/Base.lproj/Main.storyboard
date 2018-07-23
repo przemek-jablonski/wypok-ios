@@ -1,33 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p3Q-YF-XMz">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Wypok Front Page View Controller-->
+        <!--Główna-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="WypokFrontPageViewController" customModule="wypok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FrontPage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwP-GH-nEt">
-                                <rect key="frame" x="166" y="323" width="79" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FrontPage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwP-GH-nEt">
+                                <rect key="frame" x="120.5" y="273.5" width="79" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TwP-GH-nEt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hM5-iE-mc9"/>
+                            <constraint firstItem="TwP-GH-nEt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kvS-WS-dFT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Główna" id="sXd-fY-xi2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1145" y="-631"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="emm-lm-50D">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="p3Q-YF-XMz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tic-ed-W6o">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="TdM-Ot-HHK"/>
+                        <segue destination="zGd-Jp-89Z" kind="relationship" relationship="viewControllers" id="Wmb-j4-ZVo"/>
+                        <segue destination="F9R-1h-mzf" kind="relationship" relationship="viewControllers" id="lip-S5-R7M"/>
+                        <segue destination="qcV-tA-4dO" kind="relationship" relationship="viewControllers" id="jBU-hb-AIZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TTf-GF-hTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-17" y="1352"/>
+        </scene>
+        <!--Wykopalisko-->
+        <scene sceneID="YPZ-ys-vgi">
+            <objects>
+                <viewController id="zGd-Jp-89Z" customClass="WypokDigsiteViewController" customModule="wypok" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6uw-XF-3al">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wykopalisko" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDm-o8-XzS">
+                                <rect key="frame" x="112" y="273.5" width="96" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PDm-o8-XzS" firstAttribute="centerY" secondItem="6uw-XF-3al" secondAttribute="centerY" id="Hp5-XP-TbN"/>
+                            <constraint firstItem="PDm-o8-XzS" firstAttribute="centerX" secondItem="6uw-XF-3al" secondAttribute="centerX" id="yJH-EH-W7j"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="POA-SS-SZU"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Wykopalisko" id="WT4-kX-fpT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RHn-ZJ-vAO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1145.625" y="33.75"/>
+        </scene>
+        <!--Hity-->
+        <scene sceneID="ns3-I6-qGR">
+            <objects>
+                <viewController id="F9R-1h-mzf" customClass="WypokBestsViewController" customModule="wypok" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pjI-Of-Td3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1he-up-o3W">
+                                <rect key="frame" x="144.5" y="273.5" width="31" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1he-up-o3W" firstAttribute="centerY" secondItem="pjI-Of-Td3" secondAttribute="centerY" id="4jZ-EC-21O"/>
+                            <constraint firstItem="1he-up-o3W" firstAttribute="centerX" secondItem="pjI-Of-Td3" secondAttribute="centerX" id="EsX-cG-sun"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TWU-Ye-lcG"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Hity" id="Kyj-qt-waM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wcl-So-omG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1145" y="690"/>
+        </scene>
+        <!--Mirko-->
+        <scene sceneID="k8e-Pu-yno">
+            <objects>
+                <viewController id="qcV-tA-4dO" customClass="WypokMirkoViewController" customModule="wypok" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fL1-Rp-Olf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mirko" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p3-Br-F8k">
+                                <rect key="frame" x="138.5" y="273.5" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0p3-Br-F8k" firstAttribute="centerY" secondItem="fL1-Rp-Olf" secondAttribute="centerY" id="U91-6d-2fe"/>
+                            <constraint firstItem="0p3-Br-F8k" firstAttribute="centerX" secondItem="fL1-Rp-Olf" secondAttribute="centerX" id="W9X-gP-3ou"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="D6N-CT-ySI"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Mirko" id="rs1-Ft-uIR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NAv-o6-JpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1145" y="1352"/>
         </scene>
     </scenes>
 </document>

@@ -8,18 +8,25 @@
 
 import Foundation
 
-class WypokFrontPagePresenter<V : FrontPageView> {
+class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewController>, FrontPagePresenter {
     
-    private var view: V?
+    typealias V = WypokFrontPageViewController & View
     
-    func attach(_ view: V) {
-        print("attach, view: \(view)")
-        self.view = view
+    
+    func onFrontPageItemClicked() {
+            
     }
     
-    func detach(_ view: V) {
-        print("detach, view: \(view)")
-        self.view = nil
+    func onFrontPageItemForceTouchedClicked() {
+        
+    }
+    
+    func onFrontPageItemSwipedLeft() {
+        
+    }
+    
+    func onFrontPageItemSwipedRight() {
+        
     }
     
 }

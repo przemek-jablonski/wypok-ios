@@ -1,20 +1,33 @@
 //
-//  WypokBasePresenter.swift
+//  BasePresenter.swift
 //  wypok
 //
-//  Created by Przemyslaw Jablonski on 24/07/2018.
+//  Created by Przemyslaw Jablonski on 25/07/2018.
 //  Copyright © 2018 Przemyslaw Jablonski. All rights reserved.
 //
 
 import Foundation
 
-protocol BasePresenter {
-    associatedtype V: inout View
+class BasePresenter<V: View>: Presenter {
+
+    private var view: V? = nil
+
+    func attach(_ view: V) {
+        self.view = view
+        onAttached(view)
+    }
     
-    var view: V? { get } //this feels wrong lol
+    internal func onAttached(_ view: V) {
+        fatalError()
+    }
+
+    func detach(_ view: V) {
+        self.view = nil
+        onDetached(view)
+    }
     
-    func attach(_ view: V)
-    
-    func detach(_ view: V)
+    internal func onDetached(_ view: V) {
+        fatalError()
+    }
     
 }

@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-class WypokBaseUIViewController <VS> /*: UIViewController, View*/ {    
-    
-}
+//class WypokBaseUIViewController <VS> /*: UIViewController, View*/ {    
+//    
+//}

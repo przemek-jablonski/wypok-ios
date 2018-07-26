@@ -1,5 +1,5 @@
 //
-//  View.swift
+//  Presenter.swift
 //  wypok
 //
 //  Created by Przemyslaw Jablonski on 26/07/2018.
@@ -8,10 +8,12 @@
 
 import Foundation
 
-protocol View {
- 
-    associatedtype VS
+protocol Presenter {
     
-    func render(_ viewState: VS)
-
+    associatedtype V
+    
+    func attach(_ view: V)
+    
+    func detach(_ view: V)
+    
 }

@@ -14,22 +14,27 @@ import Alamofire
 class WypokFrontPageViewController : UIViewController, View {
     typealias VS = WypokFrontPageViewState
     
-//    let presenter = WypokFrontPagePresenter<WypokFrontPageViewController>()
+//    let presenter: FrontPagePresenter = WypokFrontPagePresenter()
+    
+    lazy var apiKeysDictionary: NSDictionary = { getApiKeysDictionary() }()
     
     internal func render(_ viewState : VS) {
         print("render, viewState: \(viewState)")
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        let apiKey = apiKeysDictionary.value(forKey: "WYPOK_APIKEY") as! String
+        let md5Hash = apiKeysDictionary.value(forKey: "TMP_MD5_HASH") as! String
 //        presenter.attach(self)
-////        Alamofire
-////            .validate()
-////            .responseString(completionHandler: { dataResponse in
-////                print("dataResponse: \(dataResponse)")
-////                print("dataResponse: \(dataResponse.result.value!)")
-////            }
-////        )
-//    }
+        Alamofire
+            .request("https://a.wykop.pl/links/promoted/appkey,\(apiKey)", headers: ["apisign" : "\(md5Hash)"])
+            .validate()
+            .responseString(completionHandler: { dataResponse in
+                print("dataResponse: \(dataResponse)")
+                print("dataResponse: \(dataResponse.result.value!)")
+            }
+        )
+    }
     
 //    override func viewWillDisappear(_ animated: Bool) {
 ////        presenter.detach(self)
@@ -45,24 +50,8 @@ class WypokFrontPageViewController : UIViewController, View {
         print("deinit, self: \(self)")
     }
     
-    override func viewDidLoad() {
-        print("viewDidLoad, self: \(self)")
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        print("viewWillAppear, \(animated), self: \(self)")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        print("viewDidAppear, \(animated), self: \(self)")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        print("viewWillDisappear, \(animated), self: \(self)")
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        print("viewDidDisappear, \(animated), self: \(self)")
+    private func getApiKeysDictionary() -> NSDictionary {
+        return NSDictionary(contentsOfFile: Bundle.main.path(forResource: "ApiKeys", ofType: "plist")!)!
     }
 
 }

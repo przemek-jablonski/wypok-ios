@@ -8,7 +8,7 @@
 
 import Foundation
 
-class WypokFrontPagePresenter : BasePresenter, FrontPagePresenter {
+class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewController>, FrontPagePresenter {
     
     typealias V = WypokFrontPageViewController
     

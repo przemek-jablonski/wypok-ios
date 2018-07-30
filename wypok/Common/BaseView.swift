@@ -7,6 +7,17 @@
 //
 
 import Foundation
+import UIKit
+
+class BaseView<VS: Any>: UIViewController, View {
+    
+    func render(_ viewState: VS) {
+        
+    }
+    
+    
+}
+
 
 //class BaseView<P: Presenter, VS>: View {
 //

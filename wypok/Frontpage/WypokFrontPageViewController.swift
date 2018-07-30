@@ -11,7 +11,7 @@ import Alamofire
 
 //typealias VS = WypokFrontPageViewState
 
-class WypokFrontPageViewController : UIViewController, View {
+class WypokFrontPageViewController : BaseView<WypokFrontPageViewState> {
     
     typealias VS = WypokFrontPageViewState
     
@@ -19,11 +19,7 @@ class WypokFrontPageViewController : UIViewController, View {
     
     lazy var apiKeysDictionary: NSDictionary = { getApiKeysDictionary() }()
     
-    func render(_ viewState: Any) {
-        render(viewState as! WypokFrontPageViewState)
-    }
-    
-    internal func render(_ viewState : WypokFrontPageViewState) {
+    override func render(_ viewState : WypokFrontPageViewState) {
         print("render, viewState: \(viewState)")
     }
     

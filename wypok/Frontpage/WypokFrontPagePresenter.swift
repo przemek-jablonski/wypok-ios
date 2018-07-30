@@ -8,10 +8,9 @@
 
 import Foundation
 
-class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewController>, FrontPagePresenter {
+class WypokFrontPagePresenter : BasePresenter, FrontPagePresenter {
     
-    typealias V = WypokFrontPageViewController & View
-    
+    typealias V = WypokFrontPageViewController
     
     func onFrontPageItemClicked() {
             

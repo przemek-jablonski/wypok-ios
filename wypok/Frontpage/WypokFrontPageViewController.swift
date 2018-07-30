@@ -12,20 +12,25 @@ import Alamofire
 //typealias VS = WypokFrontPageViewState
 
 class WypokFrontPageViewController : UIViewController, View {
+    
     typealias VS = WypokFrontPageViewState
     
-//    let presenter: FrontPagePresenter = WypokFrontPagePresenter()
+    let presenter = WypokFrontPagePresenter()
     
     lazy var apiKeysDictionary: NSDictionary = { getApiKeysDictionary() }()
     
-    internal func render(_ viewState : VS) {
+    func render(_ viewState: Any) {
+        render(viewState as! WypokFrontPageViewState)
+    }
+    
+    internal func render(_ viewState : WypokFrontPageViewState) {
         print("render, viewState: \(viewState)")
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        presenter.attach(self)
         let apiKey = apiKeysDictionary.value(forKey: "WYPOK_APIKEY") as! String
         let md5Hash = apiKeysDictionary.value(forKey: "TMP_MD5_HASH") as! String
-//        presenter.attach(self)
         Alamofire
             .request("https://a.wykop.pl/links/promoted/appkey,\(apiKey)", headers: ["apisign" : "\(md5Hash)"])
             .validate()
@@ -36,18 +41,8 @@ class WypokFrontPageViewController : UIViewController, View {
         )
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-////        presenter.detach(self)
-//    }
-    
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        print("init, \(aDecoder), self: \(self)")
-    }
-    
-    deinit {
-        print("deinit, self: \(self)")
+    override func viewWillDisappear(_ animated: Bool) {
+        presenter.detach(self)
     }
     
     private func getApiKeysDictionary() -> NSDictionary {

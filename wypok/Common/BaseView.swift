@@ -9,7 +9,30 @@
 import Foundation
 import UIKit
 
-class BaseView<VS: Any>: UIViewController, View {
+class BaseView<P: Presenter, VS: Any>: UIViewController, View {
+    
+    internal var presenter: P?
+
+    required convenience init?(coder aDecoder: NSCoder) {
+        print("BaseView, init, coder: \(aDecoder)")
+        self.init(presenter: nil, coder: aDecoder)
+    }
+    
+    init?(presenter:P?, coder aDecoder: NSCoder) {
+        print("BaseView, init, coder: \(aDecoder), presenter: \(String(describing: presenter))")
+        super.init(coder: aDecoder)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("viewDidAppear, \(animated)")
+        presenter?.attach(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presenter?.detach(self)
+    }
     
     func render(_ viewState: Any) {
         render(viewState as! VS)
@@ -20,25 +43,3 @@ class BaseView<VS: Any>: UIViewController, View {
     }
     
 }
-
-
-//class BaseView<P: Presenter, VS>: View {
-//
-//    typealias V = View
-//
-//    internal var presenter: P? = nil
-//
-//    func viewDidAppear(_ animated: Bool) {
-//        presenter?.attach(self as V)
-//    }
-//
-//    func viewDidDisappear(_ animated: Bool) {
-//        presenter?.detach(self as V)
-//    }
-//
-//    func render(_ viewState: VS) {
-//        fatalError("render(:VS) not overriden")
-//    }
-//
-//
-//}

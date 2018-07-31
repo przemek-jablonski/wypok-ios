@@ -10,7 +10,7 @@ import Foundation
 
 class BasePresenter<VS: Any>: Presenter {
     
-    private var view: View? = nil
+    internal var view: View? = nil
     
     final func attach(_ view: View) {
         self.view = view

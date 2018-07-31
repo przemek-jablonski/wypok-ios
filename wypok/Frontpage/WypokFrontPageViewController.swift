@@ -9,22 +9,24 @@
 import UIKit
 import Alamofire
 
-//typealias VS = WypokFrontPageViewState
+typealias P = WypokFrontPagePresenter
+typealias VS = WypokFrontPageViewState
 
-class WypokFrontPageViewController : BaseView<WypokFrontPageViewState> {
-    
-    typealias VS = WypokFrontPageViewState
-    
-    let presenter = WypokFrontPagePresenter()
+class WypokFrontPageViewController : BaseView<P, VS> {
     
     lazy var apiKeysDictionary: NSDictionary = { getApiKeysDictionary() }()
+  
+    required init?(coder aDecoder: NSCoder) {
+        print("WypokFrontPageViewController, init, coder: \(aDecoder))")
+        super.init(presenter: WypokFrontPagePresenter(), coder: aDecoder)
+    }
     
-    override func render(_ viewState : WypokFrontPageViewState) {
+    override func render(_ viewState : VS) {
         print("render, viewState: \(viewState)")
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        presenter.attach(self)
+        super.viewDidAppear(animated)
         let apiKey = apiKeysDictionary.value(forKey: "WYPOK_APIKEY") as! String
         let md5Hash = apiKeysDictionary.value(forKey: "TMP_MD5_HASH") as! String
         Alamofire
@@ -35,10 +37,6 @@ class WypokFrontPageViewController : BaseView<WypokFrontPageViewState> {
                 print("dataResponse: \(dataResponse.result.value!)")
             }
         )
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        presenter.detach(self)
     }
     
     private func getApiKeysDictionary() -> NSDictionary {

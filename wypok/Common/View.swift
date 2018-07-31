@@ -9,9 +9,7 @@
 import Foundation
 
 protocol View {
- 
-    associatedtype VS
     
-    func render(_ viewState: VS)
+    func render(_ viewState: Any)
 
 }

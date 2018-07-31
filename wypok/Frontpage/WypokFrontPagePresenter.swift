@@ -8,12 +8,19 @@
 
 import Foundation
 
-class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewController>, FrontPagePresenter {
+class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewState>, FrontPagePresenter {
     
-    typealias V = WypokFrontPageViewController
+    
+    override func onAttached(view: View) {
+
+    }
+    
+    override func onDetached(view: View) {
+        
+    }
     
     func onFrontPageItemClicked() {
-            
+        
     }
     
     func onFrontPageItemForceTouchedClicked() {

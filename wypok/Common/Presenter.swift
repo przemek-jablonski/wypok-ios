@@ -10,10 +10,8 @@ import Foundation
 
 protocol Presenter {
     
-    associatedtype V
+    func attach(_ view: View)
     
-    func attach(_ view: V)
-    
-    func detach(_ view: V)
+    func detach(_ view: View)
     
 }

@@ -11,10 +11,13 @@ import UIKit
 
 class BaseView<VS: Any>: UIViewController, View {
     
+    func render(_ viewState: Any) {
+        render(viewState as! VS)
+    }
+    
     func render(_ viewState: VS) {
         
     }
-    
     
 }
 

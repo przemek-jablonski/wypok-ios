@@ -8,25 +8,25 @@
 
 import Foundation
 
-class BasePresenter<V: View>: Presenter {
-
-    private var view: V? = nil
-
-    func attach(_ view: V) {
+class BasePresenter<VS: Any>: Presenter {
+    
+    private var view: View? = nil
+    
+    final func attach(_ view: View) {
         self.view = view
-        onAttached(view)
+        onAttached(view: view)
     }
     
-    internal func onAttached(_ view: V) {
+    final func detach(_ view: View) {
+        self.view = nil
+        onDetached(view: view)
+    }
+    
+    func onAttached(view: View) {
         fatalError()
     }
-
-    func detach(_ view: V) {
-        self.view = nil
-        onDetached(view)
-    }
     
-    internal func onDetached(_ view: V) {
+    func onDetached(view: View) {
         fatalError()
     }
     

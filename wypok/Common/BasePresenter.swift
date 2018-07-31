@@ -13,11 +13,13 @@ class BasePresenter<VS: Any>: Presenter {
     internal var view: View? = nil
     
     final func attach(_ view: View) {
+        print("BasePresenter, attach: \(view)")
         self.view = view
         onAttached(view: view)
     }
     
     final func detach(_ view: View) {
+        print("BasePresenter, detach: \(view)")
         self.view = nil
         onDetached(view: view)
     }

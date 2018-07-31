@@ -21,6 +21,7 @@ class BaseView<P: Presenter, VS: Any>: UIViewController, View {
     init?(presenter:P?, coder aDecoder: NSCoder) {
         print("BaseView, init, coder: \(aDecoder), presenter: \(String(describing: presenter))")
         super.init(coder: aDecoder)
+        self.presenter = presenter
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -29,14 +29,14 @@ class WypokFrontPageViewController : BaseView<P, VS> {
         super.viewDidAppear(animated)
         let apiKey = apiKeysDictionary.value(forKey: "WYPOK_APIKEY") as! String
         let md5Hash = apiKeysDictionary.value(forKey: "TMP_MD5_HASH") as! String
-        Alamofire
-            .request("https://a.wykop.pl/links/promoted/appkey,\(apiKey)", headers: ["apisign" : "\(md5Hash)"])
-            .validate()
-            .responseString(completionHandler: { dataResponse in
-                print("dataResponse: \(dataResponse)")
-                print("dataResponse: \(dataResponse.result.value!)")
-            }
-        )
+//        Alamofire
+//            .request("https://a.wykop.pl/links/promoted/appkey,\(apiKey)", headers: ["apisign" : "\(md5Hash)"])
+//            .validate()
+//            .responseString(completionHandler: { dataResponse in
+//                print("dataResponse: \(dataResponse)")
+//                print("dataResponse: \(dataResponse.result.value!)")
+//            }
+//        )
     }
     
     private func getApiKeysDictionary() -> NSDictionary {

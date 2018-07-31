@@ -10,6 +10,6 @@ import Foundation
 
 protocol View {
     
-    func render(_ viewState: Any)
+    func render(_ viewState: ViewState)
 
 }

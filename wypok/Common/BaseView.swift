@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class BaseView<P: Presenter, VS: Any>: UIViewController, View {
+class BaseView<P: Presenter, VS: ViewState>: UIViewController, View {
     
     internal var presenter: P?
 
@@ -26,7 +26,7 @@ class BaseView<P: Presenter, VS: Any>: UIViewController, View {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("viewDidAppear, \(animated)")
+        print("BaseView, viewDidAppear, \(animated)")
         presenter?.attach(self)
     }
     
@@ -35,12 +35,13 @@ class BaseView<P: Presenter, VS: Any>: UIViewController, View {
         presenter?.detach(self)
     }
     
-    func render(_ viewState: Any) {
+    func render(_ viewState: ViewState) {
+        print("BaseView, render: \(viewState)")
         render(viewState as! VS)
     }
     
     func render(_ viewState: VS) {
-        
+        print("BaseView, render: \(viewState)")
     }
     
 }

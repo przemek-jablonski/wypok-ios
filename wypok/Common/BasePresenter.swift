@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BasePresenter<VS: Any>: Presenter {
+class BasePresenter<VS: ViewState>: Presenter {
     
     internal var view: View? = nil
     

@@ -27,8 +27,8 @@ class WypokFrontPageViewController : BaseView<P, VS> {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let apiKey = apiKeysDictionary.value(forKey: "WYPOK_APIKEY") as! String
-        let md5Hash = apiKeysDictionary.value(forKey: "TMP_MD5_HASH") as! String
+//        let apiKey = apiKeysDictionary.value(forKey: "WYPOK_APIKEY") as! String
+//        let md5Hash = apiKeysDictionary.value(forKey: "TMP_MD5_HASH") as! String
 //        Alamofire
 //            .request("https://a.wykop.pl/links/promoted/appkey,\(apiKey)", headers: ["apisign" : "\(md5Hash)"])
 //            .validate()

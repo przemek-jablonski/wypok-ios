@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum WypokFrontPageViewState {
+enum WypokFrontPageViewState: ViewState {
     case ERROR
     case LOADING
     case ARTICLES_LIST

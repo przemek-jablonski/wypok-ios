@@ -13,6 +13,7 @@ class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewState>, FrontPag
     
     override func onAttached(view: View) {
         print("WypokFrontPagePresenter, onAttached: \(view)")
+        self.view?.render(WypokFrontPageViewState.ARTICLES_LIST)
     }
     
     override func onDetached(view: View) {
@@ -20,7 +21,6 @@ class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewState>, FrontPag
     }
     
     func onFrontPageItemClicked() {
-        
     }
     
     func onFrontPageItemForceTouchedClicked() {

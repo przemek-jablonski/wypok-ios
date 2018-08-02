@@ -35,9 +35,9 @@ class WypokFrontPageViewController : BaseView<P, VS> {
             .validate()
             .responseJSON(completionHandler: { response in
                 print("response: \(response)")
-                if let response.result.value as! NSArray {
-                    
-                }
+//                if let response.result.value as! NSArray {
+//
+//                }
                 if(response.data != nil) {
                     let frontpage = FrontPageItemDto(fromJson: try! JSON(data: response.data!))
                     print("object: \(frontpage)")

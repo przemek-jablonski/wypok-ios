@@ -16,7 +16,7 @@ typealias VS = WypokFrontPageViewState
 
 class WypokFrontPageViewController : BaseView<P, VS> {
     
-    lazy var apiKeysDictionary: NSDictionary = { getApiKeysDictionary() }()
+    private let apiKeysInteractor: ApiKeysInteractor = WypokApiKeysInteractor()
     
     required init?(coder aDecoder: NSCoder) {
         print("WypokFrontPageViewController, init, coder: \(aDecoder))")
@@ -29,10 +29,8 @@ class WypokFrontPageViewController : BaseView<P, VS> {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let apiKey = apiKeysDictionary.value(forKey: "WYPOK_APIKEY") as! String
-        let md5Hash = apiKeysDictionary.value(forKey: "TMP_MD5_HASH") as! String
         Alamofire
-            .request("https://a.wykop.pl/links/promoted/appkey,\(apiKey)", headers: ["apisign" : "\(md5Hash)"])
+            .request("https://a.wykop.pl/links/promoted/appkey,\(apiKeysInteractor.getApiKey())", headers: ["apisign" : "\(apiKeysInteractor.getMd5Hash(from: "https://a.wykop.pl/links/promoted/appkey,\(apiKeysInteractor.getApiKey())"))"])
             .validate()
             .responseJSON { response in
                 var items: [FrontPageItemDto?] = [FrontPageItemDto]()
@@ -45,10 +43,6 @@ class WypokFrontPageViewController : BaseView<P, VS> {
     
     private func requestFailed() {
         
-    }
-    
-    private func getApiKeysDictionary() -> NSDictionary {
-        return NSDictionary(contentsOfFile: Bundle.main.path(forResource: "ApiKeys", ofType: "plist")!)!
     }
     
 }

@@ -10,6 +10,9 @@
 		4101E2F9211269C50030C49B /* FrontPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E2F8211269C50030C49B /* FrontPageInteractor.swift */; };
 		4101E2FE21126BE90030C49B /* FrontPageItemDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E2FD21126BE90030C49B /* FrontPageItemDto.swift */; };
 		4101E30021126C150030C49B /* FrontPageItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E2FF21126C150030C49B /* FrontPageItemModel.swift */; };
+		4101E3022113BFCC0030C49B /* ApiKeysInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E3012113BFCC0030C49B /* ApiKeysInteractor.swift */; };
+		4101E3052113C2170030C49B /* WypokApiKeysInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E3042113C2170030C49B /* WypokApiKeysInteractor.swift */; };
+		4101E3072113C4EC0030C49B /* MD5Digest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E3062113C4EC0030C49B /* MD5Digest.swift */; };
 		41363F142107EA1D00C6AB42 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41363F132107EA1D00C6AB42 /* BasePresenter.swift */; };
 		41363F16210A554D00C6AB42 /* FrontPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41363F15210A554D00C6AB42 /* FrontPagePresenter.swift */; };
 		41363F18210A6EE000C6AB42 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41363F17210A6EE000C6AB42 /* Presenter.swift */; };
@@ -60,6 +63,9 @@
 		4101E2F8211269C50030C49B /* FrontPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageInteractor.swift; sourceTree = "<group>"; };
 		4101E2FD21126BE90030C49B /* FrontPageItemDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageItemDto.swift; sourceTree = "<group>"; };
 		4101E2FF21126C150030C49B /* FrontPageItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageItemModel.swift; sourceTree = "<group>"; };
+		4101E3012113BFCC0030C49B /* ApiKeysInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeysInteractor.swift; sourceTree = "<group>"; };
+		4101E3042113C2170030C49B /* WypokApiKeysInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokApiKeysInteractor.swift; sourceTree = "<group>"; };
+		4101E3062113C4EC0030C49B /* MD5Digest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5Digest.swift; sourceTree = "<group>"; };
 		41363F132107EA1D00C6AB42 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		41363F15210A554D00C6AB42 /* FrontPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPagePresenter.swift; sourceTree = "<group>"; };
 		41363F17210A6EE000C6AB42 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
@@ -160,6 +166,15 @@
 			path = Local;
 			sourceTree = "<group>";
 		};
+		4101E3032113C0970030C49B /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				4101E3012113BFCC0030C49B /* ApiKeysInteractor.swift */,
+				4101E3042113C2170030C49B /* WypokApiKeysInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
 		416D799A210534D300683119 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +200,7 @@
 		416D79A5210534D400683119 /* wypok */ = {
 			isa = PBXGroup;
 			children = (
+				4101E3032113C0970030C49B /* Interactors */,
 				416D79D82105414F00683119 /* Common */,
 				41C37FDE2106766C00150BFE /* Mirko */,
 				41C37FDD210674FE00150BFE /* Bests */,
@@ -197,6 +213,7 @@
 				416D79B5210534DD00683119 /* Info.plist */,
 				416D79AD210534D400683119 /* wypok.xcdatamodeld */,
 				418063ED210FC28E00B5455C /* ApiKeys.plist */,
+				4101E3062113C4EC0030C49B /* MD5Digest.swift */,
 			);
 			path = wypok;
 			sourceTree = "<group>";
@@ -499,17 +516,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				41C37FE821067FB200150BFE /* WypokMirkoViewController.swift in Sources */,
+				4101E3022113BFCC0030C49B /* ApiKeysInteractor.swift in Sources */,
 				41363F16210A554D00C6AB42 /* FrontPagePresenter.swift in Sources */,
 				41363F142107EA1D00C6AB42 /* BasePresenter.swift in Sources */,
 				4101E30021126C150030C49B /* FrontPageItemModel.swift in Sources */,
 				41363F18210A6EE000C6AB42 /* Presenter.swift in Sources */,
 				416D79A9210534D400683119 /* WypokFrontPageViewController.swift in Sources */,
 				4101E2FE21126BE90030C49B /* FrontPageItemDto.swift in Sources */,
+				4101E3052113C2170030C49B /* WypokApiKeysInteractor.swift in Sources */,
 				41C37FE621067CBF00150BFE /* WypokBestsViewState.swift in Sources */,
 				41C37FE22106780600150BFE /* WypokDigsiteViewState.swift in Sources */,
 				41C37FE02106768300150BFE /* WypokDigsiteViewController.swift in Sources */,
 				41EA0202210543690091E9F9 /* WypokFrontPageViewState.swift in Sources */,
 				4101E2F9211269C50030C49B /* FrontPageInteractor.swift in Sources */,
+				4101E3072113C4EC0030C49B /* MD5Digest.swift in Sources */,
 				41C37FE421067CA600150BFE /* WypokBestsViewController.swift in Sources */,
 				41C37F9B2105488F00150BFE /* BaseView.swift in Sources */,
 				416D79A7210534D400683119 /* AppDelegate.swift in Sources */,
@@ -693,7 +713,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
 				INFOPLIST_FILE = wypok/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -709,7 +732,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
 				INFOPLIST_FILE = wypok/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -726,7 +752,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
 				INFOPLIST_FILE = wypokTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypokTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -744,7 +774,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
 				INFOPLIST_FILE = wypokTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypokTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -761,7 +795,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
 				INFOPLIST_FILE = wypokUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypokUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -778,7 +816,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
 				INFOPLIST_FILE = wypokUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypokUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -106,7 +106,7 @@
 		00678B4D40F942A6268E741BE4F107E6 /* Pods-wypokUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-wypokUITests-frameworks.sh"; sourceTree = "<group>"; };
 		00D0B2BD080C084249DCAB816FA889C3 /* Pods-wypok-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-wypok-umbrella.h"; sourceTree = "<group>"; };
 		03FB2B27B433F3327D8824A209BCB82F /* Swinject-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Swinject-dummy.m"; sourceTree = "<group>"; };
-		07F12F9E02284369659B88945D0BD5C2 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07F12F9E02284369659B88945D0BD5C2 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A22090AAFDDDCF65303A3A68E7E9D2E /* Resolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resolver.swift; path = Sources/Resolver.swift; sourceTree = "<group>"; };
 		0BB095C1B49949F11C4A69A0951A5574 /* SynchronizedResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedResolver.swift; path = Sources/SynchronizedResolver.swift; sourceTree = "<group>"; };
 		15CD2BAEBFCEB914626AD233CCB76799 /* Pods-wypokUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-wypokUITests-dummy.m"; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		17A2562BCE6B8EA7FDDE4CEA537E3541 /* Pods-wypokUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-wypokUITests-resources.sh"; sourceTree = "<group>"; };
 		1B7DAD809BB9BEAA4F5E4653414CB627 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		1CFCDC2504AB8B2321280A5101F048C4 /* ObjectScope.Standard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObjectScope.Standard.swift; path = Sources/ObjectScope.Standard.swift; sourceTree = "<group>"; };
-		2091147545CC74B852012EE6D104EC97 /* Pods_wypok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_wypok.framework; path = "Pods-wypok.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2091147545CC74B852012EE6D104EC97 /* Pods_wypok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wypok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2452992944D1E6D2156ADFA22368D61C /* ObjectScope.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObjectScope.swift; path = Sources/ObjectScope.swift; sourceTree = "<group>"; };
 		260C278D6C1835268A75F44DFF360989 /* DebugHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DebugHelper.swift; path = Sources/DebugHelper.swift; sourceTree = "<group>"; };
 		261533CA3F1D1022AB58AEC6E051D3FE /* Pods-wypokTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-wypokTests-frameworks.sh"; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		5A34C06F5E7D445618A39B4E63963987 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		5CFBC51ECD4D0FAE9E99314C28B1D1F9 /* SynchronizedResolver.Arguments.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedResolver.Arguments.swift; path = Sources/SynchronizedResolver.Arguments.swift; sourceTree = "<group>"; };
 		63D1B3FC42D0E1EAC300ACAFD04BB79C /* SpinLock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpinLock.swift; path = Sources/SpinLock.swift; sourceTree = "<group>"; };
-		6534F70D91AA628D20E1F0B4F80B129E /* Swinject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Swinject.framework; path = Swinject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6534F70D91AA628D20E1F0B4F80B129E /* Swinject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swinject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		673C1BDC48D5F7CBC3452459292858C3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6792EC21788E7DDA3F00F92DBACF83A8 /* Pods-wypok-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-wypok-frameworks.sh"; sourceTree = "<group>"; };
@@ -150,8 +150,8 @@
 		8A40E217FC4C5FB1EC083C028F39F88C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E30624DD6F33E8BF769C101274FC4F4 /* Pods-wypokUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-wypokUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8EB9AE9DB439629E87903419CCAA4548 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9B924DC744396D367079D0A7000D4FC0 /* Pods_wypokUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_wypokUITests.framework; path = "Pods-wypokUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9B924DC744396D367079D0A7000D4FC0 /* Pods_wypokUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wypokUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA4983C432B0736D64B9A460FEB847F /* Pods-wypok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-wypok.debug.xcconfig"; sourceTree = "<group>"; };
 		9DC867B59E76E8FBA7CBB3A54EDE24E3 /* Swinject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Swinject.h; path = Sources/Swinject.h; sourceTree = "<group>"; };
 		9FBAD8E5FAE603521FD22585E32D4682 /* Assembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Assembly.swift; path = Sources/Assembly.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 		A5882E01DEC68CDE55C76DD265809939 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
 		A6DE48D5B1E5199041409CE260DB06EB /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		AE443729F05D4F6D8ADD02292297859F /* Pods-wypok.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-wypok.modulemap"; sourceTree = "<group>"; };
-		B077E684F3C7D4F2344909152235D396 /* Pods_wypokTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_wypokTests.framework; path = "Pods-wypokTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B077E684F3C7D4F2344909152235D396 /* Pods_wypokTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wypokTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B39C0907E018E1ED6617C0FFA8867C69 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		B5F774AADB1EBC46F455EF50DF1EAE7D /* Pods-wypokUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-wypokUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B86B588D466D973B81F176090D8A1AC0 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 		D547F6E0E4A34CAA56ED6B7297AF325D /* ServiceEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServiceEntry.swift; path = Sources/ServiceEntry.swift; sourceTree = "<group>"; };
 		D69B576FBCBA51247041D7CD9771F3A3 /* Pods-wypokTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-wypokTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D784D1830364EDC491B7323FC2B2FFB0 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		D9D246CE326618C747908846A0E9CCFC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9D246CE326618C747908846A0E9CCFC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8EF512C3B191DBBC1BF60245633FF2 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
 		DF92F26C8B63E2FF83C756349ADB6A21 /* Pods-wypok-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-wypok-resources.sh"; sourceTree = "<group>"; };
 		E000197EE1CDB7F9FE0009A6C0313EB2 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
@@ -256,7 +256,6 @@
 				A2B6923851CB6A18D697A349D3F24ADF /* SwiftyJSON.swift */,
 				B9A792B81AA71F1ABC893B53E0EE274A /* Support Files */,
 			);
-			name = SwiftyJSON;
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
@@ -298,7 +297,6 @@
 				806826144E740B396C1133AFCD2A54E9 /* UnavailableItems.swift */,
 				18DA652B2A2948075D399A123A244358 /* Support Files */,
 			);
-			name = Swinject;
 			path = Swinject;
 			sourceTree = "<group>";
 		};
@@ -395,7 +393,6 @@
 				1B7DAD809BB9BEAA4F5E4653414CB627 /* Validation.swift */,
 				102B6F21E23D9E33B8401B47D8A4AAC1 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};

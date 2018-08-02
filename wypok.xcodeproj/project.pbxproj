@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4101E2F9211269C50030C49B /* FrontPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E2F8211269C50030C49B /* FrontPageInteractor.swift */; };
+		4101E2FE21126BE90030C49B /* FrontPageItemDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E2FD21126BE90030C49B /* FrontPageItemDto.swift */; };
+		4101E30021126C150030C49B /* FrontPageItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E2FF21126C150030C49B /* FrontPageItemModel.swift */; };
 		41363F102107E5B600C6AB42 /* WypokGlobalContainerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41363F0F2107E5B600C6AB42 /* WypokGlobalContainerWrapper.swift */; };
 		41363F142107EA1D00C6AB42 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41363F132107EA1D00C6AB42 /* BasePresenter.swift */; };
 		41363F16210A554D00C6AB42 /* FrontPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41363F15210A554D00C6AB42 /* FrontPagePresenter.swift */; };
@@ -56,6 +59,9 @@
 /* Begin PBXFileReference section */
 		396CBE0A12B0D36C50B53642 /* Pods-wypokTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypokTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wypokTests/Pods-wypokTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3A95492F611ABA815F571EB4 /* Pods-wypok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypok.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wypok/Pods-wypok.debug.xcconfig"; sourceTree = "<group>"; };
+		4101E2F8211269C50030C49B /* FrontPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageInteractor.swift; sourceTree = "<group>"; };
+		4101E2FD21126BE90030C49B /* FrontPageItemDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageItemDto.swift; sourceTree = "<group>"; };
+		4101E2FF21126C150030C49B /* FrontPageItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageItemModel.swift; sourceTree = "<group>"; };
 		41363F0F2107E5B600C6AB42 /* WypokGlobalContainerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokGlobalContainerWrapper.swift; sourceTree = "<group>"; };
 		41363F132107EA1D00C6AB42 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		41363F15210A554D00C6AB42 /* FrontPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPagePresenter.swift; sourceTree = "<group>"; };
@@ -133,6 +139,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4101E2FA21126B0A0030C49B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				4101E2FC21126B180030C49B /* Local */,
+				4101E2FB21126B120030C49B /* Remote */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		4101E2FB21126B120030C49B /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				4101E2FD21126BE90030C49B /* FrontPageItemDto.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		4101E2FC21126B180030C49B /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				4101E2FF21126C150030C49B /* FrontPageItemModel.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
 		416D799A210534D300683119 = {
 			isa = PBXGroup;
 			children = (
@@ -195,10 +226,12 @@
 		416D79D72105413C00683119 /* Frontpage */ = {
 			isa = PBXGroup;
 			children = (
+				4101E2FA21126B0A0030C49B /* Entities */,
 				41363F15210A554D00C6AB42 /* FrontPagePresenter.swift */,
 				416D79A8210534D400683119 /* WypokFrontPageViewController.swift */,
 				415C78D62106984700453AFC /* WypokFrontPagePresenter.swift */,
 				41EA0201210543690091E9F9 /* WypokFrontPageViewState.swift */,
+				4101E2F8211269C50030C49B /* FrontPageInteractor.swift */,
 			);
 			path = Frontpage;
 			sourceTree = "<group>";
@@ -474,14 +507,17 @@
 				41C37FE821067FB200150BFE /* WypokMirkoViewController.swift in Sources */,
 				41363F16210A554D00C6AB42 /* FrontPagePresenter.swift in Sources */,
 				41363F142107EA1D00C6AB42 /* BasePresenter.swift in Sources */,
+				4101E30021126C150030C49B /* FrontPageItemModel.swift in Sources */,
 				41363F18210A6EE000C6AB42 /* Presenter.swift in Sources */,
 				416D79A9210534D400683119 /* WypokFrontPageViewController.swift in Sources */,
+				4101E2FE21126BE90030C49B /* FrontPageItemDto.swift in Sources */,
 				41C37FE621067CBF00150BFE /* WypokBestsViewState.swift in Sources */,
 				41C37F9D2105491200150BFE /* WypokBaseUIViewController.swift in Sources */,
 				41C37FE22106780600150BFE /* WypokDigsiteViewState.swift in Sources */,
 				41C37FE02106768300150BFE /* WypokDigsiteViewController.swift in Sources */,
 				41EA0202210543690091E9F9 /* WypokFrontPageViewState.swift in Sources */,
 				41363F102107E5B600C6AB42 /* WypokGlobalContainerWrapper.swift in Sources */,
+				4101E2F9211269C50030C49B /* FrontPageInteractor.swift in Sources */,
 				41C37FE421067CA600150BFE /* WypokBestsViewController.swift in Sources */,
 				41C37F9B2105488F00150BFE /* BaseView.swift in Sources */,
 				416D79A7210534D400683119 /* AppDelegate.swift in Sources */,

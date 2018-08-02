@@ -6,6 +6,4 @@
 //  Copyright © 2018 Przemyslaw Jablonski. All rights reserved.
 //
 
-protocol ViewState {
-    
-}
+protocol ViewState {}

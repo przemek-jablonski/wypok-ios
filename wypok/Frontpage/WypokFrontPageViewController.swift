@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Foundation
 
 typealias P = WypokFrontPagePresenter
 typealias VS = WypokFrontPageViewState
@@ -33,21 +34,17 @@ class WypokFrontPageViewController : BaseView<P, VS> {
         Alamofire
             .request("https://a.wykop.pl/links/promoted/appkey,\(apiKey)", headers: ["apisign" : "\(md5Hash)"])
             .validate()
-            .responseJSON(completionHandler: { response in
-                print("response: \(response)")
-//                if let response.result.value as! NSArray {
-//
-//                }
-                if(response.data != nil) {
-                    let frontpage = FrontPageItemDto(fromJson: try! JSON(data: response.data!))
-                    print("object: \(frontpage)")
+            .responseJSON { response in
+                var items: [FrontPageItemDto?] = [FrontPageItemDto]()
+                if let data = response.data {
+                    items = (try! JSON(data: data).array?.map{jsonObject in FrontPageItemDto(fromJson: jsonObject)})!
                 }
-            })
-        //            .responseString(completionHandler: { dataResponse in
-        //                print("dataResponse: \(dataResponse)")
-        //                print("dataResponse: \(dataResponse.result.value!)")
-        //            }
-        //        )
+                print("items: \(items)")
+        }
+    }
+    
+    private func requestFailed() {
+        
     }
     
     private func getApiKeysDictionary() -> NSDictionary {

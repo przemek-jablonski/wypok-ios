@@ -7,7 +7,9 @@ import Foundation
 import SwiftyJSON
 
 
-class FrontPageItemDto : NSObject, NSCoding{
+class FrontPageItemDto : NSObject, NSCoding, RemoteEntity {
+    typealias T = FrontPageItemModel
+    
     
     var id : Int!
     var title : String!
@@ -45,10 +47,14 @@ class FrontPageItemDto : NSObject, NSCoding{
     var info : AnyObject!
     var app : AnyObject!
     
+    func map() -> FrontPageItemModel {
+        return T(title: title, description: descriptionField, itemUrl: url, itemSourceUrl: sourceUrl, upvoteCount: voteCount, commentCount: commentCount, reportsCount: reportCount)
+    }
+    
     /**
      * Instantiate the instance using the passed json values to set the properties values
      */
-    init(fromJson json: JSON!){
+    required init(fromJson json: JSON){
         if json.isEmpty{
             return
         }
@@ -77,10 +83,10 @@ class FrontPageItemDto : NSObject, NSCoding{
         userFavorite = json["user_favorite"].boolValue
         userObserve = json["user_observe"].boolValue
         userLists = [Int]() as [AnyObject]
-//        let userListsArray = json["user_lists"].arrayValue
-//        for userListsJson in userListsArray{
-//            userLists.append(userListsJson.)
-//        }
+        //        let userListsArray = json["user_lists"].arrayValue
+        //        for userListsJson in userListsArray{
+        //            userLists.append(userListsJson.)
+        //        }
         plus18 = json["plus18"].boolValue
         status = json["status"].stringValue
         canVote = json["can_vote"].boolValue

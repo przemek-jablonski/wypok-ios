@@ -7,7 +7,7 @@
 //
 
 
-protocol ApiKeysInteractor {
+protocol ApiKeysProvider {
     
     func getApiKey() -> String
     

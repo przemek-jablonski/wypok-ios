@@ -8,18 +8,25 @@
 
 import Foundation
 
-//class FrontPageItemModel {
-//    let title: String
-//    let description: String
-//    let itemUrl: String
-//    let itemSourceUrl: String
-//    let digsCount: Int
-//    let commentCount: Int
-//    let reportsCount: Int
-//
-//    convenience init(title:Str) {
-//        <#statements#>
-//    }
-//
-//
-//}
+class FrontPageItemModel {
+    let title: String
+    let description: String
+    let itemUrl: String
+    let itemSourceUrl: String
+    let upvoteCount: Int
+    var commentCount: Int
+    let reportsCount: Int
+    
+    init(title: String, description: String, itemUrl: String, itemSourceUrl: String,
+         upvoteCount: Int, commentCount: Int, reportsCount: Int) {
+        self.title = title
+        self.description = description
+        self.commentCount = commentCount
+        self.itemUrl = itemUrl
+        self.itemSourceUrl = itemSourceUrl
+        self.upvoteCount = upvoteCount
+        self.commentCount = commentCount
+        self.reportsCount = reportsCount
+    }
+}
+

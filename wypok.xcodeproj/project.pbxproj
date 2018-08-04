@@ -18,7 +18,6 @@
 		4101E30D2113D7DF0030C49B /* FrontPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E30C2113D7DF0030C49B /* FrontPageService.swift */; };
 		4101E3112113D8560030C49B /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E3102113D8560030C49B /* BaseService.swift */; };
 		4101E31321151A2C0030C49B /* WypokService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E31221151A2C0030C49B /* WypokService.swift */; };
-		4101E316211536830030C49B /* FrontPageArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4101E315211536830030C49B /* FrontPageArticleCell.xib */; };
 		41363F142107EA1D00C6AB42 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41363F132107EA1D00C6AB42 /* BasePresenter.swift */; };
 		41363F16210A554D00C6AB42 /* FrontPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41363F15210A554D00C6AB42 /* FrontPagePresenter.swift */; };
 		41363F18210A6EE000C6AB42 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41363F17210A6EE000C6AB42 /* Presenter.swift */; };
@@ -36,7 +35,7 @@
 		418063F221112C9A00B5455C /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418063F121112C9A00B5455C /* ViewState.swift */; };
 		41BAE7FB2115C45200BCD5C2 /* WypokAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41BAE7FA2115C45200BCD5C2 /* WypokAssets.xcassets */; };
 		41BAE8002115D22500BCD5C2 /* FrontPageArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BAE7FF2115D22500BCD5C2 /* FrontPageArticleCell.swift */; };
-		41BAE8022115FCED00BCD5C2 /* FrontPageArticleCellPretty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41BAE8012115FCED00BCD5C2 /* FrontPageArticleCellPretty.xib */; };
+		41BAE8022115FCED00BCD5C2 /* FrontPageArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41BAE8012115FCED00BCD5C2 /* FrontPageArticleCell.xib */; };
 		41C37F9B2105488F00150BFE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C37F9A2105488F00150BFE /* BaseView.swift */; };
 		41C37FE02106768300150BFE /* WypokDigsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C37FDF2106768300150BFE /* WypokDigsiteViewController.swift */; };
 		41C37FE22106780600150BFE /* WypokDigsiteViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C37FE12106780600150BFE /* WypokDigsiteViewState.swift */; };
@@ -80,7 +79,6 @@
 		4101E30C2113D7DF0030C49B /* FrontPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageService.swift; sourceTree = "<group>"; };
 		4101E3102113D8560030C49B /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		4101E31221151A2C0030C49B /* WypokService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokService.swift; sourceTree = "<group>"; };
-		4101E315211536830030C49B /* FrontPageArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FrontPageArticleCell.xib; sourceTree = "<group>"; };
 		41363F132107EA1D00C6AB42 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		41363F15210A554D00C6AB42 /* FrontPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPagePresenter.swift; sourceTree = "<group>"; };
 		41363F17210A6EE000C6AB42 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
@@ -103,7 +101,7 @@
 		418063F121112C9A00B5455C /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		41BAE7FA2115C45200BCD5C2 /* WypokAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WypokAssets.xcassets; sourceTree = "<group>"; };
 		41BAE7FF2115D22500BCD5C2 /* FrontPageArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageArticleCell.swift; sourceTree = "<group>"; };
-		41BAE8012115FCED00BCD5C2 /* FrontPageArticleCellPretty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FrontPageArticleCellPretty.xib; sourceTree = "<group>"; };
+		41BAE8012115FCED00BCD5C2 /* FrontPageArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FrontPageArticleCell.xib; sourceTree = "<group>"; };
 		41C37F9A2105488F00150BFE /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		41C37FDF2106768300150BFE /* WypokDigsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokDigsiteViewController.swift; sourceTree = "<group>"; };
 		41C37FE12106780600150BFE /* WypokDigsiteViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokDigsiteViewState.swift; sourceTree = "<group>"; };
@@ -239,9 +237,8 @@
 				416D79AD210534D400683119 /* wypok.xcdatamodeld */,
 				418063ED210FC28E00B5455C /* ApiKeys.plist */,
 				4101E3062113C4EC0030C49B /* MD5Digest.swift */,
-				4101E315211536830030C49B /* FrontPageArticleCell.xib */,
 				41BAE7FA2115C45200BCD5C2 /* WypokAssets.xcassets */,
-				41BAE8012115FCED00BCD5C2 /* FrontPageArticleCellPretty.xib */,
+				41BAE8012115FCED00BCD5C2 /* FrontPageArticleCell.xib */,
 			);
 			path = wypok;
 			sourceTree = "<group>";
@@ -450,8 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				416D79B4210534DD00683119 /* LaunchScreen.storyboard in Resources */,
-				4101E316211536830030C49B /* FrontPageArticleCell.xib in Resources */,
-				41BAE8022115FCED00BCD5C2 /* FrontPageArticleCellPretty.xib in Resources */,
+				41BAE8022115FCED00BCD5C2 /* FrontPageArticleCell.xib in Resources */,
 				416D79B1210534DD00683119 /* (null) in Resources */,
 				41BAE7FB2115C45200BCD5C2 /* WypokAssets.xcassets in Resources */,
 				418063EE210FC28E00B5455C /* ApiKeys.plist in Resources */,

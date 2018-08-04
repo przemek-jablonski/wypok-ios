@@ -9,23 +9,21 @@
 import UIKit
 
 class FrontPageArticleCell: UITableViewCell {
+
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var previewImageView: UIImageView!
+    @IBOutlet weak var linkLabel: UILabel!
+    @IBOutlet weak var upvoteCountLabel: UILabel!
+    @IBOutlet weak var commentCountLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
-    @IBOutlet private weak var articleTitleLabel: UILabel!
-    @IBOutlet private weak var articleLinkLabel: UILabel!
-    
-    func updateContents(articleTitleText: String, articleLinkText: String) {
-        articleTitleLabel.text = articleTitleText
-        articleLinkLabel.text = articleLinkText
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+    func updateContents(titleText: String, linkText: String, upvoteCount: Int, commentCount: Int, dateText: String) {
+        titleLabel.text = titleText
+//        previewImageView.image = UIImage
+        linkLabel.text = linkText
+        upvoteCountLabel.text = String(upvoteCount)
+        commentCountLabel.text = String(commentCount)
+        dateLabel.text = dateText
     }
     
 }

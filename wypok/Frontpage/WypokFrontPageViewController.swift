@@ -72,7 +72,7 @@ class WypokFrontPageViewController : BaseView<P, VS>, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let article : FrontPageItemModel = articlesList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: WypokFrontPageViewController.ARTICLE_CELL_REUSE_IDENTIFIER, for: indexPath) as! FrontPageArticleCell
-        cell.updateContents(articleTitleText: article.title, articleLinkText: article.itemSourceUrl)
+        cell.updateContents(titleText: article.title, linkText: article.itemSourceUrl, upvoteCount: article.upvoteCount, commentCount: article.commentCount, dateText: "asd")
         defer { print("cellForRowAt, indexPath: \(indexPath), cell: \(cell), article: \(article)") }
         return cell
     }

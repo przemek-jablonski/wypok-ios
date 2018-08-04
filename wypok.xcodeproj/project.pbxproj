@@ -36,6 +36,7 @@
 		418063F221112C9A00B5455C /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418063F121112C9A00B5455C /* ViewState.swift */; };
 		41BAE7FB2115C45200BCD5C2 /* WypokAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41BAE7FA2115C45200BCD5C2 /* WypokAssets.xcassets */; };
 		41BAE8002115D22500BCD5C2 /* FrontPageArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BAE7FF2115D22500BCD5C2 /* FrontPageArticleCell.swift */; };
+		41BAE8022115FCED00BCD5C2 /* FrontPageArticleCellPretty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41BAE8012115FCED00BCD5C2 /* FrontPageArticleCellPretty.xib */; };
 		41C37F9B2105488F00150BFE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C37F9A2105488F00150BFE /* BaseView.swift */; };
 		41C37FE02106768300150BFE /* WypokDigsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C37FDF2106768300150BFE /* WypokDigsiteViewController.swift */; };
 		41C37FE22106780600150BFE /* WypokDigsiteViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C37FE12106780600150BFE /* WypokDigsiteViewState.swift */; };
@@ -102,6 +103,7 @@
 		418063F121112C9A00B5455C /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		41BAE7FA2115C45200BCD5C2 /* WypokAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WypokAssets.xcassets; sourceTree = "<group>"; };
 		41BAE7FF2115D22500BCD5C2 /* FrontPageArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageArticleCell.swift; sourceTree = "<group>"; };
+		41BAE8012115FCED00BCD5C2 /* FrontPageArticleCellPretty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FrontPageArticleCellPretty.xib; sourceTree = "<group>"; };
 		41C37F9A2105488F00150BFE /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		41C37FDF2106768300150BFE /* WypokDigsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokDigsiteViewController.swift; sourceTree = "<group>"; };
 		41C37FE12106780600150BFE /* WypokDigsiteViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokDigsiteViewState.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				4101E3062113C4EC0030C49B /* MD5Digest.swift */,
 				4101E315211536830030C49B /* FrontPageArticleCell.xib */,
 				41BAE7FA2115C45200BCD5C2 /* WypokAssets.xcassets */,
+				41BAE8012115FCED00BCD5C2 /* FrontPageArticleCellPretty.xib */,
 			);
 			path = wypok;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 			files = (
 				416D79B4210534DD00683119 /* LaunchScreen.storyboard in Resources */,
 				4101E316211536830030C49B /* FrontPageArticleCell.xib in Resources */,
+				41BAE8022115FCED00BCD5C2 /* FrontPageArticleCellPretty.xib in Resources */,
 				416D79B1210534DD00683119 /* (null) in Resources */,
 				41BAE7FB2115C45200BCD5C2 /* WypokAssets.xcassets in Resources */,
 				418063EE210FC28E00B5455C /* ApiKeys.plist in Resources */,

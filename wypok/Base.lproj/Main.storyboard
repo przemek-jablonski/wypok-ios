@@ -18,21 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FrontPage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwP-GH-nEt">
-                                <rect key="frame" x="120.5" y="273.5" width="79" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lnu-A6-lRw">
+                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="TcU-4n-F3B"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="BGb-W2-RvG"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="TwP-GH-nEt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hM5-iE-mc9"/>
-                            <constraint firstItem="TwP-GH-nEt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kvS-WS-dFT"/>
+                            <constraint firstItem="lnu-A6-lRw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EcM-wQ-BX4"/>
+                            <constraint firstItem="lnu-A6-lRw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Rrp-0G-bE3"/>
+                            <constraint firstItem="lnu-A6-lRw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gQb-Xr-cjU"/>
+                            <constraint firstItem="lnu-A6-lRw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yJy-6Y-tyE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Główna" id="sXd-fY-xi2"/>
+                    <connections>
+                        <outlet property="articlesTableView" destination="lnu-A6-lRw" id="4pd-qo-b19"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,6 +51,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="p3Q-YF-XMz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tic-ed-W6o">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

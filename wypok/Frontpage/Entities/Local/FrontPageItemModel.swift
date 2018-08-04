@@ -29,4 +29,3 @@ class FrontPageItemModel {
         self.reportsCount = reportsCount
     }
 }
-

@@ -9,11 +9,13 @@
 import Foundation
 
 class WypokFrontPageInteractor: FrontPageInteractor {
-    func getFrontPageItems() -> [FrontPageItemModel] {
-        return [FrontPageItemModel]()
+    
+    private let frontPageService: FrontPageService = WypokService()
+    
+    func getFrontPageItems(with completion: @escaping ([FrontPageItemModel]) -> ()) {
+        frontPageService.getLinksPromoted(response: { dtos in
+            completion(dtos.map({ dto in dto.mapToLocal()}))
+        })
     }
-    
-    
-    
     
 }

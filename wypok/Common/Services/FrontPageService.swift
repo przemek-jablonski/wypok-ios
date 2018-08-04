@@ -6,7 +6,6 @@
 //  Copyright © 2018 Przemyslaw Jablonski. All rights reserved.
 //
 
-
 protocol FrontPageService {
     
     func getLinksPromoted(response: @escaping ([FrontPageItemDto]) -> ())

@@ -14,6 +14,6 @@ protocol RemoteEntity {
     
     init(fromJson json: JSON)
     
-    func map() -> T
+    func mapToLocal() -> T
     
 }

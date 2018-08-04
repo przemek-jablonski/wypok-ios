@@ -10,17 +10,18 @@ import Foundation
 
 class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewState>, FrontPagePresenter {
     
-    private let frontPageService: FrontPageService = WypokFrontPageService()
+    private let interactor: FrontPageInteractor = WypokFrontPageInteractor()
     
     override func onAttached(view: View) {
         print("WypokFrontPagePresenter, onAttached: \(view)")
-        self.view?.render(WypokFrontPageViewState.ARTICLES_LIST)
-        frontPageService.getLinksPromoted(response: {dtos -> () in
-            print("dtos: \(dtos)")
+        interactor.getFrontPageItems(with: { models in
+            self.onFrontPageItemsFetched(items: models)
         })
-//        frontPageService.getLinksPromoted(response: {(dtos :  -> () in
-//            print("dtos: \(dtos)")
-//            )})
+    }
+    
+    private func onFrontPageItemsFetched(items: [FrontPageItemModel]) {
+        print("onFrontPageItemsFetched items: \(items)")
+        view?.render(WypokFrontPageViewState.ARTICLES_LIST(items))
     }
     
     override func onDetached(view: View) {

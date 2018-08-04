@@ -16,8 +16,8 @@
 		4101E3092113D3460030C49B /* RemoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E3082113D3460030C49B /* RemoteEntity.swift */; };
 		4101E30B2113D6ED0030C49B /* WypokFrontPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E30A2113D6ED0030C49B /* WypokFrontPageInteractor.swift */; };
 		4101E30D2113D7DF0030C49B /* FrontPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E30C2113D7DF0030C49B /* FrontPageService.swift */; };
-		4101E30F2113D8280030C49B /* WypokFrontPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E30E2113D8280030C49B /* WypokFrontPageService.swift */; };
-		4101E3112113D8560030C49B /* WypokBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E3102113D8560030C49B /* WypokBaseService.swift */; };
+		4101E3112113D8560030C49B /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E3102113D8560030C49B /* BaseService.swift */; };
+		4101E31321151A2C0030C49B /* WypokService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E31221151A2C0030C49B /* WypokService.swift */; };
 		41363F142107EA1D00C6AB42 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41363F132107EA1D00C6AB42 /* BasePresenter.swift */; };
 		41363F16210A554D00C6AB42 /* FrontPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41363F15210A554D00C6AB42 /* FrontPagePresenter.swift */; };
 		41363F18210A6EE000C6AB42 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41363F17210A6EE000C6AB42 /* Presenter.swift */; };
@@ -74,8 +74,8 @@
 		4101E3082113D3460030C49B /* RemoteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteEntity.swift; sourceTree = "<group>"; };
 		4101E30A2113D6ED0030C49B /* WypokFrontPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokFrontPageInteractor.swift; sourceTree = "<group>"; };
 		4101E30C2113D7DF0030C49B /* FrontPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageService.swift; sourceTree = "<group>"; };
-		4101E30E2113D8280030C49B /* WypokFrontPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokFrontPageService.swift; sourceTree = "<group>"; };
-		4101E3102113D8560030C49B /* WypokBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokBaseService.swift; sourceTree = "<group>"; };
+		4101E3102113D8560030C49B /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		4101E31221151A2C0030C49B /* WypokService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokService.swift; sourceTree = "<group>"; };
 		41363F132107EA1D00C6AB42 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		41363F15210A554D00C6AB42 /* FrontPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPagePresenter.swift; sourceTree = "<group>"; };
 		41363F17210A6EE000C6AB42 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
@@ -185,6 +185,16 @@
 			path = Interactors;
 			sourceTree = "<group>";
 		};
+		4101E31421151AA60030C49B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4101E3102113D8560030C49B /* BaseService.swift */,
+				4101E30C2113D7DF0030C49B /* FrontPageService.swift */,
+				4101E31221151A2C0030C49B /* WypokService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		416D799A210534D300683119 = {
 			isa = PBXGroup;
 			children = (
@@ -255,8 +265,6 @@
 				41EA0201210543690091E9F9 /* WypokFrontPageViewState.swift */,
 				4101E2F8211269C50030C49B /* FrontPageInteractor.swift */,
 				4101E30A2113D6ED0030C49B /* WypokFrontPageInteractor.swift */,
-				4101E30C2113D7DF0030C49B /* FrontPageService.swift */,
-				4101E30E2113D8280030C49B /* WypokFrontPageService.swift */,
 			);
 			path = Frontpage;
 			sourceTree = "<group>";
@@ -264,6 +272,7 @@
 		416D79D82105414F00683119 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4101E31421151AA60030C49B /* Services */,
 				4101E3032113C0970030C49B /* Interactors */,
 				41363F19210A6F1400C6AB42 /* View.swift */,
 				41C37F9A2105488F00150BFE /* BaseView.swift */,
@@ -271,7 +280,6 @@
 				41363F132107EA1D00C6AB42 /* BasePresenter.swift */,
 				418063F121112C9A00B5455C /* ViewState.swift */,
 				4101E3082113D3460030C49B /* RemoteEntity.swift */,
-				4101E3102113D8560030C49B /* WypokBaseService.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -538,8 +546,8 @@
 				4101E30D2113D7DF0030C49B /* FrontPageService.swift in Sources */,
 				41363F142107EA1D00C6AB42 /* BasePresenter.swift in Sources */,
 				4101E30021126C150030C49B /* FrontPageItemModel.swift in Sources */,
+				4101E31321151A2C0030C49B /* WypokService.swift in Sources */,
 				41363F18210A6EE000C6AB42 /* Presenter.swift in Sources */,
-				4101E30F2113D8280030C49B /* WypokFrontPageService.swift in Sources */,
 				416D79A9210534D400683119 /* WypokFrontPageViewController.swift in Sources */,
 				4101E2FE21126BE90030C49B /* FrontPageItemDto.swift in Sources */,
 				4101E3052113C2170030C49B /* WypokApiKeysProvider.swift in Sources */,
@@ -547,7 +555,7 @@
 				41C37FE22106780600150BFE /* WypokDigsiteViewState.swift in Sources */,
 				41C37FE02106768300150BFE /* WypokDigsiteViewController.swift in Sources */,
 				41EA0202210543690091E9F9 /* WypokFrontPageViewState.swift in Sources */,
-				4101E3112113D8560030C49B /* WypokBaseService.swift in Sources */,
+				4101E3112113D8560030C49B /* BaseService.swift in Sources */,
 				4101E2F9211269C50030C49B /* FrontPageInteractor.swift in Sources */,
 				4101E3072113C4EC0030C49B /* MD5Digest.swift in Sources */,
 				41C37FE421067CA600150BFE /* WypokBestsViewController.swift in Sources */,

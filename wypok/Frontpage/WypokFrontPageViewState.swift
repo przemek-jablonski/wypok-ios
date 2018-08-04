@@ -11,5 +11,5 @@ import Foundation
 enum WypokFrontPageViewState: ViewState {
     case ERROR
     case LOADING
-    case ARTICLES_LIST
+    case ARTICLES_LIST([FrontPageItemModel])
 }

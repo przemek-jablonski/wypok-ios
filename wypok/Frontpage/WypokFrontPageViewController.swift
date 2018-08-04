@@ -25,6 +25,12 @@ class WypokFrontPageViewController : BaseView<P, VS> {
     
     override func render(_ viewState : VS) {
         print("render, viewState: \(viewState)")
+        switch viewState {
+        case VS.ARTICLES_LIST(let articles):
+            print("ARTICLES_LIST, articles: \(articles)")
+        default:
+            fatalError("not implemented lololol")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

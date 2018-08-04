@@ -10,6 +10,6 @@ import Foundation
 
 protocol FrontPageInteractor {
     
-    func getFrontPageItems() -> [FrontPageItemModel]
+    func getFrontPageItems(with completion: @escaping ([FrontPageItemModel]) -> ())
     
 }

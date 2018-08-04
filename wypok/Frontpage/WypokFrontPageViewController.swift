@@ -35,11 +35,10 @@ class WypokFrontPageViewController : BaseView<P, VS>, UITableViewDataSource, UIT
             UINib(nibName: WypokFrontPageViewController.ARTICLE_CELL_NIB_FILE_NAME, bundle: nil),
             forCellReuseIdentifier: WypokFrontPageViewController.ARTICLE_CELL_REUSE_IDENTIFIER
         )
-        articlesTableView.rowHeight = 80
+//        articlesTableView.rowHeight = 80
     }
     
     override func render(_ viewState : VS) {
-        print("render, viewState: \(viewState)")
         switch viewState {
         case VS.ARTICLES_LIST(let articles):
             renderArticlesList(with: articles)
@@ -65,7 +64,6 @@ class WypokFrontPageViewController : BaseView<P, VS>, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        defer { print("numberOfRowsInSection, section: \(section), articlesCount: \(articlesList.count)") }
         return articlesList.count
     }
     
@@ -73,7 +71,6 @@ class WypokFrontPageViewController : BaseView<P, VS>, UITableViewDataSource, UIT
         let article : FrontPageItemModel = articlesList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: WypokFrontPageViewController.ARTICLE_CELL_REUSE_IDENTIFIER, for: indexPath) as! FrontPageArticleCell
         cell.updateContents(titleText: article.title, linkText: article.itemSourceUrl, upvoteCount: article.upvoteCount, commentCount: article.commentCount, dateText: "asd")
-        defer { print("cellForRowAt, indexPath: \(indexPath), cell: \(cell), article: \(article)") }
         return cell
     }
 

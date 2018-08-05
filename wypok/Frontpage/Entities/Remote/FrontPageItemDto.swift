@@ -251,9 +251,9 @@ class FrontPageItemDto : NSObject, NSCoding, RemoteEntity {
         isHot = aDecoder.decodeObject(forKey: "is_hot") as? Bool
         category = aDecoder.decodeObject(forKey: "category") as? String
         categoryName = aDecoder.decodeObject(forKey: "category_name") as? String
-        violationUrl = aDecoder.decodeObject(forKey: "violation_url") as? AnyObject
-        info = aDecoder.decodeObject(forKey: "info") as? AnyObject
-        app = aDecoder.decodeObject(forKey: "app") as? AnyObject
+        violationUrl = aDecoder.decodeObject(forKey: "violation_url") as AnyObject
+        info = aDecoder.decodeObject(forKey: "info") as AnyObject
+        app = aDecoder.decodeObject(forKey: "app") as AnyObject
     }
     
     /**

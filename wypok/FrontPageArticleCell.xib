@@ -23,46 +23,50 @@
                         <rect key="frame" x="8" y="8" width="651" height="376.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Raz-gv-QeE">
-                                <rect key="frame" x="0.0" y="0.0" width="651" height="20.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="651" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZpD-Dr-MvV" customClass="FrontPageImageView" customModule="wypok" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="651" height="84.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zcB-en-AY0">
-                                <rect key="frame" x="0.0" y="28.5" width="651" height="263.5"/>
+                                <rect key="frame" x="0.0" y="120.5" width="651" height="174"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yT-wU-HhP">
-                                <rect key="frame" x="0.0" y="300" width="651" height="20.5"/>
+                                <rect key="frame" x="0.0" y="302.5" width="651" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZoJ-ei-aCt">
-                                <rect key="frame" x="0.0" y="328.5" width="651" height="48"/>
+                                <rect key="frame" x="0.0" y="330.5" width="651" height="46"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outline_arrow_drop_up_black_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="1YQ-XB-JVF">
-                                        <rect key="frame" x="0.0" y="0.0" width="102" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="102" height="46"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="420" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gm-sr-afM">
-                                        <rect key="frame" x="110" y="0.0" width="101.5" height="48"/>
+                                        <rect key="frame" x="110" y="0.0" width="101.5" height="46"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outline_chat_bubble_outline_black_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="T9c-Yf-EFt">
-                                        <rect key="frame" x="219.5" y="0.0" width="102" height="48"/>
+                                        <rect key="frame" x="219.5" y="0.0" width="102" height="46"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="42" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7Q-zN-wQt">
-                                        <rect key="frame" x="329.5" y="0.0" width="102" height="48"/>
+                                        <rect key="frame" x="329.5" y="0.0" width="102" height="46"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outline_access_time_black_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="Fs9-5D-EFn">
-                                        <rect key="frame" x="439.5" y="0.0" width="101.5" height="48"/>
+                                        <rect key="frame" x="439.5" y="0.0" width="101.5" height="46"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q83-2P-ZNl">
-                                        <rect key="frame" x="549" y="0.0" width="102" height="48"/>
+                                        <rect key="frame" x="549" y="0.0" width="102" height="46"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

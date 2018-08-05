@@ -35,7 +35,6 @@ class WypokFrontPageViewController : BaseView<P, VS>, UITableViewDataSource, UIT
             UINib(nibName: WypokFrontPageViewController.ARTICLE_CELL_NIB_FILE_NAME, bundle: nil),
             forCellReuseIdentifier: WypokFrontPageViewController.ARTICLE_CELL_REUSE_IDENTIFIER
         )
-//        articlesTableView.rowHeight = 80
     }
     
     override func render(_ viewState : VS) {

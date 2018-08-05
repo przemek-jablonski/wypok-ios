@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Zyn-mQ-cKK" customClass="FrontPageImageView" customModule="wypok" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZYv-mR-x2c">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6H-Bz-Hq5" customClass="EdgeInsetLabel" customModule="wypok" customModuleProvider="target">
+                    <rect key="frame" x="317" y="0.0" width="58" height="28.5"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="topTextInset">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="bottomTextInset">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="leftTextInset">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="rightTextInset">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSH-Cz-7Be" customClass="EdgeInsetLabel" customModule="wypok" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="638.5" width="375" height="28.5"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="leftTextInset">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="rightTextInset">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="topTextInset">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="bottomTextInset">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ZYv-mR-x2c" secondAttribute="bottom" id="1fU-4U-mAZ"/>
+                <constraint firstAttribute="bottom" secondItem="aSH-Cz-7Be" secondAttribute="bottom" id="3ct-Li-EXF"/>
+                <constraint firstItem="F6H-Bz-Hq5" firstAttribute="trailing" secondItem="ZYv-mR-x2c" secondAttribute="trailing" id="4kx-DK-CiS"/>
+                <constraint firstItem="aSH-Cz-7Be" firstAttribute="leading" secondItem="Zyn-mQ-cKK" secondAttribute="leading" id="FCY-i8-ces"/>
+                <constraint firstAttribute="trailing" secondItem="ZYv-mR-x2c" secondAttribute="trailing" id="Lrp-8U-JDO"/>
+                <constraint firstItem="ZYv-mR-x2c" firstAttribute="top" secondItem="Zyn-mQ-cKK" secondAttribute="top" id="PNE-vy-CGt"/>
+                <constraint firstItem="ZYv-mR-x2c" firstAttribute="leading" secondItem="Zyn-mQ-cKK" secondAttribute="leading" id="dez-eY-b4Z"/>
+                <constraint firstAttribute="trailing" secondItem="aSH-Cz-7Be" secondAttribute="trailing" id="ksW-0C-s2G"/>
+                <constraint firstItem="F6H-Bz-Hq5" firstAttribute="top" secondItem="ZYv-mR-x2c" secondAttribute="top" id="vep-N9-XU4"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="x5V-jN-PEM"/>
+            <connections>
+                <outlet property="articlePreviewImageView" destination="ZYv-mR-x2c" id="08c-7e-RV8"/>
+                <outlet property="asdasd" destination="F6H-Bz-Hq5" id="e3d-on-ZiS"/>
+                <outlet property="sourceLinkLabel" destination="aSH-Cz-7Be" id="Zul-lj-J0k"/>
+                <outlet property="userInfoLabel" destination="F6H-Bz-Hq5" id="jq4-oP-xJV"/>
+            </connections>
+            <point key="canvasLocation" x="-55" y="13"/>
+        </view>
+    </objects>
+</document>

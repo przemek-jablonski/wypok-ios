@@ -14,7 +14,9 @@ import Foundation
 typealias P = WypokFrontPagePresenter
 typealias VS = WypokFrontPageViewState
 
-class WypokFrontPageViewController : BaseView<P, VS>, UITableViewDataSource, UITableViewDelegate {
+class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITableViewDelegate {
+    
+    private static let ESTIMATED_ROW_HEIGHT_DIVIDER: CGFloat = 2
     
     @IBOutlet weak var articlesTableView: UITableView!
     private var articlesList = [FrontPageItemModel]()
@@ -31,6 +33,8 @@ class WypokFrontPageViewController : BaseView<P, VS>, UITableViewDataSource, UIT
             UINib(nibName: FrontPageArticleTableViewCell.XIB_FILENAME, bundle: nil),
             forCellReuseIdentifier: FrontPageArticleTableViewCell.REUSE_IDENTIFIER
         )
+        articlesTableView.rowHeight = UITableViewAutomaticDimension
+        articlesTableView.estimatedRowHeight = UIScreen.main.bounds.size.height / WypokFrontPageViewController.ESTIMATED_ROW_HEIGHT_DIVIDER
     }
     
     override func render(_ viewState : VS) {

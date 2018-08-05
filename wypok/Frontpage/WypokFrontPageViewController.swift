@@ -66,6 +66,32 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
         return articlesList.count
     }
     
+    //swipe from left
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let upvoteAction = UIContextualAction(style: .normal, title: "wykop") { (_ , _ , success) in
+            success(true)
+        }
+        upvoteAction.backgroundColor = UIColor.green
+        return UISwipeActionsConfiguration(actions: [upvoteAction])
+    }
+    
+    //swipe from right
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let downvoteAction = UIContextualAction(style: .destructive, title: "zakop") { (_ , _ , success) in
+            success(false)
+        }
+        downvoteAction.backgroundColor = .red
+        let hideAction = UIContextualAction(style: .destructive, title: "ukryj") { (_, _, _) in
+            
+        }
+        hideAction.backgroundColor = UIColor.darkGray
+        return UISwipeActionsConfiguration(actions: [hideAction, downvoteAction])
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let article : FrontPageItemModel = articlesList[indexPath.row]
         let cell = tableView.dequeueReusableCell(

@@ -16,9 +16,6 @@ typealias VS = WypokFrontPageViewState
 
 class WypokFrontPageViewController : BaseView<P, VS>, UITableViewDataSource, UITableViewDelegate {
     
-    private static let ARTICLE_CELL_NIB_FILE_NAME = "FrontPageArticleCell"
-    private static let ARTICLE_CELL_REUSE_IDENTIFIER = "FrontPageArticleCell"
-    
     @IBOutlet weak var articlesTableView: UITableView!
     private var articlesList = [FrontPageItemModel]()
     
@@ -30,10 +27,9 @@ class WypokFrontPageViewController : BaseView<P, VS>, UITableViewDataSource, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //todo: reuseIdentifier is specified in Storyboard as well, is it needed twice?
         articlesTableView.register(
-            UINib(nibName: WypokFrontPageViewController.ARTICLE_CELL_NIB_FILE_NAME, bundle: nil),
-            forCellReuseIdentifier: WypokFrontPageViewController.ARTICLE_CELL_REUSE_IDENTIFIER
+            UINib(nibName: FrontPageArticleTableViewCell.XIB_FILENAME, bundle: nil),
+            forCellReuseIdentifier: FrontPageArticleTableViewCell.REUSE_IDENTIFIER
         )
     }
     
@@ -68,10 +64,13 @@ class WypokFrontPageViewController : BaseView<P, VS>, UITableViewDataSource, UIT
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let article : FrontPageItemModel = articlesList[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: WypokFrontPageViewController.ARTICLE_CELL_REUSE_IDENTIFIER, for: indexPath) as! FrontPageArticleCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: FrontPageArticleTableViewCell.REUSE_IDENTIFIER,
+            for: indexPath
+            ) as! FrontPageArticleTableViewCell
         cell.updateContents(titleText: article.title, linkText: article.itemSourceUrl, upvoteCount: article.upvoteCount, commentCount: article.commentCount, dateText: "asd")
         return cell
     }
-
+    
     
 }

@@ -12,4 +12,6 @@ protocol FrontPageInteractor {
     
     func getFrontPageItems(with completion: @escaping ([FrontPageItemModel]) -> ())
     
+    func fetchImagesForFrontPageItems(frontPageItems: [FrontPageItemModel], completionHandler: @escaping ([FrontPageItemModel]) -> ())
+    
 }

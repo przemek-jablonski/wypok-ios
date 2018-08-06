@@ -6,6 +6,7 @@ target 'wypok' do
   pod 'Alamofire', '~> 4.7'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'Swinject'
+  pod 'SDWebImage', '~> 4.0'
 
   target 'wypokTests' do
     inherit! :search_paths

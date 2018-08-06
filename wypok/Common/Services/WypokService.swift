@@ -8,7 +8,7 @@
 
 import Foundation
 
-class WypokService : BaseService, FrontPageService {
+class WypokService : WypokBaseService, FrontPageService {
     
     func getLinksPromoted(response: @escaping ([FrontPageItemDto]) -> ()) {
         performServiceCall(

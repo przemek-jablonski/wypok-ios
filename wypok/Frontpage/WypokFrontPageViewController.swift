@@ -68,24 +68,23 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
     
     //swipe from left
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let upvoteAction = UIContextualAction(style: .normal, title: "wykop") { (_ , _ , success) in
-            success(true)
-        }
-        upvoteAction.backgroundColor = UIColor.green
-        return UISwipeActionsConfiguration(actions: [upvoteAction])
+        return UISwipeActionsConfiguration(action:
+            UIContextualAction(style: .normal, title: "wykop", color: .green) { (_ , _ , success) in
+                success(true)
+            }
+        )
     }
     
     //swipe from right
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let downvoteAction = UIContextualAction(style: .destructive, title: "zakop") { (_ , _ , success) in
-            success(false)
-        }
-        downvoteAction.backgroundColor = .red
-        let hideAction = UIContextualAction(style: .destructive, title: "ukryj") { (_, _, _) in
-            
-        }
-        hideAction.backgroundColor = UIColor.darkGray
-        return UISwipeActionsConfiguration(actions: [hideAction, downvoteAction])
+        return UISwipeActionsConfiguration(actions: [
+            UIContextualAction(style: .destructive, title: "ukryj", color: .darkGray) { (_, _, success) in
+                success(false)
+            },
+            UIContextualAction(style: .destructive, title: "zakop", color: .red) { (_ , _ , success) in
+                success(false)
+            }]
+        )
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

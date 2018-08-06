@@ -13,6 +13,7 @@ class FrontPageItemModel {
     let description: String
     let itemUrl: String
     let itemSourceUrl: String
+    var imageData: Data?
     let upvoteCount: Int
     var commentCount: Int
     let reportsCount: Int

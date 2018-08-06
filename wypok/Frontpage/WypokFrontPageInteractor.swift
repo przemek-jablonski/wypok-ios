@@ -18,4 +18,12 @@ class WypokFrontPageInteractor: FrontPageInteractor {
         })
     }
     
+    func fetchImagesForFrontPageItems(frontPageItems: [FrontPageItemModel], completionHandler: @escaping ([FrontPageItemModel]) -> ()) {
+        frontPageItems.forEach { (model) in
+            frontPageService.getImage(from: model.itemSourceUrl, response: { data in
+                
+            })
+        }
+    }
+    
 }

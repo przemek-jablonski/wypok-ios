@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class FrontPageArticleTableViewCell: UITableViewCell {
 
@@ -14,10 +15,19 @@ class FrontPageArticleTableViewCell: UITableViewCell {
     static let REUSE_IDENTIFIER = "FrontPageArticleTableViewCell"
     
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet weak var previewImageView: UIImageView!
+    @IBOutlet weak var upvoteCountLabel: UILabel!
+    @IBOutlet weak var commentsCountLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
-    func updateContents(titleText: String, linkText: String, upvoteCount: Int, commentCount: Int, dateText: String) {
+    func updateContents(titleText: String, previewImageUrl: String, linkText: String, upvoteCount: Int, commentCount: Int, dateText: String) {
         titleLabel.text = titleText
+//        previewImageView.sd_setImage(with: URL(string: previewImageUrl)) { (image, error, cacheType, url) in
+////            self.updateConstraints()
+//        }
+        upvoteCountLabel.text = String(upvoteCount)
+        commentsCountLabel.text = String(commentCount)
+        dateLabel.text = dateText
     }
-    
     
 }

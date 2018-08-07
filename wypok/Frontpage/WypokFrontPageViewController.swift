@@ -21,14 +21,17 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
     @IBOutlet weak var articlesTableView: UITableView!
     private var articlesList = [FrontPageItemModel]()
     
-    
+    //todo: to be removed when some DI is in place
     required init?(coder aDecoder: NSCoder) {
-        print("WypokFrontPageViewController, init, coder: \(aDecoder))")
         super.init(presenter: WypokFrontPagePresenter(), coder: aDecoder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupArticlesTableView(tableView: articlesTableView)
+    }
+    
+    private func setupArticlesTableView(tableView: UITableView) {
         articlesTableView.register(
             UINib(nibName: FrontPageArticleTableViewCell.XIB_FILENAME, bundle: nil),
             forCellReuseIdentifier: FrontPageArticleTableViewCell.REUSE_IDENTIFIER
@@ -66,10 +69,21 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
         return articlesList.count
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let article : FrontPageItemModel = articlesList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: FrontPageArticleTableViewCell.REUSE_IDENTIFIER,
+            for: indexPath
+            ) as! FrontPageArticleTableViewCell
+        cell.updateContents(titleText: article.title, previewImageUrl: article.previewImageUrl, linkText: article.itemSourceUrl, upvoteCount: article.upvoteCount, commentCount: article.commentCount, dateText: "asd")
+        return cell
+    }
+    
     //swipe from left
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         return UISwipeActionsConfiguration(action:
-            UIContextualAction(style: .normal, title: "wykop", color: .green) { (_ , _ , success) in
+            UIContextualAction(style: .normal, title: "wykop", color: .green) { (action, view, success) in
+                print("leadingSwipeActionsConfigurationForRowAt, action: \(action.title)")
                 success(true)
             }
         )
@@ -78,28 +92,15 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
     //swipe from right
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         return UISwipeActionsConfiguration(actions: [
-            UIContextualAction(style: .destructive, title: "ukryj", color: .darkGray) { (_, _, success) in
-                success(false)
+            UIContextualAction(style: .normal, title: "zakop", color: .red) { (action, view, success) in
+                print("trailingSwipeActionsConfigurationForRowAt, action: \(action.title)")
+                success(true)
             },
-            UIContextualAction(style: .destructive, title: "zakop", color: .red) { (_ , _ , success) in
-                success(false)
+            UIContextualAction(style: .normal, title: "ukryj", color: .darkGray) { (action, view, success) in
+                print("trailingSwipeActionsConfigurationForRowAt, action: \(action.title)")
+                success(true)
             }]
         )
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let article : FrontPageItemModel = articlesList[indexPath.row]
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: FrontPageArticleTableViewCell.REUSE_IDENTIFIER,
-            for: indexPath
-            ) as! FrontPageArticleTableViewCell
-        cell.updateContents(titleText: article.title, linkText: article.itemSourceUrl, upvoteCount: article.upvoteCount, commentCount: article.commentCount, dateText: "asd")
-        return cell
-    }
-    
     
 }

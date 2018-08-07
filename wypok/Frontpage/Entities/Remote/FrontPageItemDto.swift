@@ -48,7 +48,7 @@ class FrontPageItemDto : NSObject, NSCoding, RemoteEntity {
     var app : AnyObject!
     
     func mapToLocal() -> FrontPageItemModel {
-        return T(title: title, description: descriptionField, itemUrl: url, itemSourceUrl: sourceUrl, upvoteCount: voteCount, commentCount: commentCount, reportsCount: reportCount)
+        return T(title: title, description: descriptionField, itemUrl: url, itemSourceUrl: sourceUrl, previewImageUrl: preview, upvoteCount: voteCount, commentCount: commentCount, reportsCount: reportCount)
     }
     
     /**

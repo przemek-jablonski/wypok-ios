@@ -10,9 +10,8 @@ import Foundation
 
 protocol FrontPagePresenter: Presenter {
     
-    func onFrontPageItemClicked()
-    func onFrontPageItemForceTouchedClicked()
-    func onFrontPageItemSwipedLeft()
-    func onFrontPageItemSwipedRight()
+    func onFrontPageItemClicked(row: Int)
+    func onFrontPageItemForceTouchedClicked(row: Int)
+    func onFrontPageItemActionCalled(row: Int, action: FrontPageItemAction)
     
 }

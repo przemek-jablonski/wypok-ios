@@ -18,6 +18,11 @@ class FrontPageItemModel {
     var commentCount: Int
     let reportsCount: Int
     
+    var isVisited = false //should be here
+    var isHidden = false //todo: this should be in coredata
+    var isUpvoted = false //todo: this is in the wykop api (should be probably in coredata)
+    var isDownvoted = false //todo: this is in the wykop api (should be probably in coredata)
+    
     init(title: String, description: String, itemUrl: String, itemSourceUrl: String, previewImageUrl: String,
          upvoteCount: Int, commentCount: Int, reportsCount: Int) {
         self.title = title

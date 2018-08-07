@@ -7,6 +7,7 @@ target 'wypok' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'Swinject'
   pod 'SDWebImage', '~> 4.0'
+  pod 'IGListKit', '~> 3.0'
 
   target 'wypokTests' do
     inherit! :search_paths

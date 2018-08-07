@@ -36,8 +36,8 @@ extension Dictionary where Key == String, Value == AnyObject {
 
 extension String {
     func removeHtmlEntities() -> String {
-        var string = self
         let entitiesDictionary = ["&quot;" : "\""]
+        var string = self
         entitiesDictionary.forEach { (entity, entityReplacement) in
             string = self.removeHtmlEntity(entity: entity, replacement: entityReplacement)
         }

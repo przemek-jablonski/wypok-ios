@@ -11,6 +11,7 @@ import Foundation
 class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewState>, FrontPagePresenter {
     
     private let interactor: FrontPageInteractor = WypokFrontPageInteractor()
+    private var frontPageItems: [FrontPageItemModel] = [FrontPageItemModel]()
     
     override func onAttached(view: View) {
         print("WypokFrontPagePresenter, onAttached: \(view)")
@@ -20,27 +21,32 @@ class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewState>, FrontPag
     }
     
     private func onFrontPageItemsFetched(items: [FrontPageItemModel]) {
-        print("onFrontPageItemsFetched items: \(items)")
-        view?.render(WypokFrontPageViewState.ARTICLES_LIST(items))
+        frontPageItems = items
+        view?.render(WypokFrontPageViewState.ARTICLES_LIST(frontPageItems))
     }
     
     override func onDetached(view: View) {
         print("WypokFrontPagePresenter, onDetached: \(view)")
     }
     
-    func onFrontPageItemClicked() {
+    func onFrontPageItemClicked(row: Int) {
     }
     
-    func onFrontPageItemForceTouchedClicked() {
+    func onFrontPageItemForceTouchedClicked(row: Int) {
         
     }
     
-    func onFrontPageItemSwipedLeft() {
-        
-    }
-    
-    func onFrontPageItemSwipedRight() {
-        
+    func onFrontPageItemActionCalled(row: Int, action: FrontPageItemAction) {
+        print("onFrontPageItemActionCalled, row: \(row), action: \(action)")
+        let frontPageItem = frontPageItems[row]
+        switch action {
+        case .UPVOTE:
+            frontPageItem.isUpvoted = true
+        case .DOWNVOTE:
+            frontPageItem.isDownvoted = true
+        case .HIDE:
+            frontPageItem.isHidden = true
+        }
     }
     
 }

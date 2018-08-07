@@ -44,9 +44,16 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
     
     private func renderArticlesList(with articles: [FrontPageItemModel]) {
         print("renderArticlesList, articles: \(articles)")
+        
         articlesList = articles
         articlesTableView.reloadData()
     }
+    
+    private func areAllRowsAffectedByUpdate(original: [FrontPageItemModel], updated: [FrontPageItemModel]) {
+        
+    }
+    
+    private func calculateRowsAffectedByUpdate(original: [FrontPageItemModel], )
     
     private func renderLoading() {
         print("renderLoading")
@@ -83,7 +90,7 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         return UISwipeActionsConfiguration(action:
             UIContextualAction(style: .normal, title: "wykop", color: .green) { (action, view, success) in
-                print("leadingSwipeActionsConfigurationForRowAt, action: \(action.title)")
+                self.presenter?.onFrontPageItemActionCalled(action: FrontPageItemAction.UPVOTE)
                 success(true)
             }
         )
@@ -93,11 +100,11 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         return UISwipeActionsConfiguration(actions: [
             UIContextualAction(style: .normal, title: "zakop", color: .red) { (action, view, success) in
-                print("trailingSwipeActionsConfigurationForRowAt, action: \(action.title)")
+                self.presenter?.onFrontPageItemActionCalled(action: FrontPageItemAction.DOWNVOTE)
                 success(true)
             },
             UIContextualAction(style: .normal, title: "ukryj", color: .darkGray) { (action, view, success) in
-                print("trailingSwipeActionsConfigurationForRowAt, action: \(action.title)")
+                self.presenter?.onFrontPageItemActionCalled(action: FrontPageItemAction.HIDE)
                 success(true)
             }]
         )

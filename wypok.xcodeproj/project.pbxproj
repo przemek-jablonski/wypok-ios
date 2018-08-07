@@ -48,6 +48,7 @@
 		41C37FE621067CBF00150BFE /* WypokBestsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C37FE521067CBF00150BFE /* WypokBestsViewState.swift */; };
 		41C37FE821067FB200150BFE /* WypokMirkoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C37FE721067FB200150BFE /* WypokMirkoViewController.swift */; };
 		41EA0202210543690091E9F9 /* WypokFrontPageViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EA0201210543690091E9F9 /* WypokFrontPageViewState.swift */; };
+		41FA4058211A49B600EEA5FF /* FrontPageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FA4057211A49B500EEA5FF /* FrontPageAction.swift */; };
 		5D47F22100F2340F01F318AC /* Pods_wypokUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E3190D6D26E3BD8BB738D5 /* Pods_wypokUITests.framework */; };
 		CE326A6F2440EE045E94A037 /* Pods_wypok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D094416F579C3A4D6403B350 /* Pods_wypok.framework */; };
 		E55B704C4AEE483C8D6149EC /* Pods_wypokTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFAF262115FDB73CFA59ECBE /* Pods_wypokTests.framework */; };
@@ -119,6 +120,7 @@
 		41C37FE521067CBF00150BFE /* WypokBestsViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokBestsViewState.swift; sourceTree = "<group>"; };
 		41C37FE721067FB200150BFE /* WypokMirkoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokMirkoViewController.swift; sourceTree = "<group>"; };
 		41EA0201210543690091E9F9 /* WypokFrontPageViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokFrontPageViewState.swift; sourceTree = "<group>"; };
+		41FA4057211A49B500EEA5FF /* FrontPageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageAction.swift; sourceTree = "<group>"; };
 		44E3190D6D26E3BD8BB738D5 /* Pods_wypokUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wypokUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		464BE50A99EE9AE79992C0DC /* Pods-wypokUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypokUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wypokUITests/Pods-wypokUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7A32A0842E6F62A9B3A43F99 /* Pods-wypok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypok.release.xcconfig"; path = "Pods/Target Support Files/Pods-wypok/Pods-wypok.release.xcconfig"; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				41EA0201210543690091E9F9 /* WypokFrontPageViewState.swift */,
 				4101E2F8211269C50030C49B /* FrontPageInteractor.swift */,
 				4101E30A2113D6ED0030C49B /* WypokFrontPageInteractor.swift */,
+				41FA4057211A49B500EEA5FF /* FrontPageAction.swift */,
 			);
 			path = Frontpage;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-wypok/Pods-wypok-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
@@ -565,6 +569,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
@@ -596,6 +601,7 @@
 				41363F18210A6EE000C6AB42 /* Presenter.swift in Sources */,
 				416D79A9210534D400683119 /* WypokFrontPageViewController.swift in Sources */,
 				4101E2FE21126BE90030C49B /* FrontPageItemDto.swift in Sources */,
+				41FA4058211A49B600EEA5FF /* FrontPageAction.swift in Sources */,
 				4101E3052113C2170030C49B /* WypokApiKeysProvider.swift in Sources */,
 				41C37FE621067CBF00150BFE /* WypokBestsViewState.swift in Sources */,
 				41C37FE22106780600150BFE /* WypokDigsiteViewState.swift in Sources */,

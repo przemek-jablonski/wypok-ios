@@ -6,4 +6,8 @@
 //  Copyright © 2018 Przemyslaw Jablonski. All rights reserved.
 //
 
-import Foundation
+enum FrontPageItemAction {
+    case UPVOTE
+    case DOWNVOTE
+    case HIDE
+}

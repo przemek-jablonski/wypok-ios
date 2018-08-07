@@ -36,6 +36,19 @@ extension Dictionary where Key == String, Value == AnyObject {
 
 extension String {
     func removeHtmlEntities() -> String {
-        return self.replacingOccurrences(of: "&quot;", with: "\"")
+        var string = self
+        let entitiesDictionary = ["&quot;" : "\""]
+        entitiesDictionary.forEach { (entity, entityReplacement) in
+            string = self.removeHtmlEntity(entity: entity, replacement: entityReplacement)
+        }
+        return string
+    }
+    
+    private func removeHtmlEntity(entity: String, replacement: String) -> String {
+        if (self.contains(entity)) {
+            return self.replacingOccurrences(of: entity, with: replacement)
+        } else {
+            return self
+        }
     }
 }

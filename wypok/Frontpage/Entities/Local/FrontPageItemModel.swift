@@ -8,9 +8,10 @@
 
 import Foundation
 
-class FrontPageItemModel {
+class FrontPageItemModel: NSObject {
+    let id: NSInteger
     let title: String
-    let description: String
+    let desc: String
     let itemUrl: String
     let itemSourceUrl: String
     let previewImageUrl: String
@@ -23,10 +24,11 @@ class FrontPageItemModel {
     var isUpvoted = false //todo: this is in the wykop api (should be probably in coredata)
     var isDownvoted = false //todo: this is in the wykop api (should be probably in coredata)
     
-    init(title: String, description: String, itemUrl: String, itemSourceUrl: String, previewImageUrl: String,
+    init(id: Int, title: String, description: String, itemUrl: String, itemSourceUrl: String, previewImageUrl: String,
          upvoteCount: Int, commentCount: Int, reportsCount: Int) {
+        self.id = id
         self.title = title
-        self.description = description
+        self.desc = description
         self.commentCount = commentCount
         self.itemUrl = itemUrl
         self.itemSourceUrl = itemSourceUrl
@@ -35,4 +37,19 @@ class FrontPageItemModel {
         self.commentCount = commentCount
         self.reportsCount = reportsCount
     }
+    
+    override var hash: Int {
+        return self.id
+    }
+    
+//    override func isEqual(_ object: Any?) -> Bool {
+//        return super.isEqual(object)
+////        if (object == nil) {
+////            return false
+////        }
+////        if (self.isKind(of: type(of: object))) {
+////
+////        }
+//    }
+    
 }

@@ -52,3 +52,10 @@ extension String {
         }
     }
 }
+
+
+//extension NSObjectProtocol {
+//    func isNotKind(of class: AnyClass) {
+//        return !self.isKind(of: class)
+//    }
+//}

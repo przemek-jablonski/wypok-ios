@@ -38,7 +38,7 @@ class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewState>, FrontPag
     
     func onFrontPageItemActionCalled(row: Int, action: FrontPageItemAction) {
         print("onFrontPageItemActionCalled, row: \(row), action: \(action)")
-        let frontPageItem = frontPageItems[row]
+        let frontPageItem = frontPageItems[row].resetUserPreferences()
         switch action {
         case .UPVOTE:
             frontPageItem.isUpvoted = true
@@ -47,6 +47,16 @@ class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewState>, FrontPag
         case .HIDE:
             frontPageItem.isHidden = true
         }
+        view?.render(WypokFrontPageViewState.ARTICLES_LIST(frontPageItems))
     }
     
+}
+
+fileprivate extension FrontPageItemModel{
+    func resetUserPreferences() -> FrontPageItemModel {
+        self.isUpvoted = false
+        self.isDownvoted = false
+        self.isHidden = false
+        return self
+    }
 }

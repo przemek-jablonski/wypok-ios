@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Foundation
+import IGListKit
 
 typealias P = WypokFrontPagePresenter
 typealias VS = WypokFrontPageViewState
@@ -44,16 +45,40 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
     
     private func renderArticlesList(with articles: [FrontPageItemModel]) {
         print("renderArticlesList, articles: \(articles)")
+        if (areAllRowsAffectedByUpdate(original: articlesList, updated: articles)) {
+            articlesList = articles
+            articlesTableView.reloadData()
+        } else {
+            let (inserts, deletes, updates) = calculateRowsAffectedByUpdate(original: articlesList, updated: articles)
+            articlesList = articles
+            articlesTableView.reloadData()
+//            articlesTableView.performBatchUpdates({
+//                articlesTableView.insertRows(at: inserts, with: UITableViewRowAnimation.automatic)
+//                articlesTableView.reloadRows(at: updates, with: UITableViewRowAnimation.automatic)
+//                articlesTableView.deleteRows(at: deletes, with: UITableViewRowAnimation.automatic)
+//            }) { _ in }
+        }
         
-        articlesList = articles
-        articlesTableView.reloadData()
     }
     
-    private func areAllRowsAffectedByUpdate(original: [FrontPageItemModel], updated: [FrontPageItemModel]) {
-        
+    private func areAllRowsAffectedByUpdate(original: [FrontPageItemModel], updated: [FrontPageItemModel]) -> Bool {
+        return original.isEmpty || updated.isEmpty
     }
     
-    private func calculateRowsAffectedByUpdate(original: [FrontPageItemModel], )
+    private func calculateRowsAffectedByUpdate(original: [FrontPageItemModel], updated: [FrontPageItemModel]) -> ([IndexPath], [IndexPath], [IndexPath]) {
+        let diffResult = ListDiffPaths(fromSection: 0, toSection: 0, oldArray: original, newArray: updated, option: .equality)
+        return (diffResult.inserts, diffResult.deletes, diffResult.updates)
+        
+//        articlesTableView.performBatchUpdates({
+//
+//
+////            articlesTableView.deleteRows(at: diffResult.updates.all, with: UITableViewRowAnimation.automatic)
+////            articlesTableView.insertRows(at: diffResult.inserts, with: UITableViewRowAnimation.automatic)
+////            articlesTableView.reloadRows(at: diffResult.updates, with: UITableViewRowAnimation.automatic)
+//        }) { (completed) in
+//
+//        }
+    }
     
     private func renderLoading() {
         print("renderLoading")
@@ -83,14 +108,34 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
             for: indexPath
             ) as! FrontPageArticleTableViewCell
         cell.updateContents(titleText: article.title, previewImageUrl: article.previewImageUrl, linkText: article.itemSourceUrl, upvoteCount: article.upvoteCount, commentCount: article.commentCount, dateText: "asd")
+        colorizeCell(cell: cell, model: article)
         return cell
+    }
+    
+    private func colorizeCell(cell: UITableViewCell, model: FrontPageItemModel) {
+        if (model.isUpvoted) {
+            cell.backgroundColor = .green
+            return
+        }
+        
+        if (model.isDownvoted) {
+            cell.backgroundColor = .red
+            return
+        }
+        
+        if (model.isHidden) {
+            cell.backgroundColor = .lightGray
+            return
+        }
+        
+        cell.backgroundColor = UIColor.clear
     }
     
     //swipe from left
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         return UISwipeActionsConfiguration(action:
             UIContextualAction(style: .normal, title: "wykop", color: .green) { (action, view, success) in
-                self.presenter?.onFrontPageItemActionCalled(action: FrontPageItemAction.UPVOTE)
+                self.presenter?.onFrontPageItemActionCalled(row: indexPath.row, action: FrontPageItemAction.UPVOTE)
                 success(true)
             }
         )
@@ -100,14 +145,26 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         return UISwipeActionsConfiguration(actions: [
             UIContextualAction(style: .normal, title: "zakop", color: .red) { (action, view, success) in
-                self.presenter?.onFrontPageItemActionCalled(action: FrontPageItemAction.DOWNVOTE)
+                self.presenter?.onFrontPageItemActionCalled(row: indexPath.row, action: FrontPageItemAction.DOWNVOTE)
                 success(true)
             },
             UIContextualAction(style: .normal, title: "ukryj", color: .darkGray) { (action, view, success) in
-                self.presenter?.onFrontPageItemActionCalled(action: FrontPageItemAction.HIDE)
+                self.presenter?.onFrontPageItemActionCalled(row: indexPath.row, action: FrontPageItemAction.HIDE)
                 success(true)
             }]
         )
     }
+    
+}
+
+extension FrontPageItemModel: ListDiffable {
+    func diffIdentifier() -> NSObjectProtocol {
+        return self
+    }
+    
+    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        return self.isEqual(object)
+    }
+    
     
 }

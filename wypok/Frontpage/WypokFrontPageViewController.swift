@@ -31,15 +31,6 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
         setupArticlesTableView(tableView: articlesTableView)
     }
     
-    private func setupArticlesTableView(tableView: UITableView) {
-        articlesTableView.register(
-            UINib(nibName: FrontPageArticleTableViewCell.XIB_FILENAME, bundle: nil),
-            forCellReuseIdentifier: FrontPageArticleTableViewCell.REUSE_IDENTIFIER
-        )
-        articlesTableView.rowHeight = UITableViewAutomaticDimension
-        articlesTableView.estimatedRowHeight = UIScreen.main.bounds.size.height / WypokFrontPageViewController.ESTIMATED_ROW_HEIGHT_DIVIDER
-    }
-    
     override func render(_ viewState : VS) {
         switch viewState {
         case VS.ARTICLES_LIST(let articles):
@@ -63,6 +54,15 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
     
     private func renderError() {
         print("renderError")
+    }
+    
+    private func setupArticlesTableView(tableView: UITableView) {
+        articlesTableView.register(
+            UINib(nibName: FrontPageArticleTableViewCell.XIB_FILENAME, bundle: nil),
+            forCellReuseIdentifier: FrontPageArticleTableViewCell.REUSE_IDENTIFIER
+        )
+        articlesTableView.rowHeight = UITableViewAutomaticDimension
+        articlesTableView.estimatedRowHeight = UIScreen.main.bounds.size.height / WypokFrontPageViewController.ESTIMATED_ROW_HEIGHT_DIVIDER
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

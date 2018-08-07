@@ -33,3 +33,9 @@ extension Dictionary where Key == String, Value == AnyObject {
         return string
     }
 }
+
+extension String {
+    func removeHtmlEntities() -> String {
+        return self.replacingOccurrences(of: "&quot;", with: "\"")
+    }
+}

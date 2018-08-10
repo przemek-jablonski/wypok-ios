@@ -28,6 +28,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="lnu-A6-lRw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EcM-wQ-BX4"/>
                             <constraint firstItem="lnu-A6-lRw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Rrp-0G-bE3"/>

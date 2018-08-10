@@ -131,8 +131,14 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
         cell.backgroundColor = UIColor.clear
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.onFrontPageItemClicked(row: indexPath.row)
+    }
+    
+    
     //swipe from left
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        //todo: if post already upvoted, this option should not be shown (same for downvote and hide)
         return UISwipeActionsConfiguration(action:
             UIContextualAction(style: .normal, title: "wykop", color: .green) { (action, view, success) in
                 self.presenter?.onFrontPageItemActionCalled(row: indexPath.row, action: FrontPageItemAction.UPVOTE)

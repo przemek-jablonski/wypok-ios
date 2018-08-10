@@ -30,10 +30,11 @@ class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewState>, FrontPag
     }
     
     func onFrontPageItemClicked(row: Int) {
+        print("onFrontPageItemClicked: \(row)")
     }
     
     func onFrontPageItemForceTouchedClicked(row: Int) {
-        
+        print("onFrontPageItemForceTouchedClicked: \(row)")
     }
     
     func onFrontPageItemActionCalled(row: Int, action: FrontPageItemAction) {

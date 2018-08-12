@@ -9,10 +9,11 @@
 import UIKit
 import SDWebImage
 
-class FrontPageArticleTableViewCell: UITableViewCell {
-
-    static let XIB_FILENAME = "FrontPageArticleTableViewCell"
-    static let REUSE_IDENTIFIER = "FrontPageArticleTableViewCell"
+//todo: naming mismatch, it should be WYPOKFrontTableViewCell
+class FrontPageArticleTableViewCell: WypokTableViewCell {
+    
+    override class var XIB_FILENAME: String { return "FrontPageArticleTableViewCell" }
+    override class var REUSE_IDENTIFIER: String { return "FrontPageArticleTableViewCell" }
     
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet weak var previewImageView: UIImageView!

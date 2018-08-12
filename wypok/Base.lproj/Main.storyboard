@@ -177,6 +177,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b5A-AK-O7t">
                                 <rect key="frame" x="0.0" y="108" width="320" height="411"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="qcV-tA-4dO" id="3xF-EV-b3Z"/>
+                                    <outlet property="delegate" destination="qcV-tA-4dO" id="tlL-C3-F1E"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -193,6 +197,10 @@
                         <viewLayoutGuide key="safeArea" id="D6N-CT-ySI"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mirko" id="rs1-Ft-uIR"/>
+                    <connections>
+                        <outlet property="entriesTableView" destination="b5A-AK-O7t" id="ms2-v7-uav"/>
+                        <outlet property="listTypeControl" destination="70s-ft-lUW" id="Ig5-NZ-htz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAv-o6-JpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

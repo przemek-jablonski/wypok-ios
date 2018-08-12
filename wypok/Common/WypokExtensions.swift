@@ -17,7 +17,7 @@ extension UIContextualAction {
 }
 
 extension UISwipeActionsConfiguration {
-    convenience init(action: UIContextualAction) {
+    convenience init(_ action: UIContextualAction) {
         self.init(actions: [action])
     }
 }
@@ -53,9 +53,8 @@ extension String {
     }
 }
 
-
-//extension NSObjectProtocol {
-//    func isNotKind(of class: AnyClass) {
-//        return !self.isKind(of: class)
-//    }
-//}
+extension UITableView {
+    func register(with registerData: (UINib, CellReuseIdentifierType)) {
+        register(registerData.0, forCellReuseIdentifier: registerData.1)
+    }
+}

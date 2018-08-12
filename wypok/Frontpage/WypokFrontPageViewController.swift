@@ -12,15 +12,12 @@ import SwiftyJSON
 import Foundation
 import IGListKit
 
-typealias P = WypokFrontPagePresenter
-typealias VS = WypokFrontPageViewState
-
-class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITableViewDelegate {
+class WypokFrontPageViewController: BaseView<WypokFrontPagePresenter, WypokFrontPageViewState>, UITableViewDataSource, UITableViewDelegate {
     
     private static let ESTIMATED_ROW_HEIGHT_DIVIDER: CGFloat = 2
     
     @IBOutlet weak var articlesTableView: UITableView!
-    private var articlesList = [FrontPageItemModel]()
+    private var articles = [FrontPageItemModel]()
     
     //todo: to be removed when some DI is in place
     required init?(coder aDecoder: NSCoder) {
@@ -29,28 +26,34 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupArticlesTableView(tableView: articlesTableView)
+        setupArticlesTableView(tableView: articlesTableView, cellType: FrontPageArticleTableViewCell.self)
     }
     
-    override func render(_ viewState : VS) {
+    private func setupArticlesTableView(tableView: UITableView, cellType: WypokTableViewCell.Type) {
+        articlesTableView.register(with: cellType.registerData)
+        articlesTableView.rowHeight = UITableViewAutomaticDimension
+        articlesTableView.estimatedRowHeight = UIScreen.main.bounds.size.height / WypokFrontPageViewController.ESTIMATED_ROW_HEIGHT_DIVIDER
+    }
+    
+    override func render(_ viewState : WypokFrontPageViewState) {
         switch viewState {
-        case VS.ARTICLES_LIST(let articles):
+        case .ARTICLES_LIST(let articles):
             renderArticlesList(with: articles)
-        case VS.LOADING:
+        case .LOADING:
             renderLoading()
-        case VS.ERROR:
+        case .ERROR:
             renderError()
         }
     }
     
     private func renderArticlesList(with articles: [FrontPageItemModel]) {
         print("renderArticlesList, articles: \(articles)")
-        if (areAllRowsAffectedByUpdate(original: articlesList, updated: articles)) {
-            articlesList = articles
+        if (areAllRowsAffectedByUpdate(original: self.articles, updated: articles)) {
+            self.articles = articles
             articlesTableView.reloadData()
         } else {
-            let (inserts, deletes, updates) = calculateRowsAffectedByUpdate(original: articlesList, updated: articles)
-            articlesList = articles
+            let (inserts, deletes, updates) = calculateRowsAffectedByUpdate(original: self.articles, updated: articles)
+            self.articles = articles
             articlesTableView.reloadData()
 //            articlesTableView.performBatchUpdates({
 //                articlesTableView.insertRows(at: inserts, with: UITableViewRowAnimation.automatic)
@@ -86,21 +89,12 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
         print("renderError")
     }
     
-    private func setupArticlesTableView(tableView: UITableView) {
-        articlesTableView.register(
-            UINib(nibName: FrontPageArticleTableViewCell.XIB_FILENAME, bundle: nil),
-            forCellReuseIdentifier: FrontPageArticleTableViewCell.REUSE_IDENTIFIER
-        )
-        articlesTableView.rowHeight = UITableViewAutomaticDimension
-        articlesTableView.estimatedRowHeight = UIScreen.main.bounds.size.height / WypokFrontPageViewController.ESTIMATED_ROW_HEIGHT_DIVIDER
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articlesList.count
+        return articles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let article : FrontPageItemModel = articlesList[indexPath.row]
+        let article : FrontPageItemModel = articles[indexPath.row]
         let cell = tableView.dequeueReusableCell(
             withIdentifier: FrontPageArticleTableViewCell.REUSE_IDENTIFIER,
             for: indexPath
@@ -138,7 +132,7 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
     //swipe from left
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         //todo: if post already upvoted, this option should not be shown (same for downvote and hide)
-        return UISwipeActionsConfiguration(action:
+        return UISwipeActionsConfiguration(
             UIContextualAction(style: .normal, title: "wykop", color: .green) { (action, view, success) in
                 self.presenter?.onFrontPageItemActionCalled(row: indexPath.row, action: FrontPageItemAction.UPVOTE)
                 success(true)

@@ -8,9 +8,12 @@
 
 import UIKit
 
-class MirkoEntryTableViewCell: UITableViewCell {
 
+class MirkoEntryTableViewCell: WypokTableViewCell {
     
+    override class var XIB_FILENAME: String { return "MirkoEntryTableViewCell" }
+    override class var REUSE_IDENTIFIER: String { return "MirkoEntryTableViewCell" }
+
     @IBOutlet weak var authorImageView: UIImageView!
     @IBOutlet weak var authorNameLabel: UILabel!
     @IBOutlet weak var authorDevice: UILabel!
@@ -18,6 +21,5 @@ class MirkoEntryTableViewCell: UITableViewCell {
     @IBOutlet weak var entryEmbedImageView: UIImageView!
     @IBOutlet weak var entryUpvotesLabel: UILabel!
     @IBOutlet weak var entryCommentsLabel: UILabel!
-    
     
 }

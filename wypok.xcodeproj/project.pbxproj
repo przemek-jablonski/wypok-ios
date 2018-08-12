@@ -33,7 +33,7 @@
 		416D79A9210534D400683119 /* WypokFrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D79A8210534D400683119 /* WypokFrontPageViewController.swift */; };
 		416D79AC210534D400683119 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 416D79AA210534D400683119 /* Main.storyboard */; };
 		416D79AF210534D400683119 /* wypok.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 416D79AD210534D400683119 /* wypok.xcdatamodeld */; };
-		416D79B1210534DD00683119 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		416D79B1210534DD00683119 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		416D79B4210534DD00683119 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 416D79B2210534DD00683119 /* LaunchScreen.storyboard */; };
 		416D79BF210534DE00683119 /* wypokTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D79BE210534DE00683119 /* wypokTests.swift */; };
 		416D79CA210534DE00683119 /* wypokUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D79C9210534DE00683119 /* wypokUITests.swift */; };
@@ -53,6 +53,8 @@
 		41B3B0D2211F9E590023EC45 /* MirkoAuthorDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B0D1211F9E590023EC45 /* MirkoAuthorDto.swift */; };
 		41B3B0D4211F9FEA0023EC45 /* MirkoEmbedDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B0D3211F9FEA0023EC45 /* MirkoEmbedDto.swift */; };
 		41B3B0D6211FAE2D0023EC45 /* AuthorRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B0D5211FAE2D0023EC45 /* AuthorRank.swift */; };
+		41B3B0D9212037CE0023EC45 /* MirkoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B0D8212037CE0023EC45 /* MirkoService.swift */; };
+		41B3B0DB212043FF0023EC45 /* WypokTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B0DA212043FF0023EC45 /* WypokTableViewCell.swift */; };
 		41BAE7FB2115C45200BCD5C2 /* WypokAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41BAE7FA2115C45200BCD5C2 /* WypokAssets.xcassets */; };
 		41C37F9B2105488F00150BFE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C37F9A2105488F00150BFE /* BaseView.swift */; };
 		41C37FE02106768300150BFE /* WypokDigsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C37FDF2106768300150BFE /* WypokDigsiteViewController.swift */; };
@@ -138,6 +140,8 @@
 		41B3B0D1211F9E590023EC45 /* MirkoAuthorDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoAuthorDto.swift; sourceTree = "<group>"; };
 		41B3B0D3211F9FEA0023EC45 /* MirkoEmbedDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoEmbedDto.swift; sourceTree = "<group>"; };
 		41B3B0D5211FAE2D0023EC45 /* AuthorRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorRank.swift; sourceTree = "<group>"; };
+		41B3B0D8212037CE0023EC45 /* MirkoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoService.swift; sourceTree = "<group>"; };
+		41B3B0DA212043FF0023EC45 /* WypokTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokTableViewCell.swift; sourceTree = "<group>"; };
 		41BAE7FA2115C45200BCD5C2 /* WypokAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WypokAssets.xcassets; sourceTree = "<group>"; };
 		41C37F9A2105488F00150BFE /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		41C37FDF2106768300150BFE /* WypokDigsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokDigsiteViewController.swift; sourceTree = "<group>"; };
@@ -221,9 +225,7 @@
 		4101E31421151AA60030C49B /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				4101E3102113D8560030C49B /* WypokBaseService.swift */,
-				4101E30C2113D7DF0030C49B /* FrontPageService.swift */,
-				4101E31221151A2C0030C49B /* WypokService.swift */,
+				41B3B0D7212037AE0023EC45 /* Wykop */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -234,6 +236,7 @@
 				411FEBCB2116788F00A150BE /* FrontPageImageView.xib */,
 				411FEBCD2116F83400A150BE /* EdgeInsetLabel.swift */,
 				411FEBCF2116F9BF00A150BE /* FrontPageImageView.swift */,
+				41B3B0DA212043FF0023EC45 /* WypokTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -384,6 +387,17 @@
 				41B3B0D3211F9FEA0023EC45 /* MirkoEmbedDto.swift */,
 			);
 			path = Remote;
+			sourceTree = "<group>";
+		};
+		41B3B0D7212037AE0023EC45 /* Wykop */ = {
+			isa = PBXGroup;
+			children = (
+				4101E3102113D8560030C49B /* WypokBaseService.swift */,
+				4101E30C2113D7DF0030C49B /* FrontPageService.swift */,
+				41B3B0D8212037CE0023EC45 /* MirkoService.swift */,
+				4101E31221151A2C0030C49B /* WypokService.swift */,
+			);
+			path = Wykop;
 			sourceTree = "<group>";
 		};
 		41BAE7FC2115C75700BCD5C2 /* Views */ = {
@@ -560,7 +574,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				416D79B4210534DD00683119 /* LaunchScreen.storyboard in Resources */,
-				416D79B1210534DD00683119 /* (null) in Resources */,
+				416D79B1210534DD00683119 /* BuildFile in Resources */,
 				41BAE7FB2115C45200BCD5C2 /* WypokAssets.xcassets in Resources */,
 				41B3B0CA211F9B530023EC45 /* MirkoEntryTableViewCell.xib in Resources */,
 				418063EE210FC28E00B5455C /* ApiKeys.plist in Resources */,
@@ -650,6 +664,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-wypok/Pods-wypok-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
@@ -658,6 +674,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
@@ -684,12 +702,14 @@
 				41B3B0C9211F9B530023EC45 /* MirkoEntryTableViewCell.swift in Sources */,
 				4101E30B2113D6ED0030C49B /* WypokFrontPageInteractor.swift in Sources */,
 				4101E30D2113D7DF0030C49B /* FrontPageService.swift in Sources */,
+				41B3B0D9212037CE0023EC45 /* MirkoService.swift in Sources */,
 				41B3B0D6211FAE2D0023EC45 /* AuthorRank.swift in Sources */,
 				41363F142107EA1D00C6AB42 /* BasePresenter.swift in Sources */,
 				4101E30021126C150030C49B /* FrontPageItemModel.swift in Sources */,
 				41B3B0C3211F934F0023EC45 /* WypokMirkoInteractor.swift in Sources */,
 				411FEBCE2116F83400A150BE /* EdgeInsetLabel.swift in Sources */,
 				411FEBD3211754F500A150BE /* FrontPageArticleTableViewCell.swift in Sources */,
+				41B3B0DB212043FF0023EC45 /* WypokTableViewCell.swift in Sources */,
 				41B3B0C5211F93670023EC45 /* MirkoInteractor.swift in Sources */,
 				41B3B0C1211F8F320023EC45 /* WypokMirkoPresenter.swift in Sources */,
 				41B3B0D4211F9FEA0023EC45 /* MirkoEmbedDto.swift in Sources */,
@@ -895,10 +915,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
 				INFOPLIST_FILE = wypok/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -914,10 +931,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
 				INFOPLIST_FILE = wypok/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -934,11 +948,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
 				INFOPLIST_FILE = wypokTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypokTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -956,11 +966,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
 				INFOPLIST_FILE = wypokTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypokTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -977,11 +983,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
 				INFOPLIST_FILE = wypokUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypokUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -998,11 +1000,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CKFSV7EZ6;
 				INFOPLIST_FILE = wypokUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharaquss.ios.wypokUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -8,6 +8,8 @@ target 'wypok' do
   pod 'Swinject'
   pod 'SDWebImage', '~> 4.0'
   pod 'IGListKit', '~> 3.0'
+  pod 'RxSwift',    '~> 4.0'
+  pod 'RxCocoa',    '~> 4.0'
 
   target 'wypokTests' do
     inherit! :search_paths

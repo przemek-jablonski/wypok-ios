@@ -182,13 +182,19 @@
                                     <outlet property="delegate" destination="qcV-tA-4dO" id="tlL-C3-F1E"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x02-Zr-BUj">
+                                <rect key="frame" x="282" y="481" width="30" height="30"/>
+                                <state key="normal" title="Up"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="D6N-CT-ySI" firstAttribute="bottom" secondItem="x02-Zr-BUj" secondAttribute="bottom" constant="8" id="20b-sg-Vt2"/>
                             <constraint firstItem="b5A-AK-O7t" firstAttribute="leading" secondItem="D6N-CT-ySI" secondAttribute="leading" id="E5k-sL-iD2"/>
                             <constraint firstItem="70s-ft-lUW" firstAttribute="centerX" secondItem="fL1-Rp-Olf" secondAttribute="centerX" id="EfI-om-UEH"/>
                             <constraint firstItem="D6N-CT-ySI" firstAttribute="trailing" secondItem="b5A-AK-O7t" secondAttribute="trailing" id="QDX-2H-euu"/>
                             <constraint firstItem="70s-ft-lUW" firstAttribute="leading" secondItem="D6N-CT-ySI" secondAttribute="leading" constant="8" id="Skd-BC-yrF"/>
+                            <constraint firstItem="D6N-CT-ySI" firstAttribute="trailing" secondItem="x02-Zr-BUj" secondAttribute="trailing" constant="8" id="UCq-dQ-Wsr"/>
                             <constraint firstItem="70s-ft-lUW" firstAttribute="trailing" secondItem="D6N-CT-ySI" secondAttribute="trailing" constant="-8" id="aac-my-CD6"/>
                             <constraint firstItem="70s-ft-lUW" firstAttribute="top" secondItem="D6N-CT-ySI" secondAttribute="top" constant="8" id="gtU-IE-MqN"/>
                             <constraint firstItem="D6N-CT-ySI" firstAttribute="bottom" secondItem="b5A-AK-O7t" secondAttribute="bottom" id="hcN-PD-NX3"/>
@@ -200,6 +206,7 @@
                     <connections>
                         <outlet property="entriesTableView" destination="b5A-AK-O7t" id="ms2-v7-uav"/>
                         <outlet property="listTypeControl" destination="70s-ft-lUW" id="Ig5-NZ-htz"/>
+                        <outlet property="upButton" destination="x02-Zr-BUj" id="hGZ-Ku-yVM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAv-o6-JpR" userLabel="First Responder" sceneMemberID="firstResponder"/>

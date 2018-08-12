@@ -55,11 +55,11 @@ class WypokFrontPageViewController: BaseView<WypokFrontPagePresenter, WypokFront
             let (inserts, deletes, updates) = calculateRowsAffectedByUpdate(original: self.articles, updated: articles)
             self.articles = articles
             articlesTableView.reloadData()
-//            articlesTableView.performBatchUpdates({
-//                articlesTableView.insertRows(at: inserts, with: UITableViewRowAnimation.automatic)
-//                articlesTableView.reloadRows(at: updates, with: UITableViewRowAnimation.automatic)
-//                articlesTableView.deleteRows(at: deletes, with: UITableViewRowAnimation.automatic)
-//            }) { _ in }
+            //            articlesTableView.performBatchUpdates({
+            //                articlesTableView.insertRows(at: inserts, with: UITableViewRowAnimation.automatic)
+            //                articlesTableView.reloadRows(at: updates, with: UITableViewRowAnimation.automatic)
+            //                articlesTableView.deleteRows(at: deletes, with: UITableViewRowAnimation.automatic)
+            //            }) { _ in }
         }
         
     }
@@ -71,14 +71,6 @@ class WypokFrontPageViewController: BaseView<WypokFrontPagePresenter, WypokFront
     private func calculateRowsAffectedByUpdate(original: [FrontPageItemModel], updated: [FrontPageItemModel]) -> ([IndexPath], [IndexPath], [IndexPath]) {
         let diffResult = ListDiffPaths(fromSection: 0, toSection: 0, oldArray: original, newArray: updated, option: .equality)
         return (diffResult.inserts, diffResult.deletes, diffResult.updates)
-        
-//        articlesTableView.performBatchUpdates({
-////            articlesTableView.deleteRows(at: diffResult.updates.all, with: UITableViewRowAnimation.automatic)
-////            articlesTableView.insertRows(at: diffResult.inserts, with: UITableViewRowAnimation.automatic)
-////            articlesTableView.reloadRows(at: diffResult.updates, with: UITableViewRowAnimation.automatic)
-//        }) { (completed) in
-//
-//        }
     }
     
     private func renderLoading() {
@@ -94,14 +86,20 @@ class WypokFrontPageViewController: BaseView<WypokFrontPagePresenter, WypokFront
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let article : FrontPageItemModel = articles[indexPath.row]
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: FrontPageArticleTableViewCell.REUSE_IDENTIFIER,
-            for: indexPath
-            ) as! FrontPageArticleTableViewCell
-        cell.updateContents(titleText: article.title, previewImageUrl: article.previewImageUrl, linkText: article.itemSourceUrl, upvoteCount: article.upvoteCount, commentCount: article.commentCount, dateText: "asd")
-        colorizeCell(cell: cell, model: article)
-        return cell
+        return update(cell:
+            tableView.dequeueReusableCell(
+                withIdentifier: FrontPageArticleTableViewCell.REUSE_IDENTIFIER,
+                for: indexPath
+                ) as! FrontPageArticleTableViewCell,
+                      with: articles[indexPath.row]
+        )
+        
+    }
+    
+    private func update(cell tableViewCell: FrontPageArticleTableViewCell, with item: FrontPageItemModel) -> FrontPageArticleTableViewCell {
+        tableViewCell.updateContents(titleText: item.title, previewImageUrl: item.previewImageUrl, linkText: item.itemSourceUrl, upvoteCount: item.upvoteCount, commentCount: item.commentCount, dateText: "asd")
+        colorizeCell(cell: tableViewCell, model: item)
+        return tableViewCell
     }
     
     private func colorizeCell(cell: UITableViewCell, model: FrontPageItemModel) {

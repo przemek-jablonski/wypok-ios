@@ -15,6 +15,7 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     
     @IBOutlet weak var listTypeControl: UISegmentedControl!
     @IBOutlet weak var entriesTableView: UITableView!
+    @IBOutlet weak var upButton: UIButton!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(presenter: WypokMirkoPresenter(), coder: aDecoder)
@@ -27,6 +28,8 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     
     private func setupEntriesTableView(tableView: UITableView, cellType: WypokTableViewCell.Type) {
         entriesTableView.register(with: cellType.registerData)
+        entriesTableView.rowHeight = UITableViewAutomaticDimension
+        entriesTableView.estimatedRowHeight = UIScreen.main.bounds.size.height
     }
     
     override func render(_ viewState: WypokMirkoViewState) {
@@ -55,7 +58,14 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        return update(cell:
+            tableView.dequeueReusableCell(withIdentifier: MirkoEntryTableViewCell.REUSE_IDENTIFIER, for: indexPath) as! MirkoEntryTableViewCell,
+                      with: entries[indexPath.row]
+        )
+    }
+    
+    private func update(cell tableViewCell: MirkoEntryTableViewCell, with item: MirkoItemModel) -> MirkoEntryTableViewCell {
+        return tableViewCell
     }
     
 }

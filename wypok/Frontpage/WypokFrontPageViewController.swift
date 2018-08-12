@@ -70,8 +70,6 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
         return (diffResult.inserts, diffResult.deletes, diffResult.updates)
         
 //        articlesTableView.performBatchUpdates({
-//
-//
 ////            articlesTableView.deleteRows(at: diffResult.updates.all, with: UITableViewRowAnimation.automatic)
 ////            articlesTableView.insertRows(at: diffResult.inserts, with: UITableViewRowAnimation.automatic)
 ////            articlesTableView.reloadRows(at: diffResult.updates, with: UITableViewRowAnimation.automatic)
@@ -133,6 +131,7 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.onFrontPageItemClicked(row: indexPath.row)
+        performSegue(withIdentifier: "FrontPageDetailsSegue", sender: self)
     }
     
     
@@ -147,6 +146,7 @@ class WypokFrontPageViewController: BaseView<P, VS>, UITableViewDataSource, UITa
         )
     }
     
+    //todo: swipes should be done only from right side to left (since undo is 'swipe from left' gesture and will be used in other app elements)
     //swipe from right
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         return UISwipeActionsConfiguration(actions: [

@@ -12,10 +12,27 @@ class WypokService : WypokBaseService, FrontPageService {
     
     func getLinksPromoted(response: @escaping ([FrontPageItemDto]) -> ()) {
         performServiceCall(
-            urlSuffix: "/links/promoted",
-            response: { (dtos: [FrontPageItemDto]) -> () in
-                response(dtos)
-        })
+            urlSuffix: "/links/promoted")
+        { dtos in
+            response(dtos)
+        }
+    }
+    
+    func getMirkoRecents(response: @escaping ([MirkoItemDto]) -> ()) {
+        performServiceCall(
+            urlSuffix: "/stream/index")
+        { dtos in
+            response(dtos)
+        }
+    }
+    
+    func getMirkoHots(response: @escaping ([MirkoItemDto]) -> ()) {
+        performServiceCall(urlSuffix: "/stream/hot")
+        { dtos in
+            response(dtos)
+        }
     }
     
 }
+
+

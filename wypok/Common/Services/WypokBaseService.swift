@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class WypokBaseService: BaseService {
+class WypokBaseService {
     
     private static let WYKOP_API_BASE_URL = "https://a.wykop.pl"
     private static let WYKOP_API_PARAMETERS_SUFFIX_KEY = "/appkey,"
@@ -19,15 +19,6 @@ class WypokBaseService: BaseService {
     private lazy var apiKeysProvider: ApiKeysProvider = {
         return WypokApiKeysProvider()
     }()
-    
-    func getImage(from urlString: String, response: @escaping (Data) -> ()) {
-        Alamofire
-            .request(urlString)
-            .validate()
-            .responseJSON { (dataResponse) in
-                response(dataResponse.data!)
-        }
-    }
     
     func performServiceCall<T: RemoteEntity>(urlSuffix: String, response: @escaping ([T]) -> ()){
         performServiceCall(for: urlSuffix, responseHandler: { data in

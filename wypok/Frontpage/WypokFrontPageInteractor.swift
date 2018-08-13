@@ -10,20 +10,17 @@ import Foundation
 
 class WypokFrontPageInteractor: FrontPageInteractor {
     
-    private let frontPageService: FrontPageService = WypokService()
+    //todo: maybe service should be part of some baseInteractor? this will be everywhere anyway
+    private let service: FrontPageService = WypokService() //todo: violation of DI
     
-    func getFrontPageItems(with completion: @escaping ([FrontPageItemModel]) -> ()) {
-        frontPageService.getLinksPromoted(response: { dtos in
-            completion(dtos.map({ dto in dto.mapToLocal()}))
-        })
+    func getFrontPageItems(and action: @escaping FrontPageInteractor.ItemsFetchedClosure) {
+        service.getLinksPromoted { dtos in
+            action(dtos.map({ dto in dto.mapToLocal() }))
+        }
     }
     
-    func fetchImagesForFrontPageItems(frontPageItems: [FrontPageItemModel], completionHandler: @escaping ([FrontPageItemModel]) -> ()) {
-        //        frontPageItems.forEach { (model) in
-        //            frontPageService.getImage(from: model.itemSourceUrl, response: { data in
-        //
-        //            })
-        //        }
-    }
+//    frontPageService.getLinksPromoted(response: { dtos in
+//    completion(dtos.map({ dto in dto.mapToLocal()}))
+//    })
     
 }

@@ -24,6 +24,16 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     override func viewDidLoad() {
         super.viewDidLoad()
         setupEntriesTableView(tableView: entriesTableView, cellType: MirkoEntryTableViewCell.self)
+        onListTypeChanged(listTypeControl)
+    }
+    
+    
+    @IBAction func onListTypeChanged(_ sender: UISegmentedControl) {
+        switch(sender.selectedSegmentIndex) {
+        case 0: presenter?.onHotSelected()
+        case 1: presenter?.onRecentsSelected()
+        default: break;
+        }
     }
     
     private func setupEntriesTableView(tableView: UITableView, cellType: WypokTableViewCell.Type) {
@@ -40,7 +50,9 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
             break
         case .RECENTS_EMPTY_LIST:
             break
-        case .RECENTS_LIST(_):
+        case .RECENTS_LIST(let entries):
+            self.entries = entries
+            entriesTableView.reloadData()
             break
         case .HOT_ERROR:
             break
@@ -48,7 +60,9 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
             break
         case .HOT_EMPTY_LIST:
             break
-        case .HOT_LIST(_):
+        case .HOT_LIST(let entries):
+            self.entries = entries
+            entriesTableView.reloadData()
             break
         }
     }
@@ -64,7 +78,10 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
         )
     }
     
+    //todo: here, each time NSAttributedString is calculated (item.content.convertToAttributedString())
+    //todo: it should be in the model (as a field) in order to reduce performance impact
     private func update(cell tableViewCell: MirkoEntryTableViewCell, with item: MirkoItemModel) -> MirkoEntryTableViewCell {
+        tableViewCell.updateContents(authorImageUrl: item.authorAvatarUrl, authorName: item.authorName, authorDevice: item.application ?? "", entryContent: item.content.convertToAttributedString().makeMutable().setFontFace(font: UIFont.systemFont(ofSize: 13))., entryEmbedImageUrl: "", entryUpvotesCount: item.upvoteCount, entryCommentsCount: item.commentCount)
         return tableViewCell
     }
     

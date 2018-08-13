@@ -44,7 +44,7 @@ class MirkoItemDto : NSObject, NSCoding, RemoteEntity {
     var commentCount : Int!
     
     func mapToLocal() -> MirkoItemModel {
-        return MirkoItemModel(authorName: author, authorAvatarUrl: authorAvatarBig, authorSexMale: authorSex == "male", authorRank: AuthorRank.map(from: authorGroup), application: app, date: Date(), under18Restriction: embed?.plus18 ?? false, userStarred: userFavorite, commentCount: commentCount, upvoteCount: voters.count)
+        return MirkoItemModel(authorName: author, authorAvatarUrl: authorAvatarBig, authorSexMale: authorSex == "male", authorRank: AuthorRank.map(from: authorGroup), application: app, date: Date(), under18Restriction: embed?.plus18 ?? false, userStarred: userFavorite, commentCount: commentCount, upvoteCount: voteCount, content: body)
     }
     
     /**

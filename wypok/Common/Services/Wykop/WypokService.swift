@@ -10,27 +10,21 @@ import Foundation
 
 class WypokService : WypokBaseService, FrontPageService, MirkoService {
     
-    func getLinksPromoted(response: @escaping ([FrontPageItemDto]) -> ()) {
+    func getLinksPromoted(and perform: @escaping FrontPageService.ItemFetchedClosure) {
         performServiceCall(
             urlSuffix: "/links/promoted")
-        { dtos in
-            response(dtos)
-        }
+        { dtos in perform(dtos) }
     }
     
-    func getMirkoRecents(response: @escaping ([MirkoItemDto]) -> ()) {
+    func getMirkoRecents(and perform: @escaping MirkoService.ItemFetchedClosure) {
         performServiceCall(
             urlSuffix: "/stream/index")
-        { dtos in
-            response(dtos)
-        }
+        { dtos in perform(dtos) }
     }
     
-    func getMirkoHots(response: @escaping ([MirkoItemDto]) -> ()) {
+    func getMirkoHots(and perform: @escaping MirkoService.ItemFetchedClosure) {
         performServiceCall(urlSuffix: "/stream/hot")
-        { dtos in
-            response(dtos)
-        }
+        { dtos in perform(dtos) }
     }
     
 }

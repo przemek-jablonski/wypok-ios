@@ -8,10 +8,11 @@
 
 import Foundation
 
+
 protocol FrontPageInteractor {
     
-    func getFrontPageItems(with completion: @escaping ([FrontPageItemModel]) -> ())
+    typealias ItemsFetchedClosure = ([FrontPageItemModel]) -> ()
     
-    func fetchImagesForFrontPageItems(frontPageItems: [FrontPageItemModel], completionHandler: @escaping ([FrontPageItemModel]) -> ())
+    func getFrontPageItems(and perform: @escaping ItemsFetchedClosure)
     
 }

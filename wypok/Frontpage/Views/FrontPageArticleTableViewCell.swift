@@ -23,8 +23,7 @@ class FrontPageArticleTableViewCell: WypokTableViewCell {
     
     func updateContents(titleText: String, previewImageUrl: String, linkText: String, upvoteCount: Int, commentCount: Int, dateText: String) {
         titleLabel.text = titleText
-        previewImageView.sd_setImage(with: URL(string: previewImageUrl)) { (image, error, cacheType, url) in
-        }
+        previewImageView.setImage(from: previewImageUrl)
         upvoteCountLabel.text = String(upvoteCount)
         commentsCountLabel.text = String(commentCount)
         dateLabel.text = dateText

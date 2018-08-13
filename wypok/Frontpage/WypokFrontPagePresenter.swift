@@ -8,6 +8,7 @@
 
 import Foundation
 
+//todo: remember that business logic should not be here really (so stuff like .resetUserPrefs should go to Interactor)
 class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewState>, FrontPagePresenter {
     
     private let interactor: FrontPageInteractor = WypokFrontPageInteractor()
@@ -15,9 +16,9 @@ class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewState>, FrontPag
     
     override func onAttached(view: View) {
         print("WypokFrontPagePresenter, onAttached: \(view)")
-        interactor.getFrontPageItems(with: { models in
+        interactor.getFrontPageItems { models in
             self.onFrontPageItemsFetched(items: models)
-        })
+        }
     }
     
     private func onFrontPageItemsFetched(items: [FrontPageItemModel]) {

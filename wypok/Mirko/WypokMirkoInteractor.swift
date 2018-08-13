@@ -9,5 +9,20 @@
 import Foundation
 
 class WypokMirkoInteractor: MirkoInteractor {
+    //todo: maybe service should be part of some baseInteractor? this will be everywhere anyway
+    private let service: MirkoService = WypokService() //todo: violation of DI
+    
+    func getMirkoRecents(and action: @escaping MirkoInteractor.ItemsFetchedClosure) {
+        service.getMirkoRecents { dtos in
+            action(dtos.map({ dto in dto.mapToLocal()}))
+        }
+    }
+    
+    func getMirkoHots(and action: @escaping MirkoInteractor.ItemsFetchedClosure) {
+        service.getMirkoHots { dtos in
+            action(dtos.map({ dto in dto.mapToLocal()}))
+        }
+    }
+    
     
 }

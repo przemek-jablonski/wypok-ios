@@ -173,6 +173,9 @@
                                     <segment title="Gorące"/>
                                     <segment title="Najnowsze"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onListTypeChanged:" destination="qcV-tA-4dO" eventType="valueChanged" id="pOw-lY-GaY"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b5A-AK-O7t">
                                 <rect key="frame" x="0.0" y="108" width="320" height="411"/>

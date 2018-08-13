@@ -8,6 +8,8 @@
 
 protocol FrontPageService {
     
-    func getLinksPromoted(response: @escaping ([FrontPageItemDto]) -> ())
+    typealias ItemFetchedClosure = ([FrontPageItemDto]) -> ()
+    
+    func getLinksPromoted(and perform: @escaping ItemFetchedClosure)
     
 }

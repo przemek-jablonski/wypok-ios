@@ -26,9 +26,10 @@ class MirkoItemModel {
     let upvoteCount: Int
     
     //todo: embed
-    //todo: content
     
-    init(authorName: String, authorAvatarUrl: String, authorSexMale: Bool, authorRank: AuthorRank, application: String?, date: Date, under18Restriction: Bool, /*userUpvoted: Bool,*/ userStarred: Bool, commentCount: Int, upvoteCount: Int) {
+    let content: String
+    
+    init(authorName: String, authorAvatarUrl: String, authorSexMale: Bool, authorRank: AuthorRank, application: String?, date: Date, under18Restriction: Bool, /*userUpvoted: Bool,*/ userStarred: Bool, commentCount: Int, upvoteCount: Int, content: String) {
         self.authorName = authorName
         self.authorAvatarUrl = authorAvatarUrl
         self.authorSexMale = authorSexMale
@@ -36,10 +37,13 @@ class MirkoItemModel {
         self.application = application
         self.date = date
         self.under18Restriction = under18Restriction
-//        self.userUpvoted = userUpvoted
         self.userStarred = userStarred
         self.commentCount = commentCount
         self.upvoteCount = upvoteCount
+        self.content = content
     }
+    
+    
+    
     
 }

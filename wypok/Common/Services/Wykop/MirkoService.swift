@@ -8,8 +8,10 @@
 
 protocol MirkoService {
     
-    func getMirkoRecents(response: @escaping ([MirkoItemDto]) -> ())
+    typealias ItemFetchedClosure = ([MirkoItemDto]) -> ()
     
-    func getMirkoHots(response: @escaping ([MirkoItemDto]) -> ())
+    func getMirkoRecents(and perform: @escaping ItemFetchedClosure)
+    
+    func getMirkoHots(and perform: @escaping ItemFetchedClosure)
     
 }

@@ -9,7 +9,7 @@ import SwiftyJSON
 
 class MirkoEmbedDto : NSObject, NSCoding{
     
-    var type : String!
+    var type : MirkoEmbedType
     var preview : String!
     var url : String!
     var plus18 : Bool!
@@ -19,10 +19,10 @@ class MirkoEmbedDto : NSObject, NSCoding{
      * Instantiate the instance using the passed json values to set the properties values
      */
     init(fromJson json: JSON!){
+        type = MirkoEmbedType.map(from: json["type"].string)
         if json.isEmpty{
             return
         }
-        type = json["type"].stringValue
         preview = json["preview"].stringValue
         url = json["url"].stringValue
         plus18 = json["plus18"].boolValue
@@ -59,7 +59,7 @@ class MirkoEmbedDto : NSObject, NSCoding{
      */
     @objc required init(coder aDecoder: NSCoder)
     {
-        type = aDecoder.decodeObject(forKey: "type") as? String
+        type = (aDecoder.decodeObject(forKey: "type") as? MirkoEmbedType)!
         preview = aDecoder.decodeObject(forKey: "preview") as? String
         url = aDecoder.decodeObject(forKey: "url") as? String
         plus18 = aDecoder.decodeObject(forKey: "plus18") as? Bool

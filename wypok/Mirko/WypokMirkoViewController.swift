@@ -29,11 +29,11 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     
     
     @IBAction func onListTypeChanged(_ sender: UISegmentedControl) {
-        switch(sender.selectedSegmentIndex) {
-        case 0: presenter?.onHotSelected()
-        case 1: presenter?.onRecentsSelected()
-        default: break;
-        }
+//        switch(sender.selectedSegmentIndex) {
+//        case 0: presenter?.onHotSelected()
+//        case 1: presenter?.onRecentsSelected()
+//        default: break;
+//        }
     }
     
     private func setupEntriesTableView(tableView: UITableView, cellType: WypokTableViewCell.Type) {

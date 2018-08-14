@@ -52,12 +52,15 @@ extension String {
         }
     }
     
-    func convertToAttributedString() -> NSAttributedString {
-        let attrStr = try? NSAttributedString(
+    func convertToAttributedString() -> NSMutableAttributedString {
+         guard let attributed = try? NSMutableAttributedString(
             data: self.data(using: String.Encoding.unicode)!,
             options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html],
-            documentAttributes: nil)
-        return attrStr ?? NSAttributedString(string: self)
+            documentAttributes: nil) else {
+                return NSMutableAttributedString(string: self)
+        }
+        
+        return attributed
     }
 }
 
@@ -68,7 +71,7 @@ extension NSAttributedString {
 }
 
 extension NSMutableAttributedString {
-    func setFontFace(font: UIFont, color: UIColor? = nil) {
+    func setFontFace(font: UIFont, color: UIColor? = nil) -> NSMutableAttributedString {
         beginEditing()
         self.enumerateAttribute(.font, in: NSRange(location: 0, length: self.length)) { (value, range, stop) in
             if let f = value as? UIFont, let newFontDescriptor = f.fontDescriptor.withFamily(font.familyName).withSymbolicTraits(f.fontDescriptor.symbolicTraits) {
@@ -82,6 +85,7 @@ extension NSMutableAttributedString {
             }
         }
         endEditing()
+        return self
     }
 }
 

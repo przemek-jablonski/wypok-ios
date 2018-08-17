@@ -65,6 +65,7 @@
 		41C37FE621067CBF00150BFE /* WypokBestsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C37FE521067CBF00150BFE /* WypokBestsViewState.swift */; };
 		41C37FE821067FB200150BFE /* WypokMirkoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C37FE721067FB200150BFE /* WypokMirkoViewController.swift */; };
 		41CABD48212085C400F94441 /* MirkoEmbedType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CABD47212085C300F94441 /* MirkoEmbedType.swift */; };
+		41D14F172124F383004578D4 /* WypokGlobalInjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D14F162124F383004578D4 /* WypokGlobalInjectionContainer.swift */; };
 		41EA0202210543690091E9F9 /* WypokFrontPageViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EA0201210543690091E9F9 /* WypokFrontPageViewState.swift */; };
 		41FA4058211A49B600EEA5FF /* FrontPageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FA4057211A49B500EEA5FF /* FrontPageAction.swift */; };
 		DBB2973C4FD03D519DB8AC59 /* Pods_wypokUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E25978BBB99266265024131 /* Pods_wypokUITests.framework */; };
@@ -151,6 +152,7 @@
 		41C37FE521067CBF00150BFE /* WypokBestsViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokBestsViewState.swift; sourceTree = "<group>"; };
 		41C37FE721067FB200150BFE /* WypokMirkoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokMirkoViewController.swift; sourceTree = "<group>"; };
 		41CABD47212085C300F94441 /* MirkoEmbedType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoEmbedType.swift; sourceTree = "<group>"; };
+		41D14F162124F383004578D4 /* WypokGlobalInjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokGlobalInjectionContainer.swift; sourceTree = "<group>"; };
 		41EA0201210543690091E9F9 /* WypokFrontPageViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokFrontPageViewState.swift; sourceTree = "<group>"; };
 		41FA4057211A49B500EEA5FF /* FrontPageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageAction.swift; sourceTree = "<group>"; };
 		52E35914B1674F5865C5C0DC /* Pods-wypok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypok.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wypok/Pods-wypok.debug.xcconfig"; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				41B3B0D7212037AE0023EC45 /* Wykop */,
+				4101E3082113D3460030C49B /* RemoteEntity.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -296,13 +299,9 @@
 				41C37FDD210674FE00150BFE /* Bests */,
 				41C37FDC210674F200150BFE /* Digsite */,
 				416D79D72105413C00683119 /* Frontpage */,
-				416D79A6210534D400683119 /* AppDelegate.swift */,
-				416D79AA210534D400683119 /* Main.storyboard */,
-				416D79B2210534DD00683119 /* LaunchScreen.storyboard */,
 				416D79B5210534DD00683119 /* Info.plist */,
 				416D79AD210534D400683119 /* wypok.xcdatamodeld */,
 				418063ED210FC28E00B5455C /* ApiKeys.plist */,
-				4101E3062113C4EC0030C49B /* MD5Digest.swift */,
 				41BAE7FA2115C45200BCD5C2 /* WypokAssets.xcassets */,
 			);
 			path = wypok;
@@ -344,16 +343,16 @@
 		416D79D82105414F00683119 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				411FEBC8211677EF00A150BE /* Views */,
+				41D14F132124F23A004578D4 /* Architecture */,
+				41D14F042124CB36004578D4 /* Persistence */,
 				4101E31421151AA60030C49B /* Services */,
 				4101E3032113C0970030C49B /* Interactors */,
-				41363F19210A6F1400C6AB42 /* View.swift */,
-				41C37F9A2105488F00150BFE /* BaseView.swift */,
-				41363F17210A6EE000C6AB42 /* Presenter.swift */,
-				41363F132107EA1D00C6AB42 /* BasePresenter.swift */,
-				418063F121112C9A00B5455C /* ViewState.swift */,
-				4101E3082113D3460030C49B /* RemoteEntity.swift */,
-				411FEBD52117B17600A150BE /* WypokExtensions.swift */,
+				411FEBC8211677EF00A150BE /* Views */,
+				41D14F142124F250004578D4 /* Utils */,
+				416D79A6210534D400683119 /* AppDelegate.swift */,
+				416D79AA210534D400683119 /* Main.storyboard */,
+				416D79B2210534DD00683119 /* LaunchScreen.storyboard */,
+				41D14F162124F383004578D4 /* WypokGlobalInjectionContainer.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -466,6 +465,50 @@
 				41B3B0C4211F93670023EC45 /* MirkoInteractor.swift */,
 			);
 			path = Mirko;
+			sourceTree = "<group>";
+		};
+		41D14F042124CB36004578D4 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				41D14F052124CC94004578D4 /* CoreData */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		41D14F052124CC94004578D4 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				41D14F062124CC99004578D4 /* Models */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		41D14F062124CC99004578D4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		41D14F132124F23A004578D4 /* Architecture */ = {
+			isa = PBXGroup;
+			children = (
+				41363F19210A6F1400C6AB42 /* View.swift */,
+				41C37F9A2105488F00150BFE /* BaseView.swift */,
+				41363F17210A6EE000C6AB42 /* Presenter.swift */,
+				41363F132107EA1D00C6AB42 /* BasePresenter.swift */,
+				418063F121112C9A00B5455C /* ViewState.swift */,
+			);
+			path = Architecture;
+			sourceTree = "<group>";
+		};
+		41D14F142124F250004578D4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				411FEBD52117B17600A150BE /* WypokExtensions.swift */,
+				4101E3062113C4EC0030C49B /* MD5Digest.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -743,6 +786,7 @@
 				41363F1A210A6F1400C6AB42 /* View.swift in Sources */,
 				416D79AF210534D400683119 /* wypok.xcdatamodeld in Sources */,
 				415C78D72106984700453AFC /* WypokFrontPagePresenter.swift in Sources */,
+				41D14F172124F383004578D4 /* WypokGlobalInjectionContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

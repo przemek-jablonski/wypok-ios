@@ -9,8 +9,17 @@
 import Foundation
 
 class WypokMirkoInteractor: MirkoInteractor {
+    
     //todo: maybe service should be part of some baseInteractor? this will be everywhere anyway
-    private let service: MirkoService = WypokService() //todo: violation of DI
+    private let service: MirkoService
+    
+    init(_ service: MirkoService) {
+        self.service = service
+    }
+    
+    convenience init() {
+        self.init(WypokGlobalInjectionContainer.get(MirkoService.self))
+    }
     
     func getMirkoRecents(and action: @escaping MirkoInteractor.ItemsFetchedClosure) {
         service.getMirkoRecents { dtos in

@@ -14,6 +14,14 @@ class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewState>, FrontPag
     private let interactor: FrontPageInteractor = WypokFrontPageInteractor()
     private var frontPageItems: [FrontPageItemModel] = [FrontPageItemModel]()
     
+//    override init(_ interactor: FrontPageInteractor) {
+//        self.interactor = interactor
+//    }
+//
+//    convenience override init() {
+//        self.init(WypokGlobalInjectionContainer.get(FrontPageInteractor.self))
+//    }
+    
     override func onAttached(view: View) {
         print("WypokFrontPagePresenter, onAttached: \(view)")
         interactor.getFrontPageItems { models in

@@ -11,16 +11,20 @@ import Foundation
 class WypokFrontPageInteractor: FrontPageInteractor {
     
     //todo: maybe service should be part of some baseInteractor? this will be everywhere anyway
-    private let service: FrontPageService = WypokService() //todo: violation of DI
+    private let service: FrontPageService
+    
+    init(_ service: FrontPageService) {
+        self.service = service
+    }
+    
+    convenience init() {
+        self.init(WypokGlobalInjectionContainer.get(FrontPageService.self))
+    }
     
     func getFrontPageItems(and action: @escaping FrontPageInteractor.ItemsFetchedClosure) {
         service.getLinksPromoted { dtos in
             action(dtos.map({ dto in dto.mapToLocal() }))
         }
     }
-    
-//    frontPageService.getLinksPromoted(response: { dtos in
-//    completion(dtos.map({ dto in dto.mapToLocal()}))
-//    })
     
 }

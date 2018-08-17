@@ -10,6 +10,15 @@ import Foundation
 
 class WypokService : WypokBaseService, FrontPageService, MirkoService {
     
+    override init () {
+        super.init()
+        print("WypokService: init: \(ObjectIdentifier(self).debugDescription)")
+    }
+    
+    deinit {
+        print("WypokService: deinit: \(ObjectIdentifier(self).debugDescription)")
+    }
+    
     func getLinksPromoted(and perform: @escaping FrontPageService.ItemFetchedClosure) {
         performServiceCall(
             urlSuffix: "/links/promoted")

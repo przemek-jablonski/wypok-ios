@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+//todo: this should be injected really
 class WypokBaseService {
     
     private static let WYKOP_API_BASE_URL = "https://a.wykop.pl"
@@ -29,7 +30,8 @@ class WypokBaseService {
     private func performServiceCall(for urlSuffix: String, responseHandler: @escaping (DataResponse<Any>) -> ()){
         constructServiceCall(for: urlSuffix)
             .responseJSON { dataResponse in
-                print("📡 performServiceCall, dataResponse: \(try! JSON(data: dataResponse.data!))")
+                //todo: try! may fail (eg. if wykop.pl is updating it sends some xml bullshit here)
+//                print("📡 performServiceCall, dataResponse: \(try! JSON(data: dataResponse.data!))")
             }
             .responseJSON { dataResponse in responseHandler(dataResponse)}
     }

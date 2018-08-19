@@ -19,9 +19,8 @@ class WypokFrontPageViewController: BaseView<WypokFrontPagePresenter, WypokFront
     @IBOutlet weak var articlesTableView: UITableView!
     private var articles = [FrontPageItemModel]()
     
-    //todo: to be removed when some DI is in place
     required init?(coder aDecoder: NSCoder) {
-        super.init(presenter: WypokFrontPagePresenter(), coder: aDecoder)
+        super.init(presenterType: WypokFrontPagePresenter.self, coder: aDecoder)
     }
     
     override func viewDidLoad() {

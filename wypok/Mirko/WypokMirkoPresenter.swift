@@ -10,8 +10,17 @@ import Foundation
 
 class WypokMirkoPresenter: BasePresenter<WypokMirkoViewState>, MirkoPresenter {
     
-    private let interactor: MirkoInteractor = WypokMirkoInteractor()
+    private let interactor: MirkoInteractor
     private var mirkoItems: [MirkoItemModel] = [MirkoItemModel]()
+    
+    init(_ interactor: MirkoInteractor) {
+        self.interactor = interactor
+        super.init()
+    }
+    
+    convenience override init() {
+        self.init(WypokGlobalInjectionContainer.get(MirkoInteractor.self))
+    }
     
     override func onAttached(view: View) {
         print("WypokFrontPagePresenter, onAttached: \(view)")

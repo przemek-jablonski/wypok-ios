@@ -11,16 +11,17 @@ import Foundation
 //todo: remember that business logic should not be here really (so stuff like .resetUserPrefs should go to Interactor)
 class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewState>, FrontPagePresenter {
     
-    private let interactor: FrontPageInteractor = WypokFrontPageInteractor()
+    private let interactor: FrontPageInteractor
     private var frontPageItems: [FrontPageItemModel] = [FrontPageItemModel]()
     
-//    override init(_ interactor: FrontPageInteractor) {
-//        self.interactor = interactor
-//    }
-//
-//    convenience override init() {
-//        self.init(WypokGlobalInjectionContainer.get(FrontPageInteractor.self))
-//    }
+    init(_ interactor: FrontPageInteractor) {
+        self.interactor = interactor
+        super.init()
+    }
+
+    convenience override init() {
+        self.init(WypokGlobalInjectionContainer.get(FrontPageInteractor.self))
+    }
     
     override func onAttached(view: View) {
         print("WypokFrontPagePresenter, onAttached: \(view)")

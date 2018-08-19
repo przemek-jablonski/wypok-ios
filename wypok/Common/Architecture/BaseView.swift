@@ -12,14 +12,14 @@ import UIKit
 class BaseView<P: Presenter, VS: ViewState>: UIViewController, View {
     
     internal var presenter: P?
-
+    
     required convenience init?(coder aDecoder: NSCoder) {
-        self.init(presenter: nil, coder: aDecoder)
+        self.init(presenterType: nil, coder: aDecoder)
     }
     
-    init?(presenter:P?, coder aDecoder: NSCoder) {
+    init?(presenterType: P.Type?, coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.presenter = presenter
+        self.presenter = WypokGlobalInjectionContainer.get(presenterType.self!)
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -26,6 +26,11 @@
 		411FEBD3211754F500A150BE /* FrontPageArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FEBD1211754F500A150BE /* FrontPageArticleTableViewCell.swift */; };
 		411FEBD4211754F500A150BE /* FrontPageArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411FEBD2211754F500A150BE /* FrontPageArticleTableViewCell.xib */; };
 		411FEBD62117B17600A150BE /* WypokExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FEBD52117B17600A150BE /* WypokExtensions.swift */; };
+		412BA9FA212987650024D4A9 /* WypokMirkoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BA9F9212987650024D4A9 /* WypokMirkoRepository.swift */; };
+		412BAA0521298B540024D4A9 /* MirkoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BAA0321298B540024D4A9 /* MirkoEntity+CoreDataClass.swift */; };
+		412BAA0621298B540024D4A9 /* MirkoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BAA0421298B540024D4A9 /* MirkoEntity+CoreDataProperties.swift */; };
+		412BAA0821298D090024D4A9 /* CommonCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BAA0721298D090024D4A9 /* CommonCoreDataRepository.swift */; };
+		412BAA0C212A13490024D4A9 /* MirkoEntityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BAA0B212A13490024D4A9 /* MirkoEntityRepository.swift */; };
 		41363F142107EA1D00C6AB42 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41363F132107EA1D00C6AB42 /* BasePresenter.swift */; };
 		41363F16210A554D00C6AB42 /* FrontPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41363F15210A554D00C6AB42 /* FrontPagePresenter.swift */; };
 		41363F18210A6EE000C6AB42 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41363F17210A6EE000C6AB42 /* Presenter.swift */; };
@@ -108,6 +113,11 @@
 		411FEBD1211754F500A150BE /* FrontPageArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageArticleTableViewCell.swift; sourceTree = "<group>"; };
 		411FEBD2211754F500A150BE /* FrontPageArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FrontPageArticleTableViewCell.xib; sourceTree = "<group>"; };
 		411FEBD52117B17600A150BE /* WypokExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokExtensions.swift; sourceTree = "<group>"; };
+		412BA9F9212987650024D4A9 /* WypokMirkoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokMirkoRepository.swift; sourceTree = "<group>"; };
+		412BAA0321298B540024D4A9 /* MirkoEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MirkoEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		412BAA0421298B540024D4A9 /* MirkoEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MirkoEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		412BAA0721298D090024D4A9 /* CommonCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCoreDataRepository.swift; sourceTree = "<group>"; };
+		412BAA0B212A13490024D4A9 /* MirkoEntityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoEntityRepository.swift; sourceTree = "<group>"; };
 		41363F132107EA1D00C6AB42 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		41363F15210A554D00C6AB42 /* FrontPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPagePresenter.swift; sourceTree = "<group>"; };
 		41363F17210A6EE000C6AB42 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
@@ -463,6 +473,7 @@
 				41B3B0C2211F934F0023EC45 /* WypokMirkoInteractor.swift */,
 				41B3B0BC211F8CFD0023EC45 /* MirkoPresenter.swift */,
 				41B3B0C4211F93670023EC45 /* MirkoInteractor.swift */,
+				412BA9F9212987650024D4A9 /* WypokMirkoRepository.swift */,
 			);
 			path = Mirko;
 			sourceTree = "<group>";
@@ -479,6 +490,8 @@
 			isa = PBXGroup;
 			children = (
 				41D14F062124CC99004578D4 /* Models */,
+				412BAA0721298D090024D4A9 /* CommonCoreDataRepository.swift */,
+				412BAA0B212A13490024D4A9 /* MirkoEntityRepository.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -486,6 +499,8 @@
 		41D14F062124CC99004578D4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				412BAA0321298B540024D4A9 /* MirkoEntity+CoreDataClass.swift */,
+				412BAA0421298B540024D4A9 /* MirkoEntity+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -739,6 +754,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4101E3092113D3460030C49B /* RemoteEntity.swift in Sources */,
+				412BAA0621298B540024D4A9 /* MirkoEntity+CoreDataProperties.swift in Sources */,
+				412BA9FA212987650024D4A9 /* WypokMirkoRepository.swift in Sources */,
 				41B3B0D0211F9D7A0023EC45 /* MirkoCommentDto.swift in Sources */,
 				41B3B0BD211F8CFD0023EC45 /* MirkoPresenter.swift in Sources */,
 				41C37FE821067FB200150BFE /* WypokMirkoViewController.swift in Sources */,
@@ -753,6 +770,7 @@
 				41363F142107EA1D00C6AB42 /* BasePresenter.swift in Sources */,
 				4101E30021126C150030C49B /* FrontPageItemModel.swift in Sources */,
 				41B3B0C3211F934F0023EC45 /* WypokMirkoInteractor.swift in Sources */,
+				412BAA0C212A13490024D4A9 /* MirkoEntityRepository.swift in Sources */,
 				411FEBCE2116F83400A150BE /* EdgeInsetLabel.swift in Sources */,
 				41CABD48212085C400F94441 /* MirkoEmbedType.swift in Sources */,
 				411FEBD3211754F500A150BE /* FrontPageArticleTableViewCell.swift in Sources */,
@@ -762,6 +780,7 @@
 				41B3B0D4211F9FEA0023EC45 /* MirkoEmbedDto.swift in Sources */,
 				4101E31321151A2C0030C49B /* WypokService.swift in Sources */,
 				41363F18210A6EE000C6AB42 /* Presenter.swift in Sources */,
+				412BAA0521298B540024D4A9 /* MirkoEntity+CoreDataClass.swift in Sources */,
 				416D79A9210534D400683119 /* WypokFrontPageViewController.swift in Sources */,
 				4101E2FE21126BE90030C49B /* FrontPageItemDto.swift in Sources */,
 				41FA4058211A49B600EEA5FF /* FrontPageAction.swift in Sources */,
@@ -786,6 +805,7 @@
 				41363F1A210A6F1400C6AB42 /* View.swift in Sources */,
 				416D79AF210534D400683119 /* wypok.xcdatamodeld in Sources */,
 				415C78D72106984700453AFC /* WypokFrontPagePresenter.swift in Sources */,
+				412BAA0821298D090024D4A9 /* CommonCoreDataRepository.swift in Sources */,
 				41D14F172124F383004578D4 /* WypokGlobalInjectionContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

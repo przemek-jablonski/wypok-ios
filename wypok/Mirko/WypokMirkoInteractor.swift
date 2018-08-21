@@ -12,13 +12,15 @@ class WypokMirkoInteractor: MirkoInteractor {
     
     //todo: maybe service should be part of some baseInteractor? this will be everywhere anyway
     private let service: MirkoService
+    private let repository: MirkoEntityRepository
     
-    init(_ service: MirkoService) {
+    init(service: MirkoService, repository: MirkoEntityRepository) {
         self.service = service
+        self.repository = repository
     }
     
     convenience init() {
-        self.init(WypokGlobalInjectionContainer.get(MirkoService.self))
+        self.init(service: WypokGlobalInjectionContainer.get(MirkoService.self), repository: WypokGlobalInjectionContainer.get(MirkoEntityRepository.self))
     }
     
     func getMirkoRecents(and action: @escaping MirkoInteractor.ItemsFetchedClosure) {
@@ -29,7 +31,24 @@ class WypokMirkoInteractor: MirkoInteractor {
     
     func getMirkoHots(and action: @escaping MirkoInteractor.ItemsFetchedClosure) {
         service.getMirkoHots { dtos in
-            action(dtos.map({ dto in dto.mapToLocal()}))
+            let mapped = dtos.map({ dto in dto.mapToLocal()})
+            action(mapped)
+            self.repository.put(models: mapped, and: { (model, entity) -> () in
+                entity.application = model.application ?? ""
+                entity.authorAvatarUrl = model.authorAvatarUrl
+                entity.authorName = model.authorName
+                entity.authorSexMale = model.authorSexMale
+                entity.commentCount = Int32(model.commentCount)
+                entity.date = NSDate()
+                entity.under18Restriction = model.under18Restriction
+                entity.upvoteCount = Int32(model.upvoteCount)
+            })
+            self.repository.get(with: { (entities) in
+                print("entities: \(entities)")
+                for (index, entity) in entities.enumerated() {
+                    print("entity[\(index)]: \(entity), \(entity.application) \(entity.authorAvatarUrl) \(entity.upvoteCount) \(entity.commentCount)")
+                }
+            })
         }
     }
     

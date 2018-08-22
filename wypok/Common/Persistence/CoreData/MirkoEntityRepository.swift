@@ -60,6 +60,8 @@ class MirkoEntityRepository {
     
     private func execute(_ fetchRequest: NSFetchRequest<MirkoEntity>, with viewContext: NSManagedObjectContext, fetchDidSucceed: MirkoEntityFetchClosure, fetchDidFail: () -> ()) {
         do {
+            fetchRequest.includesPendingChanges = false
+            fetchRequest.returnsDistinctResults = false
             fetchDidSucceed(try viewContext.fetch(fetchRequest))
         } catch {
             fetchDidFail()

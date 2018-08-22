@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+typealias CommonFailureClosure = (Error) -> ()
+
 extension UIContextualAction {
     convenience init(style: UIContextualAction.Style, title: String, color: UIColor, actionHandler: @escaping UIContextualActionHandler) {
         self.init(style: style, title: title, handler: actionHandler)

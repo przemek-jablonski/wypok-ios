@@ -229,17 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				4101E2FC21126B180030C49B /* Local */,
-				4101E2FB21126B120030C49B /* Remote */,
 			);
 			path = Entities;
-			sourceTree = "<group>";
-		};
-		4101E2FB21126B120030C49B /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-				4101E2FD21126BE90030C49B /* FrontPageItemDto.swift */,
-			);
-			path = Remote;
 			sourceTree = "<group>";
 		};
 		4101E2FC21126B180030C49B /* Local */ = {
@@ -259,13 +250,12 @@
 			path = Interactors;
 			sourceTree = "<group>";
 		};
-		4101E31421151AA60030C49B /* Services */ = {
+		4101E31421151AA60030C49B /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				41B3B0D7212037AE0023EC45 /* Wykop */,
-				4101E3082113D3460030C49B /* RemoteEntity.swift */,
 			);
-			path = Services;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		411FEBC8211677EF00A150BE /* Views */ = {
@@ -277,6 +267,39 @@
 				41B3B0DA212043FF0023EC45 /* WypokTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		412BAA0D212CC34D0024D4A9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4101E3102113D8560030C49B /* WypokBaseService.swift */,
+				4101E30C2113D7DF0030C49B /* FrontPageService.swift */,
+				41B3B0D8212037CE0023EC45 /* MirkoService.swift */,
+				4101E31221151A2C0030C49B /* WypokService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		412BAA0E212CC3530024D4A9 /* Entitites */ = {
+			isa = PBXGroup;
+			children = (
+				4101E3082113D3460030C49B /* RemoteEntity.swift */,
+				412BAA0F212CC35B0024D4A9 /* Remote */,
+			);
+			path = Entitites;
+			sourceTree = "<group>";
+		};
+		412BAA0F212CC35B0024D4A9 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				4101E2FD21126BE90030C49B /* FrontPageItemDto.swift */,
+				41B3B0CD211F9D580023EC45 /* MirkoItemDto.swift */,
+				41B3B0CF211F9D7A0023EC45 /* MirkoCommentDto.swift */,
+				41B3B0D1211F9E590023EC45 /* MirkoAuthorDto.swift */,
+				41B3B0D3211F9FEA0023EC45 /* MirkoEmbedDto.swift */,
+				41CABD47212085C300F94441 /* MirkoEmbedType.swift */,
+			);
+			path = Remote;
 			sourceTree = "<group>";
 		};
 		416D799A210534D300683119 = {
@@ -355,7 +378,7 @@
 			children = (
 				41D14F132124F23A004578D4 /* Architecture */,
 				41D14F042124CB36004578D4 /* Persistence */,
-				4101E31421151AA60030C49B /* Services */,
+				4101E31421151AA60030C49B /* Networking */,
 				4101E3032113C0970030C49B /* Interactors */,
 				411FEBC8211677EF00A150BE /* Views */,
 				41D14F142124F250004578D4 /* Utils */,
@@ -388,7 +411,6 @@
 		41B3B0B8211F87AE0023EC45 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				41B3B0CC211F9D360023EC45 /* Remote */,
 				41B3B0B9211F87B50023EC45 /* Local */,
 			);
 			path = Entities;
@@ -412,25 +434,11 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		41B3B0CC211F9D360023EC45 /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-				41B3B0CD211F9D580023EC45 /* MirkoItemDto.swift */,
-				41B3B0CF211F9D7A0023EC45 /* MirkoCommentDto.swift */,
-				41B3B0D1211F9E590023EC45 /* MirkoAuthorDto.swift */,
-				41B3B0D3211F9FEA0023EC45 /* MirkoEmbedDto.swift */,
-				41CABD47212085C300F94441 /* MirkoEmbedType.swift */,
-			);
-			path = Remote;
-			sourceTree = "<group>";
-		};
 		41B3B0D7212037AE0023EC45 /* Wykop */ = {
 			isa = PBXGroup;
 			children = (
-				4101E3102113D8560030C49B /* WypokBaseService.swift */,
-				4101E30C2113D7DF0030C49B /* FrontPageService.swift */,
-				41B3B0D8212037CE0023EC45 /* MirkoService.swift */,
-				4101E31221151A2C0030C49B /* WypokService.swift */,
+				412BAA0D212CC34D0024D4A9 /* Services */,
+				412BAA0E212CC3530024D4A9 /* Entitites */,
 			);
 			path = Wykop;
 			sourceTree = "<group>";

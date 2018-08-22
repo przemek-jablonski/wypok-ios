@@ -8,12 +8,15 @@
 
 import Foundation
 
+//todo: improvement - view protocol should be named Renderer? Because that's what it does
+
 class WypokMirkoInteractor: MirkoInteractor {
     
     //todo: maybe service should be part of some baseInteractor? this will be everywhere anyway
     private let service: MirkoService
     private let repository: MirkoEntityRepository
     
+    //todo: why two initializers?
     init(service: MirkoService, repository: MirkoEntityRepository) {
         self.service = service
         self.repository = repository
@@ -24,13 +27,15 @@ class WypokMirkoInteractor: MirkoInteractor {
     }
     
     func getMirkoRecents(and action: @escaping MirkoInteractor.ItemsFetchedClosure) {
-        service.getMirkoRecents { dtos in
+        service.getMirkoRecents(and: { dtos in
             action(dtos.map({ dto in dto.mapToLocal()}))
-        }
+        }, fetchDidFailed: {_ in
+            
+        })
     }
     
     func getMirkoHots(and action: @escaping MirkoInteractor.ItemsFetchedClosure) {
-        service.getMirkoHots { dtos in
+        service.getMirkoHots(and: { dtos in
             let mapped = dtos.map({ dto in dto.mapToLocal()})
             action(mapped)
             self.repository.put(models: mapped, and: { (model, entity) -> () in
@@ -43,13 +48,10 @@ class WypokMirkoInteractor: MirkoInteractor {
                 entity.under18Restriction = model.under18Restriction
                 entity.upvoteCount = Int32(model.upvoteCount)
             })
-            self.repository.get(with: { (entities) in
-                print("entities: \(entities)")
-                for (index, entity) in entities.enumerated() {
-                    print("entity[\(index)]: \(entity), \(entity.application) \(entity.authorAvatarUrl) \(entity.upvoteCount) \(entity.commentCount)")
-                }
-            })
-        }
+            //todo: tutej get
+        }, fetchDidFailed: {_ in
+            
+        })
     }
     
     

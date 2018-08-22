@@ -22,9 +22,12 @@ class WypokFrontPageInteractor: FrontPageInteractor {
     }
     
     func getFrontPageItems(and action: @escaping FrontPageInteractor.ItemsFetchedClosure) {
-        service.getLinksPromoted { dtos in
-            action(dtos.map({ dto in dto.mapToLocal() }))
-        }
+        
+        service.getLinksPromoted(and: { dtos in
+                action(dtos.map({ dto in dto.mapToLocal()}))
+        }, fetchDidFailed: {_ in
+            
+        })
     }
     
 }

@@ -23,7 +23,7 @@ class MirkoEntryTableViewCell: WypokTableViewCell {
     @IBOutlet weak var entryUpvotesLabel: UILabel!
     @IBOutlet weak var entryCommentsLabel: UILabel!
     
-    func updateContents(authorImageUrl: String, authorName: String, authorDevice: String, entryContent: NSAttributedString, entryEmbedImageUrl: String?, entryUpvotesCount: Int, entryCommentsCount: Int) {
+    func updateContents(authorImageUrl: String, authorName: String, authorDevice: String?, entryContent: NSAttributedString, entryEmbedImageUrl: String?, entryUpvotesCount: Int, entryCommentsCount: Int) {
         authorImageView.setImage(from: authorImageUrl)
         authorNameLabel.text = authorName
         entryContentLabel.attributedText = entryContent

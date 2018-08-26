@@ -44,7 +44,26 @@ class MirkoItemDto : NSObject, NSCoding, RemoteEntity {
     var commentCount : Int!
     
     func mapToLocal() -> MirkoItemModel {
-        return MirkoItemModel(authorName: author, authorAvatarUrl: authorAvatarBig, authorSexMale: authorSex == "male", authorRank: AuthorRank.map(from: authorGroup), application: app, date: Date(), under18Restriction: embed?.plus18 ?? false, userStarred: userFavorite, commentCount: commentCount, upvoteCount: voteCount, content: body)
+        let embedModel: EmbedModel?
+        //todo: why UNDEFINED and NIL-storing object is not null?
+        if (embed != nil && embed!.type != MirkoEmbedType.UNDEFINED) {
+            embedModel = EmbedModel(contentType: getEmbedTypeModel(embed!.type), previewImageUrl: embed!.preview, contentUrl: embed!.url, under18RestrictedFlag: embed!.plus18)
+        } else {
+            embedModel = nil
+        }
+        
+        return MirkoItemModel(content: body, embed: embedModel, authorName: author, authorAvatarUrl: authorAvatarBig, authorSexMale: authorSex == "male", authorRank: AuthorRank.map(from: authorGroup), application: app, date: Date(), under18Restriction: embed?.plus18 ?? false, commentCount: commentCount, upvoteCount: voteCount)
+    }
+    
+    private func getEmbedTypeModel(_ embedType: MirkoEmbedType) -> EmbedTypeModel {
+        switch(embedType) {
+        case .IMAGE:
+            return EmbedTypeModel.IMAGE
+        case .VIDEO:
+            return EmbedTypeModel.VIDEO
+        case .UNDEFINED:
+            return EmbedTypeModel.UNDEFINED
+        }
     }
     
     /**

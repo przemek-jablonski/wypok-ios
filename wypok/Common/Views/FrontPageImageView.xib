@@ -20,7 +20,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6H-Bz-Hq5" customClass="EdgeInsetLabel" customModule="wypok" customModuleProvider="target">
-                    <rect key="frame" x="333" y="0.0" width="42" height="20.5"/>
+                    <rect key="frame" x="317" y="0.0" width="58" height="28.5"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -41,7 +41,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSH-Cz-7Be" customClass="EdgeInsetLabel" customModule="wypok" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="646.5" width="375" height="20.5"/>
+                    <rect key="frame" x="0.0" y="638.5" width="375" height="28.5"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>

@@ -81,7 +81,14 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     //todo: here, each time NSAttributedString is calculated (item.content.convertToAttributedString())
     //todo: it should be in the model (as a field) in order to reduce performance impact
     private func update(cell tableViewCell: MirkoEntryTableViewCell, with item: MirkoItemModel) -> MirkoEntryTableViewCell {
-        tableViewCell.updateContents(authorImageUrl: item.authorAvatarUrl, authorName: item.authorName, authorDevice: item.application ?? "", entryContent: item.content.convertToAttributedString().setFontFace(font: UIFont.systemFont(ofSize: 13)), entryEmbedImageUrl: "", entryUpvotesCount: item.upvoteCount, entryCommentsCount: item.commentCount)
+        tableViewCell.updateContents(
+            authorImageUrl: item.authorAvatarUrl,
+            authorName: item.authorName,
+            authorDevice: item.application,
+            entryContent: item.content.convertToAttributedString().setFontFace(font: UIFont.systemFont(ofSize: 13)),
+            entryEmbedImageUrl: item.embed?.previewImageUrl,
+            entryUpvotesCount: item.upvoteCount,
+            entryCommentsCount: item.commentCount)
         return tableViewCell
     }
     

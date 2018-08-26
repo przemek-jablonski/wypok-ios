@@ -9,6 +9,7 @@
 import Foundation
 
 enum AuthorRank {
+    //todo: mapping functions to Interactors
     static func map(from int: Int) -> AuthorRank {
         switch(int) {
         case 0: return .GREEN

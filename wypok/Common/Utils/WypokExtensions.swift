@@ -38,7 +38,7 @@ extension Dictionary where Key == String, Value == AnyObject {
 
 extension Optional where Wrapped == String {
     var isBlank: Bool {
-        return self == nil || self!.isEmpty || self!.elementsEqual("")
+        return self == nil || self?.isEmpty ?? true || self?.elementsEqual("") ?? true
     }
     
     var isNotBlank: Bool {

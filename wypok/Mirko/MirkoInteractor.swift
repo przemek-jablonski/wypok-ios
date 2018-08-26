@@ -10,8 +10,8 @@ protocol MirkoInteractor {
     
     typealias ItemsFetchedClosure = ([MirkoItemModel]) -> ()
     
-    func getMirkoRecents(and perform: @escaping ItemsFetchedClosure)
+    func getMirkoRecents(and successClosure: @escaping ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure)
     
-    func getMirkoHots(and perform: @escaping ItemsFetchedClosure)
+    func getMirkoHots(and successClosure: @escaping ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure)
     
 }

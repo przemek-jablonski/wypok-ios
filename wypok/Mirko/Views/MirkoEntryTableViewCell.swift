@@ -26,24 +26,34 @@ class MirkoEntryTableViewCell: WypokTableViewCell {
     func updateContents(authorImageUrl: String, authorName: String, authorDevice: String, entryContent: NSAttributedString, entryEmbedImageUrl: String?, entryUpvotesCount: Int, entryCommentsCount: Int) {
         authorImageView.setImage(from: authorImageUrl)
         authorNameLabel.text = authorName
-        if (authorDeviceLabel != nil) {
-            processDeviceText(label: authorDeviceLabel!, deviceText: authorDevice)
-        }
         entryContentLabel.attributedText = entryContent
-        if (entryEmbedImageUrl != nil) {
-            entryEmbedImageView.setImage(from: entryEmbedImageUrl!)
-        }
         entryUpvotesLabel.text = String(entryUpvotesCount)
         entryCommentsLabel.text = String(entryCommentsCount)
+        handle(authorDeviceLabel!, apply: authorDevice)
+        handle(entryEmbedImageView!, apply: entryEmbedImageUrl)
     }
     
-    private func processDeviceText(label: UILabel, deviceText: String) {
-        if (!deviceText.isEmpty) {
-            label.isHidden = false
-            label.text = deviceText
+    private func handle(_ deviceTextLabel: UILabel, apply deviceText: String?) {
+        if (deviceText.isNotBlank) {
+            deviceTextLabel.isHidden = false
+            deviceTextLabel.text = deviceText
         } else {
-            label.isHidden = true
+            deviceTextLabel.isHidden = true
         }
+    }
+    
+    private func handle(_ embedImageView: UIImageView, apply embedImageUrl: String?) {
+        if (embedImageUrl.isNotBlank) {
+            embedImageView.isHidden = false
+            embedImageView.setImage(from: embedImageUrl!)
+        } else {
+            embedImageView.isHidden = true
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
     }
     
 }

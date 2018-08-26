@@ -9,9 +9,11 @@
 import Foundation
 import CoreData
 
-typealias MirkoEntityFetchClosure = (([MirkoEntity]) -> ())
 
-class MirkoEntityRepository {
+
+class MirkoEntityRepository<Internal : NSManagedObject, External: RemoteEntity> {
+    
+    typealias MirkoEntityFetchClosure = (([Internal]) -> ())
     
     private let viewContext: NSManagedObjectContext
     private let coreDataEntityName: String
@@ -21,9 +23,12 @@ class MirkoEntityRepository {
         self.coreDataEntityName = coreDataEntityName
     }
     
-    func put(models: [MirkoItemModel], and transform: @escaping (MirkoItemModel, inout MirkoEntity) -> ()) {
+    //todo: this should be template for every method with params
+    //todo: 'put items and transform' is nicely prosaic
+    //todo: all method parameters should have ext and int arguments
+    func put(_ items: [External], and transform: @escaping (External, inout Internal) -> ()) {
         execute({
-            models.forEach({ model in
+            items.forEach({ model in
                 var managedObject = createManagedObjectTemplate(for: coreDataEntityName, with: viewContext)
                 transform(model, &managedObject)
             })
@@ -34,9 +39,11 @@ class MirkoEntityRepository {
         })
     }
     
+    //todo: fix naming (should be 'and' and 'successClosure')
+    //todo: maybe 'success' will be enough and more prose-like?
     func get(with completionClosure: MirkoEntityFetchClosure) {
         execute(
-            NSFetchRequest<MirkoEntity>(entityName: coreDataEntityName),
+            NSFetchRequest<Internal>(entityName: coreDataEntityName),
             with: viewContext,
             fetchDidSucceed: { entities in
                 print("MirkoEntityRepository, get, SUCCESS")
@@ -58,7 +65,7 @@ class MirkoEntityRepository {
         }
     }
     
-    private func execute(_ fetchRequest: NSFetchRequest<MirkoEntity>, with viewContext: NSManagedObjectContext, fetchDidSucceed: MirkoEntityFetchClosure, fetchDidFail: () -> ()) {
+    private func execute(_ fetchRequest: NSFetchRequest<Internal>, with viewContext: NSManagedObjectContext, fetchDidSucceed: MirkoEntityFetchClosure, fetchDidFail: () -> ()) {
         do {
             fetchRequest.includesPendingChanges = false
             fetchRequest.returnsDistinctResults = false
@@ -68,8 +75,8 @@ class MirkoEntityRepository {
         }
     }
     
-    private func createManagedObjectTemplate(for entityName: String, with viewContext: NSManagedObjectContext) -> MirkoEntity {
-        return MirkoEntity(entity: NSEntityDescription.entity(forEntityName: entityName, in: viewContext)!, insertInto: viewContext)
+    private func createManagedObjectTemplate(for entityName: String, with viewContext: NSManagedObjectContext) -> Internal {
+        return Internal(entity: NSEntityDescription.entity(forEntityName: entityName, in: viewContext)!, insertInto: viewContext)
     }
     
 }

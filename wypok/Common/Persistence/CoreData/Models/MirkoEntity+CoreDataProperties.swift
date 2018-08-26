@@ -18,6 +18,7 @@ extension MirkoEntity {
     }
     
 
+    @NSManaged public var id: Int64
     @NSManaged public var application: String
     @NSManaged public var authorAvatarUrl: String
     @NSManaged public var authorName: String

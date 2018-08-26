@@ -12,46 +12,58 @@ import Foundation
 
 class WypokMirkoInteractor: MirkoInteractor {
     
-    //todo: maybe service should be part of some baseInteractor? this will be everywhere anyway
+    //todo: maybe service should be part of some baseInteractor? this will be everywhere anywa. The same for the repository (probably?)
     private let service: MirkoService
-    private let repository: MirkoEntityRepository
     
     //todo: why two initializers?
-    init(service: MirkoService, repository: MirkoEntityRepository) {
+    init(service: MirkoService) {
         self.service = service
-        self.repository = repository
     }
     
     convenience init() {
-        self.init(service: WypokGlobalInjectionContainer.get(MirkoService.self), repository: WypokGlobalInjectionContainer.get(MirkoEntityRepository.self))
+        self.init(service: WypokGlobalInjectionContainer.get(MirkoService.self))
     }
     
-    func getMirkoRecents(and action: @escaping MirkoInteractor.ItemsFetchedClosure) {
+    func getMirkoRecents(and successClosure: @escaping MirkoInteractor.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure) {
         service.getMirkoRecents(and: { dtos in
-            action(dtos.map({ dto in dto.mapToLocal()}))
-        }, fetchDidFailed: {_ in
-            
+            successClosure(dtos.map({ (dto) -> MirkoItemModel in
+                return self.map(dto)
+            }))
+        }, fetchDidFailed: { error in
+            failureClosure(error)
         })
     }
     
-    func getMirkoHots(and action: @escaping MirkoInteractor.ItemsFetchedClosure) {
+    func getMirkoHots(and successClosure: @escaping MirkoInteractor.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure) {
         service.getMirkoHots(and: { dtos in
-            let mapped = dtos.map({ dto in dto.mapToLocal()})
-            action(mapped)
-            self.repository.put(models: mapped, and: { (model, entity) -> () in
-                entity.application = model.application ?? ""
-                entity.authorAvatarUrl = model.authorAvatarUrl
-                entity.authorName = model.authorName
-                entity.authorSexMale = model.authorSexMale
-                entity.commentCount = Int32(model.commentCount)
-                entity.date = NSDate()
-                entity.under18Restriction = model.under18Restriction
-                entity.upvoteCount = Int32(model.upvoteCount)
-            })
-            //todo: tutej get
-        }, fetchDidFailed: {_ in
-            
+            successClosure(dtos.map({ (dto) -> MirkoItemModel in
+                return self.map(dto)
+            }))
+        }, fetchDidFailed: { error in
+            failureClosure(error)
         })
+    }
+    
+    
+    private func map(_ dto: MirkoItemDto, to entity: inout MirkoEntity) {
+        entity.id = Int64(dto.id)
+        entity.application = dto.app ?? ""
+        entity.authorAvatarUrl = dto.authorAvatarBig
+        entity.authorName = dto.author
+        entity.authorSexMale = dto.authorSex == "male"
+        entity.commentCount = Int32(dto.commentCount)
+        entity.date = NSDate()
+        entity.under18Restriction = dto.embed?.plus18 ?? false
+        entity.upvoteCount = Int32(dto.voteCount)
+    }
+    
+    private func map(_ entity: MirkoEntity, to model: inout MirkoItemModel) {
+        
+    }
+    
+    //todo: to be deleted when repository will be in place
+    private func map(_ dto: MirkoItemDto) -> MirkoItemModel {
+        return dto.mapToLocal()
     }
     
     

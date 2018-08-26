@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+//todo: why is this in common lol?
 @IBDesignable
 class FrontPageImageView: UIView {
     

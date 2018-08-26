@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,14 +19,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="666.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMV-2s-ofM">
-                        <rect key="frame" x="0.0" y="1" width="375" height="75"/>
-                        <color key="backgroundColor" name="WypokLightGray"/>
-                    </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gxj-YX-XaH">
-                        <rect key="frame" x="0.0" y="636" width="375" height="29.5"/>
-                        <color key="backgroundColor" name="WypokLightGray"/>
-                    </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B5l-9T-qQW">
                         <rect key="frame" x="16" y="28" width="40" height="40"/>
                         <constraints>
@@ -118,7 +109,6 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="JUa-G0-kdX" secondAttribute="bottom" id="0YM-oU-05c"/>
-                    <constraint firstItem="Wmf-1a-sFn" firstAttribute="top" secondItem="pMV-2s-ofM" secondAttribute="bottom" id="3Sc-nu-GPu"/>
                     <constraint firstItem="Wmf-1a-sFn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="4Ap-fn-90M"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Wmf-1a-sFn" secondAttribute="trailing" id="4f0-5E-v8C"/>
                     <constraint firstAttribute="trailingMargin" secondItem="NZw-8H-dHS" secondAttribute="trailing" id="4yB-gz-aIx"/>
@@ -130,9 +120,7 @@
                     <constraint firstItem="uEk-gE-vHV" firstAttribute="leading" secondItem="473-u6-Hkk" secondAttribute="trailing" constant="12" id="Cpz-Le-sFN"/>
                     <constraint firstItem="B5l-9T-qQW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="Dxd-x6-6tS"/>
                     <constraint firstItem="473-u6-Hkk" firstAttribute="leading" secondItem="r9Y-NU-fZT" secondAttribute="trailing" constant="4" id="GCR-yW-uqq"/>
-                    <constraint firstAttribute="trailing" secondItem="Gxj-YX-XaH" secondAttribute="trailing" id="GCm-a2-bfm"/>
                     <constraint firstItem="B5l-9T-qQW" firstAttribute="bottom" secondItem="NZw-8H-dHS" secondAttribute="bottom" constant="8" id="GOG-rz-K4B"/>
-                    <constraint firstItem="Gxj-YX-XaH" firstAttribute="top" secondItem="iFz-pU-rTr" secondAttribute="bottom" id="JAb-8q-nlp"/>
                     <constraint firstItem="NZw-8H-dHS" firstAttribute="leading" secondItem="B5l-9T-qQW" secondAttribute="trailing" constant="8" id="K3B-1Y-B3t"/>
                     <constraint firstItem="U30-df-XEy" firstAttribute="top" secondItem="iFz-pU-rTr" secondAttribute="bottom" constant="8" id="KEM-yF-0mC"/>
                     <constraint firstItem="hwp-UG-Jdi" firstAttribute="top" secondItem="iFz-pU-rTr" secondAttribute="bottom" constant="8" id="KMF-Gc-YpQ"/>
@@ -140,19 +128,14 @@
                     <constraint firstItem="r9Y-NU-fZT" firstAttribute="leading" secondItem="U30-df-XEy" secondAttribute="trailing" constant="12" id="KvT-G5-ZJV"/>
                     <constraint firstItem="473-u6-Hkk" firstAttribute="top" secondItem="iFz-pU-rTr" secondAttribute="bottom" constant="8" id="NPc-9x-rzE"/>
                     <constraint firstAttribute="bottomMargin" secondItem="U30-df-XEy" secondAttribute="bottom" id="QgG-aa-T0a"/>
-                    <constraint firstItem="pMV-2s-ofM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="1" id="Qmd-J5-fHI"/>
-                    <constraint firstAttribute="bottom" secondItem="Gxj-YX-XaH" secondAttribute="bottom" constant="1" id="Un7-Ny-odu"/>
                     <constraint firstItem="iFz-pU-rTr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="V0t-p2-Kjc"/>
                     <constraint firstAttribute="bottomMargin" secondItem="hwp-UG-Jdi" secondAttribute="bottom" id="V2d-jG-FQ2"/>
                     <constraint firstItem="iFz-pU-rTr" firstAttribute="top" secondItem="Wmf-1a-sFn" secondAttribute="bottom" constant="8" id="VI2-o2-Qbe"/>
                     <constraint firstItem="5EQ-QB-KHQ" firstAttribute="leading" secondItem="uEk-gE-vHV" secondAttribute="trailing" constant="4" id="bxP-zb-nqw"/>
                     <constraint firstItem="U30-df-XEy" firstAttribute="leading" secondItem="hwp-UG-Jdi" secondAttribute="trailing" constant="4" id="ezf-14-USv"/>
                     <constraint firstAttribute="bottomMargin" secondItem="r9Y-NU-fZT" secondAttribute="bottom" id="gTz-SE-2Yo"/>
-                    <constraint firstAttribute="trailing" secondItem="pMV-2s-ofM" secondAttribute="trailing" id="gnR-LY-fCe"/>
                     <constraint firstAttribute="trailingMargin" secondItem="iFz-pU-rTr" secondAttribute="trailing" id="hzz-Z3-sqm"/>
-                    <constraint firstItem="Gxj-YX-XaH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jhS-lU-D4x"/>
                     <constraint firstItem="5EQ-QB-KHQ" firstAttribute="top" secondItem="iFz-pU-rTr" secondAttribute="bottom" constant="8" id="mTb-jd-Is1"/>
-                    <constraint firstItem="pMV-2s-ofM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="nfd-Pb-gl4"/>
                     <constraint firstAttribute="bottomMargin" secondItem="473-u6-Hkk" secondAttribute="bottom" id="q9O-eY-8dA"/>
                     <constraint firstItem="uEk-gE-vHV" firstAttribute="top" secondItem="iFz-pU-rTr" secondAttribute="bottom" constant="8" id="qW5-r8-YVC"/>
                     <constraint firstItem="Wmf-1a-sFn" firstAttribute="top" secondItem="B5l-9T-qQW" secondAttribute="bottom" constant="8" id="stF-0K-fba"/>
@@ -179,8 +162,5 @@
         <image name="outline_arrow_drop_up_black_48pt" width="48" height="48"/>
         <image name="outline_arrow_upward_black_48pt" width="48" height="48"/>
         <image name="outline_chat_bubble_outline_black_48pt" width="48" height="48"/>
-        <namedColor name="WypokLightGray">
-            <color red="0.88999998569488525" green="0.88999998569488525" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
     </resources>
 </document>

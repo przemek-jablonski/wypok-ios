@@ -32,7 +32,7 @@ class WypokGlobalInjectionContainer {
     
     private static func registerCoreData(_ container: inout Container) {
         container.register(NSManagedObjectContext.self) { r in r.resolve(AppDelegate.self)!.persistentContainer.viewContext }.inObjectScope(.container)
-        container.register(MirkoEntityRepository.self) { r in MirkoEntityRepository(viewContext: r.resolve(NSManagedObjectContext.self)!, coreDataEntityName: "MirkoEntity") }.inObjectScope(.container)
+        container.register(MirkoEntityRepository.self) { r in MirkoEntityRepository<MirkoEntity, MirkoItemDto>(viewContext: r.resolve(NSManagedObjectContext.self)!, coreDataEntityName: "MirkoEntity") }.inObjectScope(.container)
     }
     
     private static func registerServices(_ container: inout Container) {
@@ -45,7 +45,7 @@ class WypokGlobalInjectionContainer {
         //todo: presenters dont have interfaces, but interactors do
         //todo: solution - remove interface from interactors
         container.register(FrontPageInteractor.self) { r in WypokFrontPageInteractor(r.resolve(FrontPageService.self)!) }.inObjectScope(.container)
-        container.register(MirkoInteractor.self) { r in WypokMirkoInteractor(service: r.resolve(MirkoService.self)!, repository: r.resolve(MirkoEntityRepository.self)!) }.inObjectScope(.container)
+        container.register(MirkoInteractor.self) { r in WypokMirkoInteractor(service: r.resolve(MirkoService.self)!) }.inObjectScope(.container)
     }
     
     private static func registerPresenters(_ container: inout Container) {

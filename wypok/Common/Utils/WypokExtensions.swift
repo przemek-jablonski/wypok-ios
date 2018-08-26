@@ -36,7 +36,26 @@ extension Dictionary where Key == String, Value == AnyObject {
     }
 }
 
+extension Optional where Wrapped == String {
+    var isBlank: Bool {
+        return self == nil || self!.isEmpty || self!.elementsEqual("")
+    }
+    
+    var isNotBlank: Bool {
+        return !self.isBlank
+    }
+}
+
 extension String {
+    //todo: maybe there is a way to make extension for both Optional<String> and just String?
+    var isBlank: Bool {
+        return self.isEmpty || self.elementsEqual("")
+    }
+    
+    var isNotBlank: Bool {
+        return !self.isBlank
+    }
+    
     func removeHtmlEntities() -> String {
         let entitiesDictionary = ["&quot;" : "\""]
         var string = self
@@ -61,7 +80,6 @@ extension String {
             documentAttributes: nil) else {
                 return NSMutableAttributedString(string: self)
         }
-        
         return attributed
     }
 }
@@ -103,6 +121,15 @@ extension UIImageView {
             if (error != nil) {
                 print("ERRORRRR!, \(error) for url: \(url) and image: \(image)")
             }
+        }
+    }
+}
+
+extension Array {
+    func forEach(_ closure: (Element, Int) -> ()) {
+        for (index, element) in self.enumerated() {
+            closure(element, index)
+            print("Item \(index): \(element)")
         }
     }
 }

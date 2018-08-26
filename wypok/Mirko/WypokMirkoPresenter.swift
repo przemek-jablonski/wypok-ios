@@ -32,16 +32,21 @@ class WypokMirkoPresenter: BasePresenter<WypokMirkoViewState>, MirkoPresenter {
     
     func onHotSelected() {
         print("onHotSelected")
-        interactor.getMirkoHots { models in
+        interactor.getMirkoHots(and: { models in
             self.onMirkoHotItemsFetched(items: models)
-        }
+        }, fetchDidFailed:  { error in
+            
+        })
+//        interactor.getMirkoHots(and: <#MirkoInteractor.ItemsFetchedClosure#>) { models in
+//            self.onMirkoHotItemsFetched(items: models)
+//        }
     }
     
     func onRecentsSelected() {
         print("onRecentsSelected")
-        interactor.getMirkoRecents { models in
-            self.onMirkoRecentItemsFetched(items: models)
-        }
+//        interactor.getMirkoRecents { models in
+//            self.onMirkoRecentItemsFetched(items: models)
+//        }
     }
     
     func onMirkoItemClicked(row: Int) {

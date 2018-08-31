@@ -33,9 +33,9 @@ class MirkoEntityRepository<Internal : NSManagedObject, External: RemoteEntity> 
                 transform(model, &managedObject)
             })
         }, insertsDidSucceed: {
-        print("MirkoEntityRepository, put, SUCCESS")
+//        print("MirkoEntityRepository, put, SUCCESS")
         }, insertsDidFail: {
-        print("MirkoEntityRepository, put, FAILURE")
+//        print("MirkoEntityRepository, put, FAILURE")
         })
     }
     
@@ -46,11 +46,11 @@ class MirkoEntityRepository<Internal : NSManagedObject, External: RemoteEntity> 
             NSFetchRequest<Internal>(entityName: coreDataEntityName),
             with: viewContext,
             fetchDidSucceed: { entities in
-                print("MirkoEntityRepository, get, SUCCESS")
+//                print("MirkoEntityRepository, get, SUCCESS")
                 completionClosure(entities)
         },
             fetchDidFail: {
-                print("MirkoEntityRepository, get, FAILURE")
+//                print("MirkoEntityRepository, get, FAILURE")
         })
         
     }

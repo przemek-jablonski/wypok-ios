@@ -45,7 +45,7 @@ class WypokBaseService {
     private func constructServiceCall(for urlSuffix: String, with apiKey: String) -> DataRequest {
         let requestUrl = WypokBaseService.WYKOP_API_BASE_URL + urlSuffix + WypokBaseService.WYKOP_API_PARAMETERS_SUFFIX_KEY + apiKey
         let requestMd5Hash = apiKeysProvider.getMd5Hash(from: requestUrl)
-        print("📡 constructServiceCall, requestUrl: \(requestUrl)")
+//        print("📡 constructServiceCall, requestUrl: \(requestUrl)")
         return Alamofire
             .request(requestUrl, headers: [WypokBaseService.WYKOP_API_REQUEST_HEADER_MD5HASH_KEY : requestMd5Hash])
             .validate()

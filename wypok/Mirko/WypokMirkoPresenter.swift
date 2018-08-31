@@ -23,15 +23,15 @@ class WypokMirkoPresenter: BasePresenter<WypokMirkoViewState>, MirkoPresenter {
     }
     
     override func onAttached(view: View) {
-        print("WypokFrontPagePresenter, onAttached: \(view)")
+//        print("WypokFrontPagePresenter, onAttached: \(view)")
     }
     
     override func onDetached(view: View) {
-        print("WypokFrontPagePresenter, onDetached: \(view)")
+//        print("WypokFrontPagePresenter, onDetached: \(view)")
     }
     
     func onHotSelected() {
-        print("onHotSelected")
+//        print("onHotSelected")
         interactor.getMirkoHots(and: { models in
             self.onMirkoHotItemsFetched(items: models)
         }, fetchDidFailed:  { error in
@@ -43,35 +43,35 @@ class WypokMirkoPresenter: BasePresenter<WypokMirkoViewState>, MirkoPresenter {
     }
     
     func onRecentsSelected() {
-        print("onRecentsSelected")
+//        print("onRecentsSelected")
 //        interactor.getMirkoRecents { models in
 //            self.onMirkoRecentItemsFetched(items: models)
 //        }
     }
     
     func onMirkoItemClicked(row: Int) {
-        print("onMirkoItemClicked: \(row)")
+//        print("onMirkoItemClicked: \(row)")
         
     }
     
     func onMirkoItemForceTouched(row: Int) {
-        print("onMirkoItemForceTouched: \(row)")
+//        print("onMirkoItemForceTouched: \(row)")
         
     }
     
     func onMirkoItemActionCalled(row: Int, action: MirkoItemAction) {
-        print("onMirkoItemActionCalled: \(row), action: \(action)")
+//        print("onMirkoItemActionCalled: \(row), action: \(action)")
         
     }
     
     private func onMirkoRecentItemsFetched(items: [MirkoItemModel]) {
-        print("onMirkoRecentItemsFetched: \(items)")
+//        print("onMirkoRecentItemsFetched: \(items)")
         mirkoItems = items
         view?.render(WypokMirkoViewState.RECENTS_LIST(mirkoItems))
     }
     
     private func onMirkoHotItemsFetched(items: [MirkoItemModel]) {
-        print("onMirkoHotItemsFetched: \(items)")
+//        print("onMirkoHotItemsFetched: \(items)")
         mirkoItems = items
         view?.render(WypokMirkoViewState.HOT_LIST(mirkoItems))
     }

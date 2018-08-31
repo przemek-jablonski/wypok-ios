@@ -46,7 +46,7 @@ class WypokFrontPageViewController: BaseView<WypokFrontPagePresenter, WypokFront
     }
     
     private func renderArticlesList(with articles: [FrontPageItemModel]) {
-        print("renderArticlesList, articles: \(articles)")
+//        print("renderArticlesList, articles: \(articles)")
         if (areAllRowsAffectedByUpdate(original: self.articles, updated: articles)) {
             self.articles = articles
             articlesTableView.reloadData()
@@ -73,11 +73,11 @@ class WypokFrontPageViewController: BaseView<WypokFrontPagePresenter, WypokFront
     }
     
     private func renderLoading() {
-        print("renderLoading")
+//        print("renderLoading")
     }
     
     private func renderError() {
-        print("renderError")
+//        print("renderError")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -16,7 +16,6 @@ class WypokGlobalInjectionContainer {
     
     private static func configureContainer() -> Container {
         var container = Container()
-        print("WypokGlobalInjectionContainer, configureContainer: \(container) \(ObjectIdentifier(container).debugDescription)")
         //todo: services protocols for specific modules should not be in the 'common' module
         registerCommonDependencies(&container)
         registerCoreData(&container)

@@ -38,8 +38,8 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     
     private func setupEntriesTableView(tableView: UITableView, cellType: WypokTableViewCell.Type) {
         entriesTableView.register(with: cellType.registerData)
-        entriesTableView.rowHeight = UITableViewAutomaticDimension
-        entriesTableView.estimatedRowHeight = UIScreen.main.bounds.size.height
+//        entriesTableView.rowHeight = UITableViewAutomaticDimension
+//        entriesTableView.estimatedRowHeight = UIScreen.main.bounds.size.height
     }
     
     override func render(_ viewState: WypokMirkoViewState) {

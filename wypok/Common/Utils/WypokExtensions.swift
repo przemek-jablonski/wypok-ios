@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+typealias CommonSuccessClosure = () -> ()
 typealias CommonFailureClosure = (Error) -> ()
 
 extension UIContextualAction {
@@ -25,7 +26,7 @@ extension UISwipeActionsConfiguration {
 }
 
 extension Dictionary where Key == String, Value == AnyObject {
-    func prettyPrint() -> String{
+    func prettyPrint() -> String {
         var string: String = ""
         if let data = try? JSONSerialization.data(withJSONObject: self, options: .prettyPrinted){
             if let nstr = NSString(data: data, encoding: String.Encoding.utf8.rawValue){

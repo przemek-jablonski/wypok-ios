@@ -55,7 +55,8 @@ class MirkoEntryTableViewCell: WypokTableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+//        entryEmbedImageView.layer.cornerRadius = UIScreen.main.bounds.size.width / 4.0
+//        entryEmbedImageView.layer.masksToBounds = true
     }
     
 }

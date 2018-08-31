@@ -80,6 +80,7 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     
     //todo: here, each time NSAttributedString is calculated (item.content.convertToAttributedString())
     //todo: it should be in the model (as a field) in order to reduce performance impact
+    //todo: quite similarly with the images, they are being pulled from the memory (or disk lol) and put in place
     private func update(cell tableViewCell: MirkoEntryTableViewCell, with item: MirkoItemModel) -> MirkoEntryTableViewCell {
         tableViewCell.updateContents(
             authorImageUrl: item.authorAvatarUrl,

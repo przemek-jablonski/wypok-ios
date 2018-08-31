@@ -24,7 +24,7 @@ class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewState>, FrontPag
     }
     
     override func onAttached(view: View) {
-        print("WypokFrontPagePresenter, onAttached: \(view)")
+//        print("WypokFrontPagePresenter, onAttached: \(view)")
         interactor.getFrontPageItems { models in
             self.onFrontPageItemsFetched(items: models)
         }
@@ -36,19 +36,19 @@ class WypokFrontPagePresenter : BasePresenter<WypokFrontPageViewState>, FrontPag
     }
     
     override func onDetached(view: View) {
-        print("WypokFrontPagePresenter, onDetached: \(view)")
+//        print("WypokFrontPagePresenter, onDetached: \(view)")
     }
     
     func onFrontPageItemClicked(row: Int) {
-        print("onFrontPageItemClicked: \(row)")
+//        print("onFrontPageItemClicked: \(row)")
     }
     
     func onFrontPageItemForceTouchedClicked(row: Int) {
-        print("onFrontPageItemForceTouchedClicked: \(row)")
+//        print("onFrontPageItemForceTouchedClicked: \(row)")
     }
     
     func onFrontPageItemActionCalled(row: Int, action: FrontPageItemAction) {
-        print("onFrontPageItemActionCalled, row: \(row), action: \(action)")
+//        print("onFrontPageItemActionCalled, row: \(row), action: \(action)")
         let frontPageItem = frontPageItems[row].resetUserPreferences()
         switch action {
         case .UPVOTE:

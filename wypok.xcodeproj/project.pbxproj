@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		316D7B204D410E489D367F5B /* Pods_wypokTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E00BE2601F05C8617269D7 /* Pods_wypokTests.framework */; };
-		377E4904BEC96B8B8B36FA77 /* Pods_wypok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33EEAF2DA61E8F1C8295AF70 /* Pods_wypok.framework */; };
+		179A69850B000C5550979085 /* Pods_wypokTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7396BF67F943556B28357814 /* Pods_wypokTests.framework */; };
+		1EEF93DA7A931FA7B002220E /* Pods_wypok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75541E82421464883543F307 /* Pods_wypok.framework */; };
 		4101E2F9211269C50030C49B /* FrontPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E2F8211269C50030C49B /* FrontPageInteractor.swift */; };
 		4101E2FE21126BE90030C49B /* FrontPageItemDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E2FD21126BE90030C49B /* FrontPageItemDto.swift */; };
 		4101E30021126C150030C49B /* FrontPageItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E2FF21126C150030C49B /* FrontPageItemModel.swift */; };
@@ -42,7 +42,7 @@
 		416D79A9210534D400683119 /* WypokFrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D79A8210534D400683119 /* WypokFrontPageViewController.swift */; };
 		416D79AC210534D400683119 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 416D79AA210534D400683119 /* Main.storyboard */; };
 		416D79AF210534D400683119 /* wypok.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 416D79AD210534D400683119 /* wypok.xcdatamodeld */; };
-		416D79B1210534DD00683119 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		416D79B1210534DD00683119 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		416D79B4210534DD00683119 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 416D79B2210534DD00683119 /* LaunchScreen.storyboard */; };
 		416D79BF210534DE00683119 /* wypokTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D79BE210534DE00683119 /* wypokTests.swift */; };
 		416D79CA210534DE00683119 /* wypokUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D79C9210534DE00683119 /* wypokUITests.swift */; };
@@ -77,7 +77,7 @@
 		41D14F172124F383004578D4 /* WypokGlobalInjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D14F162124F383004578D4 /* WypokGlobalInjectionContainer.swift */; };
 		41EA0202210543690091E9F9 /* WypokFrontPageViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EA0201210543690091E9F9 /* WypokFrontPageViewState.swift */; };
 		41FA4058211A49B600EEA5FF /* FrontPageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FA4057211A49B500EEA5FF /* FrontPageAction.swift */; };
-		DBB2973C4FD03D519DB8AC59 /* Pods_wypokUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E25978BBB99266265024131 /* Pods_wypokUITests.framework */; };
+		570BA3CF5591460F01AC9800 /* Pods_wypokUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F833BEB7C2A096254638DEB /* Pods_wypokUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,8 +98,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04907643BC04B2C719C29585 /* Pods-wypokTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypokTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wypokTests/Pods-wypokTests.debug.xcconfig"; sourceTree = "<group>"; };
-		33EEAF2DA61E8F1C8295AF70 /* Pods_wypok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wypok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		296FD035969B0A408F6F3B24 /* Pods-wypok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypok.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wypok/Pods-wypok.debug.xcconfig"; sourceTree = "<group>"; };
 		4101E2F8211269C50030C49B /* FrontPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageInteractor.swift; sourceTree = "<group>"; };
 		4101E2FD21126BE90030C49B /* FrontPageItemDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageItemDto.swift; sourceTree = "<group>"; };
 		4101E2FF21126C150030C49B /* FrontPageItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageItemModel.swift; sourceTree = "<group>"; };
@@ -173,13 +172,14 @@
 		41D14F162124F383004578D4 /* WypokGlobalInjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokGlobalInjectionContainer.swift; sourceTree = "<group>"; };
 		41EA0201210543690091E9F9 /* WypokFrontPageViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokFrontPageViewState.swift; sourceTree = "<group>"; };
 		41FA4057211A49B500EEA5FF /* FrontPageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageAction.swift; sourceTree = "<group>"; };
-		52E35914B1674F5865C5C0DC /* Pods-wypok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypok.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wypok/Pods-wypok.debug.xcconfig"; sourceTree = "<group>"; };
-		6492390DDE7CE6E7A25CA215 /* Pods-wypokTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypokTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wypokTests/Pods-wypokTests.release.xcconfig"; sourceTree = "<group>"; };
-		689D2979BD8CC9F1AA6D6597 /* Pods-wypokUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypokUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wypokUITests/Pods-wypokUITests.release.xcconfig"; sourceTree = "<group>"; };
-		97AA2C4F728DABF3002A1083 /* Pods-wypok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypok.release.xcconfig"; path = "Pods/Target Support Files/Pods-wypok/Pods-wypok.release.xcconfig"; sourceTree = "<group>"; };
-		9E25978BBB99266265024131 /* Pods_wypokUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wypokUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C38979DEA0250E842F07B6CF /* Pods-wypokUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypokUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wypokUITests/Pods-wypokUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		F9E00BE2601F05C8617269D7 /* Pods_wypokTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wypokTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55B58248F696786B40BF5389 /* Pods-wypokTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypokTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wypokTests/Pods-wypokTests.release.xcconfig"; sourceTree = "<group>"; };
+		70570478837AE9B36CABE0BB /* Pods-wypok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypok.release.xcconfig"; path = "Pods/Target Support Files/Pods-wypok/Pods-wypok.release.xcconfig"; sourceTree = "<group>"; };
+		7396BF67F943556B28357814 /* Pods_wypokTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wypokTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75541E82421464883543F307 /* Pods_wypok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wypok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F66037C47F3524C0524E525 /* Pods-wypokTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypokTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wypokTests/Pods-wypokTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8F833BEB7C2A096254638DEB /* Pods_wypokUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wypokUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B40B55928F13A9046F7073A3 /* Pods-wypokUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypokUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wypokUITests/Pods-wypokUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BEBF29EE7B605D37F6B411F0 /* Pods-wypokUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypokUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wypokUITests/Pods-wypokUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				377E4904BEC96B8B8B36FA77 /* Pods_wypok.framework in Frameworks */,
+				1EEF93DA7A931FA7B002220E /* Pods_wypok.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				316D7B204D410E489D367F5B /* Pods_wypokTests.framework in Frameworks */,
+				179A69850B000C5550979085 /* Pods_wypokTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,32 +203,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBB2973C4FD03D519DB8AC59 /* Pods_wypokUITests.framework in Frameworks */,
+				570BA3CF5591460F01AC9800 /* Pods_wypokUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03104BE547583B9CBD01CBDD /* Pods */ = {
+		2C96339AD6AB6E53E2B8659F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				52E35914B1674F5865C5C0DC /* Pods-wypok.debug.xcconfig */,
-				97AA2C4F728DABF3002A1083 /* Pods-wypok.release.xcconfig */,
-				04907643BC04B2C719C29585 /* Pods-wypokTests.debug.xcconfig */,
-				6492390DDE7CE6E7A25CA215 /* Pods-wypokTests.release.xcconfig */,
-				C38979DEA0250E842F07B6CF /* Pods-wypokUITests.debug.xcconfig */,
-				689D2979BD8CC9F1AA6D6597 /* Pods-wypokUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		1F81B72C7F357D7B0279AE01 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				33EEAF2DA61E8F1C8295AF70 /* Pods_wypok.framework */,
-				F9E00BE2601F05C8617269D7 /* Pods_wypokTests.framework */,
-				9E25978BBB99266265024131 /* Pods_wypokUITests.framework */,
+				75541E82421464883543F307 /* Pods_wypok.framework */,
+				7396BF67F943556B28357814 /* Pods_wypokTests.framework */,
+				8F833BEB7C2A096254638DEB /* Pods_wypokUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -335,8 +322,8 @@
 				416D79BD210534DE00683119 /* wypokTests */,
 				416D79C8210534DE00683119 /* wypokUITests */,
 				416D79A4210534D400683119 /* Products */,
-				03104BE547583B9CBD01CBDD /* Pods */,
-				1F81B72C7F357D7B0279AE01 /* Frameworks */,
+				EEBA3BB4716132D1FED9B560 /* Pods */,
+				2C96339AD6AB6E53E2B8659F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -554,6 +541,19 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		EEBA3BB4716132D1FED9B560 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				296FD035969B0A408F6F3B24 /* Pods-wypok.debug.xcconfig */,
+				70570478837AE9B36CABE0BB /* Pods-wypok.release.xcconfig */,
+				8F66037C47F3524C0524E525 /* Pods-wypokTests.debug.xcconfig */,
+				55B58248F696786B40BF5389 /* Pods-wypokTests.release.xcconfig */,
+				BEBF29EE7B605D37F6B411F0 /* Pods-wypokUITests.debug.xcconfig */,
+				B40B55928F13A9046F7073A3 /* Pods-wypokUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -561,11 +561,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 416D79CE210534DE00683119 /* Build configuration list for PBXNativeTarget "wypok" */;
 			buildPhases = (
-				8283FFF23B61737732BB2EA3 /* [CP] Check Pods Manifest.lock */,
+				7BAA6614795C5BA37CFE6637 /* [CP] Check Pods Manifest.lock */,
 				416D799F210534D400683119 /* Sources */,
 				416D79A0210534D400683119 /* Frameworks */,
 				416D79A1210534D400683119 /* Resources */,
-				68CEE08D2E0A9D010AEA4985 /* [CP] Embed Pods Frameworks */,
+				A801AA20876E0298075A6AC9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -580,7 +580,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 416D79D1210534DF00683119 /* Build configuration list for PBXNativeTarget "wypokTests" */;
 			buildPhases = (
-				91071677A1B427905B5220F7 /* [CP] Check Pods Manifest.lock */,
+				25A301E2063F5168713B44F1 /* [CP] Check Pods Manifest.lock */,
 				416D79B6210534DE00683119 /* Sources */,
 				416D79B7210534DE00683119 /* Frameworks */,
 				416D79B8210534DE00683119 /* Resources */,
@@ -599,7 +599,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 416D79D4210534DF00683119 /* Build configuration list for PBXNativeTarget "wypokUITests" */;
 			buildPhases = (
-				079DC599CE8C059E798CD3FE /* [CP] Check Pods Manifest.lock */,
+				5A0817F200185873D2B3E248 /* [CP] Check Pods Manifest.lock */,
 				416D79C1210534DE00683119 /* Sources */,
 				416D79C2210534DE00683119 /* Frameworks */,
 				416D79C3210534DE00683119 /* Resources */,
@@ -663,7 +663,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				416D79B4210534DD00683119 /* LaunchScreen.storyboard in Resources */,
-				416D79B1210534DD00683119 /* (null) in Resources */,
+				416D79B1210534DD00683119 /* BuildFile in Resources */,
 				41BAE7FB2115C45200BCD5C2 /* WypokAssets.xcassets in Resources */,
 				41B3B0CA211F9B530023EC45 /* MirkoEntryTableViewCell.xib in Resources */,
 				418063EE210FC28E00B5455C /* ApiKeys.plist in Resources */,
@@ -690,16 +690,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		079DC599CE8C059E798CD3FE /* [CP] Check Pods Manifest.lock */ = {
+		25A301E2063F5168713B44F1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wypokTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A0817F200185873D2B3E248 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-wypokUITests-checkManifestLockResult.txt",
 			);
@@ -708,10 +734,34 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		68CEE08D2E0A9D010AEA4985 /* [CP] Embed Pods Frameworks */ = {
+		7BAA6614795C5BA37CFE6637 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wypok-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A801AA20876E0298075A6AC9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-wypok/Pods-wypok-frameworks.sh",
@@ -724,6 +774,8 @@
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
@@ -736,42 +788,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wypok/Pods-wypok-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8283FFF23B61737732BB2EA3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-wypok-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		91071677A1B427905B5220F7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-wypokTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1009,7 +1025,7 @@
 		};
 		416D79CF210534DE00683119 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52E35914B1674F5865C5C0DC /* Pods-wypok.debug.xcconfig */;
+			baseConfigurationReference = 296FD035969B0A408F6F3B24 /* Pods-wypok.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1028,7 +1044,7 @@
 		};
 		416D79D0210534DE00683119 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97AA2C4F728DABF3002A1083 /* Pods-wypok.release.xcconfig */;
+			baseConfigurationReference = 70570478837AE9B36CABE0BB /* Pods-wypok.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1047,7 +1063,7 @@
 		};
 		416D79D2210534DF00683119 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04907643BC04B2C719C29585 /* Pods-wypokTests.debug.xcconfig */;
+			baseConfigurationReference = 8F66037C47F3524C0524E525 /* Pods-wypokTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1069,7 +1085,7 @@
 		};
 		416D79D3210534DF00683119 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6492390DDE7CE6E7A25CA215 /* Pods-wypokTests.release.xcconfig */;
+			baseConfigurationReference = 55B58248F696786B40BF5389 /* Pods-wypokTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1091,7 +1107,7 @@
 		};
 		416D79D5210534DF00683119 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C38979DEA0250E842F07B6CF /* Pods-wypokUITests.debug.xcconfig */;
+			baseConfigurationReference = BEBF29EE7B605D37F6B411F0 /* Pods-wypokUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1112,7 +1128,7 @@
 		};
 		416D79D6210534DF00683119 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 689D2979BD8CC9F1AA6D6597 /* Pods-wypokUITests.release.xcconfig */;
+			baseConfigurationReference = B40B55928F13A9046F7073A3 /* Pods-wypokUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

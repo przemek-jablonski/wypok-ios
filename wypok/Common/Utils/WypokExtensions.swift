@@ -130,7 +130,7 @@ extension Array {
     func forEach(_ closure: (Element, Int) -> ()) {
         for (index, element) in self.enumerated() {
             closure(element, index)
-            print("Item \(index): \(element)")
+//            print("Item \(index): \(element)")
         }
     }
 }

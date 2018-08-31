@@ -22,8 +22,10 @@ class MirkoEntryTableViewCell: WypokTableViewCell {
     @IBOutlet weak var entryEmbedImageView: UIImageView!
     @IBOutlet weak var entryUpvotesLabel: UILabel!
     @IBOutlet weak var entryCommentsLabel: UILabel!
+    @IBOutlet weak var DEBUGLABELOLOL: UILabel!
     
-    func updateContents(authorImageUrl: String, authorName: String, authorDevice: String?, entryContent: NSAttributedString, entryEmbedImageUrl: String?, entryUpvotesCount: Int, entryCommentsCount: Int) {
+    func updateContents(DEBUGTEXTOLOL: String, authorImageUrl: String, authorName: String, authorDevice: String?, entryContent: NSAttributedString, entryEmbedImageUrl: String?, entryUpvotesCount: Int, entryCommentsCount: Int) {
+        DEBUGLABELOLOL.text = DEBUGTEXTOLOL
         authorImageView.setImage(from: authorImageUrl)
         authorNameLabel.text = authorName
         entryContentLabel.attributedText = entryContent

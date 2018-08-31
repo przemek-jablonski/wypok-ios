@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -106,6 +107,13 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DEBUGOLOLOLOL" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHq-4q-ufx">
+                        <rect key="frame" x="83" y="7" width="270" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                        <color key="textColor" name="WykopOfficialBadgeRed"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="JUa-G0-kdX" secondAttribute="bottom" id="0YM-oU-05c"/>
@@ -145,6 +153,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="DEBUGLABELOLOL" destination="FHq-4q-ufx" id="1sX-dU-qsw"/>
                 <outlet property="authorDeviceLabel" destination="7Ud-kh-17g" id="BG1-jJ-pAB"/>
                 <outlet property="authorImageView" destination="B5l-9T-qQW" id="HIE-3r-Q5W"/>
                 <outlet property="authorInformationStack" destination="NZw-8H-dHS" id="XNy-X8-7u7"/>
@@ -162,5 +171,8 @@
         <image name="outline_arrow_drop_up_black_48pt" width="48" height="48"/>
         <image name="outline_arrow_upward_black_48pt" width="48" height="48"/>
         <image name="outline_chat_bubble_outline_black_48pt" width="48" height="48"/>
+        <namedColor name="WykopOfficialBadgeRed">
+            <color red="0.73725490196078436" green="0.19215686274509805" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

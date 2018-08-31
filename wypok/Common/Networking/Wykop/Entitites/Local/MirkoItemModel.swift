@@ -8,8 +8,10 @@
 
 import Foundation
 
+//todo: models should not e in /Networking group anyways
 class MirkoItemModel {
     
+    let id: Int
     let content: String
     let embed: EmbedModel?
     let authorName: String
@@ -21,7 +23,8 @@ class MirkoItemModel {
     let commentCount: Int
     let upvoteCount: Int
     
-    init(content: String, embed: EmbedModel?, authorName: String, authorAvatarUrl: String, authorSexMale: Bool, authorRank: AuthorRank, application: String?, date: Date, under18Restriction: Bool, commentCount: Int, upvoteCount: Int) {
+    init(id: Int, content: String, embed: EmbedModel?, authorName: String, authorAvatarUrl: String, authorSexMale: Bool, authorRank: AuthorRank, application: String?, date: Date, under18Restriction: Bool, commentCount: Int, upvoteCount: Int) {
+        self.id = id
         self.content = content
         self.embed = embed
         self.authorName = authorName

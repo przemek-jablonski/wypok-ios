@@ -72,8 +72,8 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return update(cell:
-            tableView.dequeueReusableCell(withIdentifier: MirkoEntryTableViewCell.REUSE_IDENTIFIER, for: indexPath) as! MirkoEntryTableViewCell,
+        return update(rowId: indexPath.row,
+                      cell: tableView.dequeueReusableCell(withIdentifier: MirkoEntryTableViewCell.REUSE_IDENTIFIER, for: indexPath) as! MirkoEntryTableViewCell,
                       with: entries[indexPath.row]
         )
     }
@@ -81,8 +81,9 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     //todo: here, each time NSAttributedString is calculated (item.content.convertToAttributedString())
     //todo: it should be in the model (as a field) in order to reduce performance impact
     //todo: quite similarly with the images, they are being pulled from the memory (or disk lol) and put in place
-    private func update(cell tableViewCell: MirkoEntryTableViewCell, with item: MirkoItemModel) -> MirkoEntryTableViewCell {
+    private func update(rowId: Int, cell tableViewCell: MirkoEntryTableViewCell, with item: MirkoItemModel) -> MirkoEntryTableViewCell {
         tableViewCell.updateContents(
+            DEBUGTEXTOLOL: String(item.id - 34857000) + " / " + String(rowId),
             authorImageUrl: item.authorAvatarUrl,
             authorName: item.authorName,
             authorDevice: item.application,

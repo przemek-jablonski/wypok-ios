@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import IGListKit
 
 class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewState>, UITableViewDataSource, UITableViewDelegate {
     
@@ -59,11 +60,25 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
         case .HOT_EMPTY_LIST:
             break
         case .HOT_LIST(let entries):
-            self.entries = entries
-            entriesTableView.reloadData()
+//            let rowsToUpdate = calculateRowsToUpdate(between: self.entries, and: entries)
+//            rowsToUpdate.enum
+//            self.entries = entries
+//            if (rowsToUpdate.hasNoChanges()) {
+//                entriesTableView.reloadData()
+//            } else {
+//                entriesTableView.performBatchUpdates({
+//                    entriesTableView.insertRows(at: IndexSet(rowsToUpdate.inserts), with: .automatic)
+//                    entriesTableView.reloadRows(at: IndexSet(rowsToUpdate.updates), with: .automatic)
+//                    entriesTableView.deleteRows(at: IndexSet(rowsToUpdate.deletes), with: .automatic)
+//                }, completion: { finishedSuccesfully in
+//
+//                })
+//            }
             break
         }
     }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return entries.count
@@ -75,6 +90,13 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
                       cell: tableView.dequeueReusableCell(withIdentifier: MirkoEntryTableViewCell.REUSE_IDENTIFIER, for: indexPath) as! MirkoEntryTableViewCell,
                       with: entries[indexPath.row]
         )
+    }
+    
+    private func calculateRowsToUpdate(between oldArray: [MirkoItemModel], and newArray: [MirkoItemModel]) -> ListIndexSetResult {
+        return
+//            ListDiffPaths(fromSection: 0, toSection: 0, oldArray: <#T##[ListDiffable]?#>, newArray: <#T##[ListDiffable]?#>, option: <#T##IGListDiffOption#>)
+            ListDiff(oldArray: oldArray, newArray: newArray, option: .equality)
+            .forBatchUpdates()
     }
     
     //todo: here, each time NSAttributedString is calculated (item.content.convertToAttributedString())
@@ -93,4 +115,14 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
         return tableViewCell
     }
     
+}
+
+extension MirkoItemModel: ListDiffable {
+    func diffIdentifier() -> NSObjectProtocol {
+        return self //todo: as NSObject?
+    }
+    
+    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        return self.isEqual(toDiffableObject:object)
+    }
 }

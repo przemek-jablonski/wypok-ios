@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import IGListKit
 
 typealias CommonSuccessClosure = () -> ()
 typealias CommonFailureClosure = (Error) -> ()
@@ -130,7 +131,12 @@ extension Array {
     func forEach(_ closure: (Element, Int) -> ()) {
         for (index, element) in self.enumerated() {
             closure(element, index)
-//            print("Item \(index): \(element)")
         }
+    }
+}
+
+extension ListIndexSetResult {
+    func hasNoChanges() -> Bool {
+        return self.hasChanges
     }
 }

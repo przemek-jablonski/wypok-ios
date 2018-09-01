@@ -47,13 +47,13 @@ class WypokMirkoPresenter: BasePresenter<WypokMirkoViewState>, MirkoPresenter {
     }
     
     private func onUserApproachingListBottom() {
-        print("onUserApproachingListBottom")
-        userApproachedListBottom = true
-        interactor.getMirkoHots(and: { models in
-            self.onMirkoHotItemsFetched(items: models)
-        }, fetchDidFailed:  { error in
-            
-        })
+//        print("onUserApproachingListBottom")
+//        userApproachedListBottom = true
+//        interactor.getMirkoHots(and: { models in
+//            self.onMirkoHotItemsFetched(items: models)
+//        }, fetchDidFailed:  { error in
+//
+//        })
     }
     
     func onRecentsSelected() {
@@ -69,13 +69,13 @@ class WypokMirkoPresenter: BasePresenter<WypokMirkoViewState>, MirkoPresenter {
     }
     
     private func onMirkoRecentItemsFetched(items: [MirkoItemModel]) {
-        mirkoItems = items
+        mirkoItems.append(contentsOf: items) //todo: validation with ids
         render(.RECENTS_LIST(mirkoItems))
         userApproachedListBottom = false
     }
     
     private func onMirkoHotItemsFetched(items: [MirkoItemModel]) {
-        mirkoItems = items
+        mirkoItems.append(contentsOf: items) //todo: validation with ids
         render(.HOT_LIST(mirkoItems))
         userApproachedListBottom = false
     }

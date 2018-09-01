@@ -9,7 +9,7 @@
 import Foundation
 
 //todo: models should not e in /Networking group anyways
-class MirkoItemModel {
+class MirkoItemModel: NSObject {
     
     let id: Int
     let content: String

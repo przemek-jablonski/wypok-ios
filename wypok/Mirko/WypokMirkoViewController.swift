@@ -50,8 +50,15 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
         case .RECENTS_EMPTY_LIST:
             break
         case .RECENTS_LIST(let entries):
+            let (inserts, updates, deletes, hasChanges) = calculateRowsToUpdate(between: self.entries, and: entries)
             self.entries = entries
-            entriesTableView.reloadData()
+            entriesTableView.performBatchUpdates({
+                entriesTableView.insertRows(at: inserts, with: .automatic)
+                entriesTableView.reloadRows(at: updates, with: .automatic)
+                entriesTableView.deleteRows(at: deletes, with: .automatic)
+            }, completion: { finished in
+                
+            })
             break
         case .HOT_ERROR:
             break
@@ -60,20 +67,16 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
         case .HOT_EMPTY_LIST:
             break
         case .HOT_LIST(let entries):
-//            let rowsToUpdate = calculateRowsToUpdate(between: self.entries, and: entries)
-//            rowsToUpdate.enum
-//            self.entries = entries
-//            if (rowsToUpdate.hasNoChanges()) {
-//                entriesTableView.reloadData()
-//            } else {
-//                entriesTableView.performBatchUpdates({
-//                    entriesTableView.insertRows(at: IndexSet(rowsToUpdate.inserts), with: .automatic)
-//                    entriesTableView.reloadRows(at: IndexSet(rowsToUpdate.updates), with: .automatic)
-//                    entriesTableView.deleteRows(at: IndexSet(rowsToUpdate.deletes), with: .automatic)
-//                }, completion: { finishedSuccesfully in
-//
-//                })
-//            }
+            let (inserts, updates, deletes, hasChanges) = calculateRowsToUpdate(between: self.entries, and: entries)
+            self.entries = entries
+            entriesTableView.performBatchUpdates({
+                print("render.HOT_LIST, inserts: \(inserts), updates: \(updates), deletes: \(deletes)")
+                entriesTableView.insertRows(at: inserts, with: .automatic)
+                entriesTableView.reloadRows(at: updates, with: .automatic)
+                entriesTableView.deleteRows(at: deletes, with: .automatic)
+            }, completion: { finished in
+                
+            })
             break
         }
     }
@@ -92,11 +95,11 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
         )
     }
     
-    private func calculateRowsToUpdate(between oldArray: [MirkoItemModel], and newArray: [MirkoItemModel]) -> ListIndexSetResult {
-        return
-//            ListDiffPaths(fromSection: 0, toSection: 0, oldArray: <#T##[ListDiffable]?#>, newArray: <#T##[ListDiffable]?#>, option: <#T##IGListDiffOption#>)
-            ListDiff(oldArray: oldArray, newArray: newArray, option: .equality)
-            .forBatchUpdates()
+    private func calculateRowsToUpdate(between oldArray: [MirkoItemModel], and newArray: [MirkoItemModel]) -> (inserts: [IndexPath], updates: [IndexPath], deletes: [IndexPath], hasChanges: Bool) {
+        let result =
+            ListDiffPaths(fromSection: 0, toSection: 0, oldArray: oldArray, newArray: newArray, option: .equality)
+                .forBatchUpdates()
+        return (result.inserts, result.updates, result.deletes, result.hasChanges)
     }
     
     //todo: here, each time NSAttributedString is calculated (item.content.convertToAttributedString())

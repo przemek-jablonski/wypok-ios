@@ -19,12 +19,12 @@ class WypokService : WypokBaseService, FrontPageService, MirkoService {
         performServiceCall(for: "/links/promoted", callDidSucceed: successClosure, callDidFailed: failureClosure)
     }
     
-    func getMirkoRecents(and successClosure: @escaping MirkoService.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure) {
-        performServiceCall(for: "/stream/index", callDidSucceed: successClosure, callDidFailed: failureClosure)
+    func getMirkoHots(for page: Int, and period: Int, and successClosure: @escaping MirkoService.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure) {
+        performServiceCall(for: "/stream/hot/page/\(page)/period/\(period)", callDidSucceed: successClosure, callDidFailed: failureClosure)
     }
     
-    func getMirkoHots(and successClosure: @escaping MirkoService.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure) {
-        performServiceCall(for: "/stream/hot", callDidSucceed: successClosure, callDidFailed: failureClosure)
+    func getMirkoRecents(for page: Int, and successClosure: @escaping MirkoService.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure) {
+        performServiceCall(for: "/stream/index/page/\(page)", callDidSucceed: successClosure, callDidFailed: failureClosure)
     }
     
 }

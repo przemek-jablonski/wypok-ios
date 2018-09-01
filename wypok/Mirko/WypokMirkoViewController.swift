@@ -38,8 +38,6 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     
     private func setupEntriesTableView(tableView: UITableView, cellType: WypokTableViewCell.Type) {
         entriesTableView.register(with: cellType.registerData)
-//        entriesTableView.rowHeight = UITableViewAutomaticDimension
-//        entriesTableView.estimatedRowHeight = UIScreen.main.bounds.size.height
     }
     
     override func render(_ viewState: WypokMirkoViewState) {
@@ -72,6 +70,7 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        presenter?.onMirkoItemShownOnScreen(row: indexPath.row) //todo: ShownOnScreen -> Rendered
         return update(rowId: indexPath.row,
                       cell: tableView.dequeueReusableCell(withIdentifier: MirkoEntryTableViewCell.REUSE_IDENTIFIER, for: indexPath) as! MirkoEntryTableViewCell,
                       with: entries[indexPath.row]

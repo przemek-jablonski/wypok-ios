@@ -10,8 +10,11 @@ import Foundation
 
 class WypokMirkoPresenter: BasePresenter<WypokMirkoViewState>, MirkoPresenter {
     
+    private static let USER_APPROACHING_LIST_BOTTOM_ITEM_THRESHOLD = 7
+    
     private let interactor: MirkoInteractor
     private var mirkoItems: [MirkoItemModel] = [MirkoItemModel]()
+    private var userApproachedListBottom = false
     
     init(_ interactor: MirkoInteractor) {
         self.interactor = interactor
@@ -23,57 +26,58 @@ class WypokMirkoPresenter: BasePresenter<WypokMirkoViewState>, MirkoPresenter {
     }
     
     override func onAttached(view: View) {
-//        print("WypokFrontPagePresenter, onAttached: \(view)")
     }
     
     override func onDetached(view: View) {
-//        print("WypokFrontPagePresenter, onDetached: \(view)")
     }
     
     func onHotSelected() {
-//        print("onHotSelected")
         interactor.getMirkoHots(and: { models in
             self.onMirkoHotItemsFetched(items: models)
         }, fetchDidFailed:  { error in
             
         })
-//        interactor.getMirkoHots(and: <#MirkoInteractor.ItemsFetchedClosure#>) { models in
-//            self.onMirkoHotItemsFetched(items: models)
-//        }
+    }
+    
+    func onMirkoItemShownOnScreen(row: Int) {
+        print("onMirkoItemShownOnScreen: \(row)")
+        if (row >= mirkoItems.count - WypokMirkoPresenter.USER_APPROACHING_LIST_BOTTOM_ITEM_THRESHOLD && !userApproachedListBottom) {
+            onUserApproachingListBottom()
+        }
+    }
+    
+    private func onUserApproachingListBottom() {
+        print("onUserApproachingListBottom")
+        userApproachedListBottom = true
+        interactor.getMirkoHots(and: { models in
+            self.onMirkoHotItemsFetched(items: models)
+        }, fetchDidFailed:  { error in
+            
+        })
     }
     
     func onRecentsSelected() {
-//        print("onRecentsSelected")
-//        interactor.getMirkoRecents { models in
-//            self.onMirkoRecentItemsFetched(items: models)
-//        }
     }
     
     func onMirkoItemClicked(row: Int) {
-//        print("onMirkoItemClicked: \(row)")
-        
     }
     
     func onMirkoItemForceTouched(row: Int) {
-//        print("onMirkoItemForceTouched: \(row)")
-        
     }
     
     func onMirkoItemActionCalled(row: Int, action: MirkoItemAction) {
-//        print("onMirkoItemActionCalled: \(row), action: \(action)")
-        
     }
     
     private func onMirkoRecentItemsFetched(items: [MirkoItemModel]) {
-//        print("onMirkoRecentItemsFetched: \(items)")
         mirkoItems = items
-        view?.render(WypokMirkoViewState.RECENTS_LIST(mirkoItems))
+        render(.RECENTS_LIST(mirkoItems))
+        userApproachedListBottom = false
     }
     
     private func onMirkoHotItemsFetched(items: [MirkoItemModel]) {
-//        print("onMirkoHotItemsFetched: \(items)")
         mirkoItems = items
-        view?.render(WypokMirkoViewState.HOT_LIST(mirkoItems))
+        render(.HOT_LIST(mirkoItems))
+        userApproachedListBottom = false
     }
     
     

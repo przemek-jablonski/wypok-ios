@@ -15,6 +15,7 @@ class WypokMirkoInteractor: MirkoInteractor {
     //todo: maybe service should be part of some baseInteractor? this will be everywhere anywa. The same for the repository (probably?)
     private let service: MirkoService
     private let prefetchingService: PrefetchingService
+    private var currentPage = 1
     
     //todo: why two initializers?
     init(service: MirkoService, prefetchingService: PrefetchingService) {
@@ -30,24 +31,24 @@ class WypokMirkoInteractor: MirkoInteractor {
     }
     
     func getMirkoHots(and successClosure: @escaping MirkoInteractor.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure) {
-        service.getMirkoHots(and: { dtos in
-            let models = dtos.map({ (dto) -> MirkoItemModel in
-                return self.map(dto)
-            })
-            let previewImageUrls = models
-                .filter({ (model) -> Bool in
-                    return model.embed != nil
-                }).map({ (model) -> String in
-                    return model.embed!.previewImageUrl
+        print("getMirkoHots, currentPage: \(currentPage)")
+        service.getMirkoHots(
+            for: currentPage,
+            and: 6,
+            and: { dtos in
+                let models = dtos.map({ (dto) -> MirkoItemModel in return self.map(dto) })
+                let previewImageUrls = models
+                    .filter({ (model) -> Bool in return model.embed != nil })
+                    .map({ (model) -> String in return model.embed!.previewImageUrl })
+                self.prefetchingService.prefetch(
+                    from: previewImageUrls,
+                    and: {
+                        self.currentPage += 1
+                        successClosure(models)
+                }, prefetchDidFailed: { error in
+                    failureClosure(error)
                 })
-            self.prefetchingService.prefetch(
-                from: previewImageUrls,
-                and: {
-                    successClosure(models)
-            }, prefetchDidFailed: { error in
-                
-            })
-        }, fetchDidFailed: { error in
+        }, fetchDidFailed:  { error in
             failureClosure(error)
         })
     }

@@ -15,5 +15,6 @@ protocol MirkoPresenter: Presenter {
     func onMirkoItemClicked(row: Int)
     func onMirkoItemForceTouched(row: Int)
     func onMirkoItemActionCalled(row: Int, action: MirkoItemAction)
+    func onMirkoItemShownOnScreen(row: Int)
     
 }

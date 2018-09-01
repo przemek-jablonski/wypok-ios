@@ -11,6 +11,7 @@ import Foundation
 class BasePresenter<VS: ViewState>: Presenter {
     
     internal var view: View? = nil
+    internal var viewState: VS? = nil
     
     final func attach(_ view: View) {
 //        print("BasePresenter, attach: \(view)")
@@ -30,6 +31,15 @@ class BasePresenter<VS: ViewState>: Presenter {
     
     func onDetached(view: View) {
         fatalError()
+    }
+    
+    func render() {
+        assert(viewState != nil, "ERROLOLOLOLOLO")
+        render(viewState!)
+    }
+    
+    func render(_ viewState: VS) {
+        view?.render(viewState)
     }
     
 }

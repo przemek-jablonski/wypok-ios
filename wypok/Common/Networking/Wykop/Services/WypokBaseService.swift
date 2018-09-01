@@ -24,39 +24,37 @@ class WypokBaseService {
     }()
     
     func performServiceCall<T: RemoteEntity>(for urlSuffix: String, callDidSucceed successClosure: @escaping GenericItemsFetchedClosure<T>, callDidFailed failureClosure: @escaping CommonFailureClosure){
-        performServiceCall(for: urlSuffix){ data in
+        performServiceCall(for: urlSuffix) { data in
             do {
-                successClosure(try self.parseServiceCallResponseToJsonArray(from: data).map({json in T(fromJson: json)}))
+                successClosure(try data.parseServiceCallResponseToJsonArray().map({json in T(fromJson: json)}))
             } catch {
-                //todo: service maintenance (aktualizacja serwisu) case is not handled really (it will break here since it will respond with XML code, not JSON)
-                failureClosure(error)
+                
+                failureClosure(error) //todo: service maintenance (aktualizacja serwisu) case is not handled really (it will break here since it will respond with XML code, not JSON)
             }
         }
     }
     
     private func performServiceCall(for urlSuffix: String, callDidSucceed successClosure: @escaping DataResponseFetchedClosure){
-        constructServiceCall(for: urlSuffix).responseJSON { dataResponse in successClosure(dataResponse)}
-    }
-    
-    private func constructServiceCall(for urlSuffix: String) -> DataRequest {
-        return constructServiceCall(for: urlSuffix, with: apiKeysProvider.getApiKey())
+        constructServiceCall(for: urlSuffix, with: apiKeysProvider.getApiKey()).responseJSON { dataResponse in successClosure(dataResponse)}
     }
     
     private func constructServiceCall(for urlSuffix: String, with apiKey: String) -> DataRequest {
         let requestUrl = WypokBaseService.WYKOP_API_BASE_URL + urlSuffix + WypokBaseService.WYKOP_API_PARAMETERS_SUFFIX_KEY + apiKey
         let requestMd5Hash = apiKeysProvider.getMd5Hash(from: requestUrl)
-//        print("📡 constructServiceCall, requestUrl: \(requestUrl)")
+        print("serviceCall: \(requestUrl)")
         return Alamofire
             .request(requestUrl, headers: [WypokBaseService.WYKOP_API_REQUEST_HEADER_MD5HASH_KEY : requestMd5Hash])
             .validate()
     }
     
-    private func parseServiceCallResponseToJson(from dataResponse: DataResponse<Any>) throws -> JSON {
-        return try JSON(data: dataResponse.data!)
+}
+
+fileprivate extension DataResponse where Value == Any {
+    func parseServiceCallResponseToJson() throws -> JSON {
+        return try JSON(data: self.data!)
     }
     
-    private func parseServiceCallResponseToJsonArray(from dataResponse: DataResponse<Any>) throws -> [JSON] {
-        return try JSON(data: dataResponse.data!).array!
+    func parseServiceCallResponseToJsonArray() throws -> [JSON] {
+        return try JSON(data: self.data!).array!
     }
-    
 }

@@ -122,10 +122,23 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
 
 extension MirkoItemModel: ListDiffable {
     func diffIdentifier() -> NSObjectProtocol {
-        return self //todo: as NSObject?
+        return self
     }
     
     func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
-        return self.isEqual(toDiffableObject:object)
+        if (self === object) {
+            return true
+        }
+        if (!(object is MirkoItemModel)) {
+            return false
+        }
+        let compared = object as! MirkoItemModel
+        if (self.id == compared.id) {
+            return true
+        }
+        return self.upvoteCount == compared.upvoteCount &&
+            self.commentCount == compared.commentCount &&
+            self.date == self.date &&
+            self.content == self.content
     }
 }

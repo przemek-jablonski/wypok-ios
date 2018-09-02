@@ -67,21 +67,22 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
         case .HOT_EMPTY_LIST:
             break
         case .HOT_LIST(let entries):
-            let (inserts, updates, deletes, hasChanges) = calculateRowsToUpdate(between: self.entries, and: entries)
-            self.entries = entries
-            entriesTableView.performBatchUpdates({
-                print("render.HOT_LIST, inserts: \(inserts), updates: \(updates), deletes: \(deletes)")
-                entriesTableView.insertRows(at: inserts, with: .automatic)
-                entriesTableView.reloadRows(at: updates, with: .automatic)
-                entriesTableView.deleteRows(at: deletes, with: .automatic)
-            }, completion: { finished in
-                
-            })
+            reloadTableData(with: entries)
             break
         }
     }
     
-    
+    private func reloadTableData(with newEntries: [MirkoItemModel]) {
+        let (inserts, updates, deletes, hasChanges) = calculateRowsToUpdate(between: self.entries, and: newEntries)
+        self.entries = newEntries
+        entriesTableView.performBatchUpdates({
+            entriesTableView.insertRows(at: inserts, with: .automatic)
+            entriesTableView.reloadRows(at: updates, with: .automatic)
+            entriesTableView.deleteRows(at: deletes, with: .automatic)
+        }, completion: { finished in
+            
+        })
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return entries.count
@@ -96,9 +97,12 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     }
     
     private func calculateRowsToUpdate(between oldArray: [MirkoItemModel], and newArray: [MirkoItemModel]) -> (inserts: [IndexPath], updates: [IndexPath], deletes: [IndexPath], hasChanges: Bool) {
-        let result =
-            ListDiffPaths(fromSection: 0, toSection: 0, oldArray: oldArray, newArray: newArray, option: .equality)
-                .forBatchUpdates()
+        let result = ListDiffPaths(
+            fromSection: 0,
+            toSection: 0,
+            oldArray: oldArray,
+            newArray: newArray,
+            option: .equality).forBatchUpdates()
         return (result.inserts, result.updates, result.deletes, result.hasChanges)
     }
     

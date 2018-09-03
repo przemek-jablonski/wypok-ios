@@ -223,11 +223,27 @@
                         <outlet property="entriesTableView" destination="b5A-AK-O7t" id="ms2-v7-uav"/>
                         <outlet property="listTypeControl" destination="70s-ft-lUW" id="Ig5-NZ-htz"/>
                         <outlet property="upButton" destination="x02-Zr-BUj" id="hGZ-Ku-yVM"/>
+                        <segue destination="Hs1-C0-gpr" kind="show" identifier="MirkoEntryDetailSegue" id="0vC-4e-PiP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAv-o6-JpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1144.8" y="1350.7389162561576"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="I6Y-cF-D9L">
+            <objects>
+                <viewController id="Hs1-C0-gpr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HOQ-Ra-8nh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fTa-Jg-M83"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tpZ-u6-oaq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2065" y="1352"/>
         </scene>
     </scenes>
     <resources>

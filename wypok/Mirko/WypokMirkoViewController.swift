@@ -37,6 +37,13 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //todo: this should be in presenter really
+        //todo: magic string
+        performSegue(withIdentifier: "MirkoEntryDetailSegue", sender: self)
+        tableView.cellForRow(at: indexPath)?.isSelected = false
+    }
+    
     private func setupEntriesTableView(tableView: UITableView, cellType: WypokTableViewCell.Type) {
         entriesTableView.register(with: cellType.registerData)
     }

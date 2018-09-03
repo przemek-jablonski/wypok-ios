@@ -344,6 +344,7 @@
 			children = (
 				416D79D82105414F00683119 /* Common */,
 				41C37FDE2106766C00150BFE /* Mirko */,
+				41760DBC213CA6900093A4DC /* MirkoEntryDetail */,
 				41C37FDD210674FE00150BFE /* Bests */,
 				41C37FDC210674F200150BFE /* Digsite */,
 				416D79D72105413C00683119 /* Frontpage */,
@@ -405,6 +406,13 @@
 				41D14F162124F383004578D4 /* WypokGlobalInjectionContainer.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		41760DBC213CA6900093A4DC /* MirkoEntryDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MirkoEntryDetail;
 			sourceTree = "<group>";
 		};
 		41B3B0B4211F87120023EC45 /* Misc */ = {

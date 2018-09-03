@@ -121,6 +121,7 @@ class WypokFrontPageViewController: BaseView<WypokFrontPagePresenter, WypokFront
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.onFrontPageItemClicked(row: indexPath.row)
+        //todo: this is baad
         performSegue(withIdentifier: "FrontPageDetailsSegue", sender: self)
     }
     

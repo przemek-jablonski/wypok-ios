@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+@IBDesignable
 class MirkoEntryTableViewCell: WypokTableViewCell {
     
     override class var XIB_FILENAME: String { return "MirkoEntryTableViewCell" }

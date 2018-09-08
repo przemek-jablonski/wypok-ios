@@ -20,7 +20,7 @@ class WypokFrontPageViewController: BaseView<WypokFrontPagePresenter, WypokFront
     private var articles = [FrontPageItemModel]()
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(presenterType: WypokFrontPagePresenter.self, coder: aDecoder)
+        super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {

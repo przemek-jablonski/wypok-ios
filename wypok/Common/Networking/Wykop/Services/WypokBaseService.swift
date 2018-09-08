@@ -12,6 +12,7 @@ import SwiftyJSON
 
 class WypokBaseService {
     
+    typealias GenericSingleItemFetchedClosure <T: RemoteEntity> = (T) -> ()
     typealias GenericItemsFetchedClosure <T: RemoteEntity> = ([T]) -> ()
     typealias DataResponseFetchedClosure = (DataResponse<Any>) -> ()
     
@@ -28,7 +29,16 @@ class WypokBaseService {
             do {
                 successClosure(try data.parseServiceCallResponseToJsonArray().map({json in T(fromJson: json)}))
             } catch {
-                
+                failureClosure(error) //todo: service maintenance (aktualizacja serwisu) case is not handled really (it will break here since it will respond with XML code, not JSON)
+            }
+        }
+    }
+    
+    func performServiceCall<T: RemoteEntity>(for urlSuffix: String, callDidSucceed successClosure: @escaping GenericSingleItemFetchedClosure<T>, callDidFailed failureClosure: @escaping CommonFailureClosure){
+        performServiceCall(for: urlSuffix) { data in
+            do {
+                successClosure(try T(fromJson: data.parseServiceCallResponseToJson()))
+            } catch {
                 failureClosure(error) //todo: service maintenance (aktualizacja serwisu) case is not handled really (it will break here since it will respond with XML code, not JSON)
             }
         }

@@ -26,6 +26,7 @@ class WypokMirkoPresenter: BasePresenter<WypokMirkoViewState>, MirkoPresenter {
     }
     
     override func onAttached(view: View) {
+        //todo: here presenter should ask view on which segmented control user is in (or set it from cache)
     }
     
     override func onDetached(view: View) {

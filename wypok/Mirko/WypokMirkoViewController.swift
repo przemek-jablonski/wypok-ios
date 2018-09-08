@@ -19,7 +19,7 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     @IBOutlet weak var upButton: UIButton!
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(presenterType: WypokMirkoPresenter.self, coder: aDecoder)
+        super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {

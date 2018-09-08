@@ -6,8 +6,6 @@
 //  Copyright © 2018 Przemyslaw Jablonski. All rights reserved.
 //
 
-import Foundation
-
 protocol MirkoPresenter: Presenter {
     
     func onHotSelected()

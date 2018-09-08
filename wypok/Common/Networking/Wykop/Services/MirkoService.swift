@@ -8,7 +8,10 @@
 
 protocol MirkoService {
     
+    typealias ItemFetchedClosure = (MirkoItemDto) -> ()
     typealias ItemsFetchedClosure = ([MirkoItemDto]) -> ()
+    
+    func getEntryDetails(for id: Int, and successClosure: @escaping ItemFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure)
     
     func getMirkoRecents(for page: Int, and successClosure: @escaping ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure)
     

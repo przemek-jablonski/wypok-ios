@@ -10,7 +10,11 @@ import Foundation
 
 class WypokMirkoDetailsPresenter: BasePresenter<WypokMirkoDetailsViewState>, MirkoDetailsPresenter {
     
+    private let interactor: MirkoDetailsInteractor
     
+    init(interactor: MirkoDetailsInteractor) {
+        self.interactor = interactor
+    }
     
     override func onAttached(view: View) {
         

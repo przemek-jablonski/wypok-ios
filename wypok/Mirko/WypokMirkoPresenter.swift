@@ -21,10 +21,6 @@ class WypokMirkoPresenter: BasePresenter<WypokMirkoViewState>, MirkoPresenter {
         super.init()
     }
     
-    convenience override init() {
-        self.init(WypokGlobalInjectionContainer.get(MirkoInteractor.self))
-    }
-    
     override func onAttached(view: View) {
         //todo: here presenter should ask view on which segmented control user is in (or set it from cache)
     }

@@ -24,7 +24,7 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        entriesTableView.register(with: cellType.registerData)
+        entriesTableView.register(with: MirkoEntryTableViewCell.self.registerData)
         onListTypeChanged(listTypeControl)
     }
     
@@ -53,15 +53,7 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
         case .RECENTS_EMPTY_LIST:
             break
         case .RECENTS_LIST(let entries):
-            let (inserts, updates, deletes, hasChanges) = calculateRowsToUpdate(between: self.entries, and: entries)
-            self.entries = entries
-            entriesTableView.performBatchUpdates({
-                entriesTableView.insertRows(at: inserts, with: .automatic)
-                entriesTableView.reloadRows(at: updates, with: .automatic)
-                entriesTableView.deleteRows(at: deletes, with: .automatic)
-            }, completion: { finished in
-                
-            })
+            reloadTableData(with: entries)
             break
         case .HOT_ERROR:
             break

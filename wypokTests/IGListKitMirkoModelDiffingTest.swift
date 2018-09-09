@@ -68,9 +68,6 @@ class IGListKitMirkoModelDiffingTest: XCTestCase {
         XCTAssertTrue(result.deletes.count == max(updatedList!.count, uniqueList!.count))
     }
     
-    
-    
-    
     private func generateEmptyList() -> [MirkoItemModel] {
         return [MirkoItemModel]()
     }
@@ -98,6 +95,6 @@ class IGListKitMirkoModelDiffingTest: XCTestCase {
     
     private func generateRandomMirkoItemModel() -> MirkoItemModel {
         topmostModelId += 1
-        return MirkoItemModel(id: topmostModelId, content: NSUUID().uuidString, embed: nil, authorName: NSUUID().uuidString, authorAvatarUrl: NSUUID().uuidString, authorSexMale: arc4random_uniform(2) == 0, authorRank: AuthorRank.ADMIN, application: NSUUID().uuidString, date: Date(), under18Restriction: arc4random_uniform(2) == 0, commentCount: Int(arc4random()), upvoteCount: Int(arc4random()))
+        return MirkoItemModel(id: topmostModelId, content: NSUUID().uuidString, embed: nil, authorName: NSUUID().uuidString, authorAvatarUrl: NSUUID().uuidString, authorSexMale: arc4random_uniform(2) == 0, authorRank: AuthorRankModel.ADMIN, application: NSUUID().uuidString, date: Date(), under18Restriction: arc4random_uniform(2) == 0, commentCount: Int(arc4random()), upvoteCount: Int(arc4random()))
     }
 }

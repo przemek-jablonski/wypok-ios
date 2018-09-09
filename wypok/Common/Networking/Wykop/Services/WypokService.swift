@@ -27,7 +27,7 @@ class WypokService : WypokBaseService, FrontPageService, MirkoService {
         performServiceCall(for: "/stream/index/page/\(page)", callDidSucceed: successClosure, callDidFailed: failureClosure)
     }
     
-    func getEntryDetails(for id: Int, and successClosure: @escaping MirkoService.ItemFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure) {
+    func getMirkoItemWithComments(for id: Int, and successClosure: @escaping MirkoService.ItemFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure) {
         performServiceCall(for: "/entries/index/\(id)", callDidSucceed: successClosure, callDidFailed: failureClosure)
     }
     

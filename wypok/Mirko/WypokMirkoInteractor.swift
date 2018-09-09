@@ -31,7 +31,6 @@ class WypokMirkoInteractor: MirkoInteractor {
     }
     
     func getMirkoHots(and successClosure: @escaping MirkoInteractor.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure) {
-        print("getMirkoHots, currentPage: \(currentPage)")
         service.getMirkoHots(
             for: currentPage,
             and: 6,

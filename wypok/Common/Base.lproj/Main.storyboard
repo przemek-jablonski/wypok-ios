@@ -230,10 +230,10 @@
             </objects>
             <point key="canvasLocation" x="1144.8" y="1350.7389162561576"/>
         </scene>
-        <!--View Controller-->
+        <!--Wypok Mirko Details View Controller-->
         <scene sceneID="I6Y-cF-D9L">
             <objects>
-                <viewController id="Hs1-C0-gpr" sceneMemberID="viewController">
+                <viewController id="Hs1-C0-gpr" customClass="WypokMirkoDetailsViewController" customModule="wypok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HOQ-Ra-8nh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,6 +253,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fTa-Jg-M83"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="3bE-SU-3yJ" id="9IM-VY-oHH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tpZ-u6-oaq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

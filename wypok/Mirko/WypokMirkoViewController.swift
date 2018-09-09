@@ -24,7 +24,7 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupEntriesTableView(tableView: entriesTableView, cellType: MirkoEntryTableViewCell.self)
+        entriesTableView.register(with: cellType.registerData)
         onListTypeChanged(listTypeControl)
     }
     
@@ -42,10 +42,6 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
         //todo: magic string
         performSegue(withIdentifier: "MirkoEntryDetailSegue", sender: self)
         tableView.cellForRow(at: indexPath)?.isSelected = false
-    }
-    
-    private func setupEntriesTableView(tableView: UITableView, cellType: WypokTableViewCell.Type) {
-        entriesTableView.register(with: cellType.registerData)
     }
     
     override func render(_ viewState: WypokMirkoViewState) {

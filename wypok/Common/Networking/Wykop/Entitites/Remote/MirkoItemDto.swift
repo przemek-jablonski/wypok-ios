@@ -52,7 +52,7 @@ class MirkoItemDto : NSObject, NSCoding, RemoteEntity {
             embedModel = nil
         }
         
-        return MirkoItemModel(id: id, content: body, embed: embedModel, authorName: author, authorAvatarUrl: authorAvatarBig, authorSexMale: authorSex == "male", authorRank: AuthorRank.map(from: authorGroup), application: app, date: Date(), under18Restriction: embed?.plus18 ?? false, commentCount: commentCount, upvoteCount: voteCount)
+        return MirkoItemModel(id: id, content: body, embed: embedModel, authorName: author, authorAvatarUrl: authorAvatarBig, authorSexMale: authorSex == "male", authorRank: AuthorRankModel.map(from: authorGroup), application: app, date: Date(), under18Restriction: embed?.plus18 ?? false, commentCount: commentCount, upvoteCount: voteCount)
     }
     
     private func getEmbedTypeModel(_ embedType: MirkoEmbedType) -> EmbedTypeModel {

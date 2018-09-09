@@ -17,13 +17,13 @@ class MirkoItemModel: NSObject {
     let authorName: String
     let authorAvatarUrl: String
     let authorSexMale: Bool
-    let authorRank: AuthorRank
+    let authorRank: AuthorRankModel
     let application: String?
     let date: Date
     let commentCount: Int
     let upvoteCount: Int
     
-    init(id: Int, content: String, embed: EmbedModel?, authorName: String, authorAvatarUrl: String, authorSexMale: Bool, authorRank: AuthorRank, application: String?, date: Date, under18Restriction: Bool, commentCount: Int, upvoteCount: Int) {
+    init(id: Int, content: String, embed: EmbedModel?, authorName: String, authorAvatarUrl: String, authorSexMale: Bool, authorRank: AuthorRankModel, application: String?, date: Date, under18Restriction: Bool, commentCount: Int, upvoteCount: Int) {
         self.id = id
         self.content = content
         self.embed = embed

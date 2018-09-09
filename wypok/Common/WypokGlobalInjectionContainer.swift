@@ -60,6 +60,7 @@ class WypokGlobalInjectionContainer {
     private static func registerPresenters(_ container: inout Container) {
         container.register(WypokFrontPagePresenter.self) { r in WypokFrontPagePresenter(r.resolve(FrontPageInteractor.self)!)}.singleton()
         container.register(WypokMirkoPresenter.self) { r in WypokMirkoPresenter(r.resolve(MirkoInteractor.self)!)}.singleton()
+        container.register(WypokMirkoDetailsPresenter.self) { r in WypokMirkoDetailsPresenter() }.singleton()
     }
     
     static func get <T :Any>(_ classType: T.Type) -> T {

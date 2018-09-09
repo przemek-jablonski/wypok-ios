@@ -33,7 +33,6 @@
 		412BA9FA212987650024D4A9 /* WypokMirkoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BA9F9212987650024D4A9 /* WypokMirkoRepository.swift */; };
 		412BAA0521298B540024D4A9 /* MirkoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BAA0321298B540024D4A9 /* MirkoEntity+CoreDataClass.swift */; };
 		412BAA0621298B540024D4A9 /* MirkoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BAA0421298B540024D4A9 /* MirkoEntity+CoreDataProperties.swift */; };
-		412BAA0821298D090024D4A9 /* CommonCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BAA0721298D090024D4A9 /* CommonCoreDataRepository.swift */; };
 		412BAA0C212A13490024D4A9 /* MirkoEntityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BAA0B212A13490024D4A9 /* MirkoEntityRepository.swift */; };
 		412BB7B0213B020A001138AD /* IGListKitMirkoModelDiffingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BB7AF213B020A001138AD /* IGListKitMirkoModelDiffingTest.swift */; };
 		4133EED7213475DB00A5ED68 /* PrefetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4133EED6213475DB00A5ED68 /* PrefetchingService.swift */; };
@@ -137,7 +136,6 @@
 		412BA9F9212987650024D4A9 /* WypokMirkoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokMirkoRepository.swift; sourceTree = "<group>"; };
 		412BAA0321298B540024D4A9 /* MirkoEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MirkoEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		412BAA0421298B540024D4A9 /* MirkoEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MirkoEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		412BAA0721298D090024D4A9 /* CommonCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCoreDataRepository.swift; sourceTree = "<group>"; };
 		412BAA0B212A13490024D4A9 /* MirkoEntityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoEntityRepository.swift; sourceTree = "<group>"; };
 		412BB7AF213B020A001138AD /* IGListKitMirkoModelDiffingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGListKitMirkoModelDiffingTest.swift; sourceTree = "<group>"; };
 		4133EED6213475DB00A5ED68 /* PrefetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefetchingService.swift; sourceTree = "<group>"; };
@@ -541,7 +539,6 @@
 			isa = PBXGroup;
 			children = (
 				41D14F062124CC99004578D4 /* Models */,
-				412BAA0721298D090024D4A9 /* CommonCoreDataRepository.swift */,
 				412BAA0B212A13490024D4A9 /* MirkoEntityRepository.swift */,
 			);
 			path = CoreData;
@@ -899,7 +896,6 @@
 				41363F1A210A6F1400C6AB42 /* View.swift in Sources */,
 				416D79AF210534D400683119 /* wypok.xcdatamodeld in Sources */,
 				415C78D72106984700453AFC /* WypokFrontPagePresenter.swift in Sources */,
-				412BAA0821298D090024D4A9 /* CommonCoreDataRepository.swift in Sources */,
 				41D14F172124F383004578D4 /* WypokGlobalInjectionContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

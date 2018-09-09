@@ -17,14 +17,9 @@ class WypokMirkoInteractor: MirkoInteractor {
     private let prefetchingService: PrefetchingService
     private var currentPage = 1
     
-    //todo: why two initializers?
     init(service: MirkoService, prefetchingService: PrefetchingService) {
         self.service = service
         self.prefetchingService = prefetchingService
-    }
-    
-    convenience init() {
-        self.init(service: WypokGlobalInjectionContainer.get(MirkoService.self), prefetchingService: WypokGlobalInjectionContainer.get(PrefetchingService.self))
     }
     
     func getMirkoRecents(and successClosure: @escaping MirkoInteractor.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure) {

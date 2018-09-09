@@ -17,7 +17,6 @@ class PrefetchingService {
     }
     
     func prefetch(from imagesUrls: [String], and successClosure: @escaping CommonSuccessClosure, prefetchDidFailed failureClosure: @escaping CommonFailureClosure) {
-//        let imagePrefetcher = SDWebImagePrefetcher.shared()
         prefetchingManager.prefetchURLs(
             imagesUrls.map { imageUrl -> URL in URL(string: imageUrl)! },
             progress: nil,

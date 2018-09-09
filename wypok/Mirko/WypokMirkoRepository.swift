@@ -18,11 +18,6 @@ class WypokMirkoRepository {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let container = appDelegate.persistentContainer
         let context = container.viewContext
-//        let repo = CommonCoreDataRepository<MirkoItemModel, MirkoEntity>()
-//        repo.put(MirkoItemModel(authorName: "asdas", authorAvatarUrl: "asdas", authorSexMale: true, authorRank: AuthorRank.ADMIN, application: "asdasd", date: Date(), under18Restriction: false, userStarred: true, commentCount: 2, upvoteCount: 2, content: "asdas")) { model, databaseModel in
-//            databaseModel.application = "asdasdasdasd"
-//        }
-        
         let entityDescription = NSEntityDescription.entity(forEntityName: "MirkoEntity", in: context)!
         let entity = MirkoEntity(entity: entityDescription, insertInto: context)
         entity.application = "Asdasdasd"
@@ -31,8 +26,6 @@ class WypokMirkoRepository {
         } catch {
             //...
         }
-        
-        
     }
     
     

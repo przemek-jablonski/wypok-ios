@@ -18,11 +18,6 @@ class BaseView<P: Presenter, VS: ViewState>: UIViewController, View {
         self.presenter = WypokGlobalInjectionContainer.get(P.self)
     }
     
-//    init?(presenterType: P.Type?, coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        self.presenter = WypokGlobalInjectionContainer.get(P.self)
-//    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         presenter?.attach(self)

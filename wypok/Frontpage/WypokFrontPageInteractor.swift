@@ -17,10 +17,6 @@ class WypokFrontPageInteractor: FrontPageInteractor {
         self.service = service
     }
     
-    convenience init() {
-        self.init(WypokGlobalInjectionContainer.get(FrontPageService.self))
-    }
-    
     func getFrontPageItems(and action: @escaping FrontPageInteractor.ItemsFetchedClosure) {
         
         service.getLinksPromoted(and: { dtos in

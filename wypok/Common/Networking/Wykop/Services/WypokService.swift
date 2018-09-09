@@ -11,10 +11,6 @@ import SDWebImage
 
 class WypokService : WypokBaseService, FrontPageService, MirkoService {
     
-    override init () {
-        super.init()
-    }
-    
     func getLinksPromoted(and successClosure: @escaping FrontPageService.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure) {
         performServiceCall(for: "/links/promoted", callDidSucceed: successClosure, callDidFailed: failureClosure)
     }

@@ -47,9 +47,6 @@ class FrontPageItemDto : NSObject, NSCoding, RemoteEntity {
     var info : AnyObject!
     var app : AnyObject!
     
-    func mapToLocal() -> FrontPageItemModel {
-        return T(id: id, title: title.removeHtmlEntities(), description: descriptionField.removeHtmlEntities(), itemUrl: url, itemSourceUrl: sourceUrl, previewImageUrl: preview, upvoteCount: voteCount, commentCount: commentCount, reportsCount: reportCount)
-    }
     
     /**
      * Instantiate the instance using the passed json values to set the properties values

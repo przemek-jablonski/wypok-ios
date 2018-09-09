@@ -6,10 +6,8 @@
 import Foundation
 import SwiftyJSON
 
-
+//todo: regenerate that dto 6with quicktype.io
 class MirkoItemDto : NSObject, NSCoding, RemoteEntity {
-    typealias T = MirkoItemModel
-    
     
     var id : Int!
     var author : String!
@@ -42,30 +40,7 @@ class MirkoItemDto : NSObject, NSCoding, RemoteEntity {
     var canComment : Bool?
     var app : String?
     var commentCount : Int!
-    
-    func mapToLocal() -> MirkoItemModel {
-        let embedModel: EmbedModel?
-        //todo: why UNDEFINED and NIL-storing object is not null?
-        if (embed != nil && embed!.type != MirkoEmbedType.UNDEFINED) {
-            embedModel = EmbedModel(contentType: getEmbedTypeModel(embed!.type), previewImageUrl: embed!.preview, contentUrl: embed!.url, under18RestrictedFlag: embed!.plus18)
-        } else {
-            embedModel = nil
-        }
         
-        return MirkoItemModel(id: id, content: body, embed: embedModel, authorName: author, authorAvatarUrl: authorAvatarBig, authorSexMale: authorSex == "male", authorRank: AuthorRankModel.map(from: authorGroup), application: app, date: Date(), under18Restriction: embed?.plus18 ?? false, commentCount: commentCount, upvoteCount: voteCount)
-    }
-    
-    private func getEmbedTypeModel(_ embedType: MirkoEmbedType) -> EmbedTypeModel {
-        switch(embedType) {
-        case .IMAGE:
-            return EmbedTypeModel.IMAGE
-        case .VIDEO:
-            return EmbedTypeModel.VIDEO
-        case .UNDEFINED:
-            return EmbedTypeModel.UNDEFINED
-        }
-    }
-    
     /**
      * Instantiate the instance using the passed json values to set the properties values
      */

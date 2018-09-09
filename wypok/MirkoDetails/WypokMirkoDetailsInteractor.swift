@@ -18,9 +18,9 @@ class WypokMirkoDetailsInteractor: MirkoDetailsInteractor {
     
     func getMirkoItemWithComments(fetchDidSucceed successClosure: @escaping MirkoDetailsInteractor.ItemFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure) {
         service.getMirkoItemWithComments(for: 123123, and: { dto in
-            
+//            successClosure(dto)
         }, fetchDidFailed: { error in
-            
+            failureClosure(error)
         })
     }
     

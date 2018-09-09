@@ -44,6 +44,7 @@
 		415C78D72106984700453AFC /* WypokFrontPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415C78D62106984700453AFC /* WypokFrontPagePresenter.swift */; };
 		416BE3F7214580190063F009 /* MirkoDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BE3F6214580190063F009 /* MirkoDetailsInteractor.swift */; };
 		416BE3F9214580C20063F009 /* WypokMirkoDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BE3F8214580C20063F009 /* WypokMirkoDetailsInteractor.swift */; };
+		416BE3FD21459BE10063F009 /* RemoteToLocalMappings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BE3FC21459BE10063F009 /* RemoteToLocalMappings.swift */; };
 		416D79A7210534D400683119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D79A6210534D400683119 /* AppDelegate.swift */; };
 		416D79A9210534D400683119 /* WypokFrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D79A8210534D400683119 /* WypokFrontPageViewController.swift */; };
 		416D79AC210534D400683119 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 416D79AA210534D400683119 /* Main.storyboard */; };
@@ -147,6 +148,7 @@
 		415C78D62106984700453AFC /* WypokFrontPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokFrontPagePresenter.swift; sourceTree = "<group>"; };
 		416BE3F6214580190063F009 /* MirkoDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoDetailsInteractor.swift; sourceTree = "<group>"; };
 		416BE3F8214580C20063F009 /* WypokMirkoDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokMirkoDetailsInteractor.swift; sourceTree = "<group>"; };
+		416BE3FC21459BE10063F009 /* RemoteToLocalMappings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteToLocalMappings.swift; sourceTree = "<group>"; };
 		416D79A3210534D400683119 /* wypok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wypok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		416D79A6210534D400683119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		416D79A8210534D400683119 /* WypokFrontPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokFrontPageViewController.swift; sourceTree = "<group>"; };
@@ -246,22 +248,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4101E2FA21126B0A0030C49B /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				4101E2FC21126B180030C49B /* Local */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		4101E2FC21126B180030C49B /* Local */ = {
-			isa = PBXGroup;
-			children = (
-				4101E2FF21126C150030C49B /* FrontPageItemModel.swift */,
-			);
-			path = Local;
-			sourceTree = "<group>";
-		};
 		4101E3032113C0970030C49B /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +293,7 @@
 		412BAA0E212CC3530024D4A9 /* Entitites */ = {
 			isa = PBXGroup;
 			children = (
+				416BE3FC21459BE10063F009 /* RemoteToLocalMappings.swift */,
 				4101E3082113D3460030C49B /* RemoteEntity.swift */,
 				412BAA0F212CC35B0024D4A9 /* Remote */,
 				41B90E0521335C9B00627F41 /* Local */,
@@ -407,7 +394,6 @@
 			children = (
 				41B3B0B4211F87120023EC45 /* Misc */,
 				41BAE7FC2115C75700BCD5C2 /* Views */,
-				4101E2FA21126B0A0030C49B /* Entities */,
 				416D79A8210534D400683119 /* WypokFrontPageViewController.swift */,
 				415C78D62106984700453AFC /* WypokFrontPagePresenter.swift */,
 				4101E30A2113D6ED0030C49B /* WypokFrontPageInteractor.swift */,
@@ -474,6 +460,7 @@
 		41B90E0521335C9B00627F41 /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				4101E2FF21126C150030C49B /* FrontPageItemModel.swift */,
 				41B3B0BA211F87CD0023EC45 /* MirkoItemModel.swift */,
 				41B3B0D5211FAE2D0023EC45 /* AuthorRankModel.swift */,
 				41B90E0621335CD700627F41 /* EmbedModel.swift */,
@@ -869,6 +856,7 @@
 				416D79A9210534D400683119 /* WypokFrontPageViewController.swift in Sources */,
 				4101E2FE21126BE90030C49B /* FrontPageItemDto.swift in Sources */,
 				41FA4058211A49B600EEA5FF /* FrontPageAction.swift in Sources */,
+				416BE3FD21459BE10063F009 /* RemoteToLocalMappings.swift in Sources */,
 				4101E3052113C2170030C49B /* WypokApiKeysProvider.swift in Sources */,
 				41B3B0BF211F8E1F0023EC45 /* MirkoItemAction.swift in Sources */,
 				41B3B0BB211F87CD0023EC45 /* MirkoItemModel.swift in Sources */,

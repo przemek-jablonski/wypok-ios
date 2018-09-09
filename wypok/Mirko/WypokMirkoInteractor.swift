@@ -30,7 +30,7 @@ class WypokMirkoInteractor: MirkoInteractor {
             for: currentPage,
             and: 6,
             and: { dtos in
-                let models = dtos.map({ (dto) -> MirkoItemModel in return self.map(dto) })
+                let models = dtos.flatMap({ dto in dto.map() })
                 let previewImageUrls = models
                     .filter({ (model) -> Bool in return model.embed != nil })
                     .map({ (model) -> String in return model.embed!.previewImageUrl })
@@ -60,14 +60,7 @@ class WypokMirkoInteractor: MirkoInteractor {
         entity.upvoteCount = Int32(dto.voteCount)
     }
     
-    private func map(_ entity: MirkoEntity, to model: inout MirkoItemModel) {
-        
-    }
-    
-    //todo: to be deleted when repository will be in place
-    private func map(_ dto: MirkoItemDto) -> MirkoItemModel {
-        return dto.mapToLocal()
-    }
-    
-    
+//    private func map(_ entity: MirkoEntity, to model: inout MirkoItemModel) {
+//
+//    }
 }

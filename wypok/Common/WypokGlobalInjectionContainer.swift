@@ -46,9 +46,9 @@ class WypokGlobalInjectionContainer {
         container.register(NSManagedObjectContext.self) { r in
             get(AppDelegate.self).persistentContainer.viewContext
             }.singleton()
-        container.register(MirkoEntityRepository.self) { r in
-            MirkoEntityRepository<MirkoEntity, MirkoItemDto>(viewContext: get(NSManagedObjectContext.self), coreDataEntityName: "MirkoEntity")
-            }.singleton()
+//        container.register(MirkoEntityRepository.self) { r in
+//            MirkoEntityRepository<MirkoEntity, MirkoItemDto>(viewContext: get(NSManagedObjectContext.self), coreDataEntityName: "MirkoEntity")
+//            }.singleton()
     }
     
     private static func registerServices(_ container: inout Container) {

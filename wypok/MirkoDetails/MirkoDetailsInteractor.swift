@@ -8,7 +8,7 @@
 
 protocol MirkoDetailsInteractor {
     
-    typealias ItemFetchedClosure = ([MirkoItemModel]) -> ()
+    typealias ItemFetchedClosure = (MirkoItemModel) -> ()
     
     func getMirkoItemWithComments(fetchDidSucceed successClosure: @escaping ItemFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure)
     

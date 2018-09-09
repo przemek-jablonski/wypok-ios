@@ -42,14 +42,4 @@ class FrontPageItemModel: NSObject {
         return self.id
     }
     
-//    override func isEqual(_ object: Any?) -> Bool {
-//        return super.isEqual(object)
-////        if (object == nil) {
-////            return false
-////        }
-////        if (self.isKind(of: type(of: object))) {
-////
-////        }
-//    }
-    
 }

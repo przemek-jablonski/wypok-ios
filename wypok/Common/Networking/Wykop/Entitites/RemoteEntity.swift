@@ -9,11 +9,7 @@
 import SwiftyJSON
 
 protocol RemoteEntity {
-    
-    associatedtype T
-    
+
     init(fromJson json: JSON)
-    
-    func mapToLocal() -> T
-    
+
 }

@@ -67,7 +67,7 @@
 		41B3B0CE211F9D580023EC45 /* MirkoItemDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B0CD211F9D580023EC45 /* MirkoItemDto.swift */; };
 		41B3B0D0211F9D7A0023EC45 /* MirkoCommentDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B0CF211F9D7A0023EC45 /* MirkoCommentDto.swift */; };
 		41B3B0D2211F9E590023EC45 /* MirkoAuthorDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B0D1211F9E590023EC45 /* MirkoAuthorDto.swift */; };
-		41B3B0D4211F9FEA0023EC45 /* MirkoEmbedDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B0D3211F9FEA0023EC45 /* MirkoEmbedDto.swift */; };
+		41B3B0D4211F9FEA0023EC45 /* EmbedDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B0D3211F9FEA0023EC45 /* EmbedDto.swift */; };
 		41B3B0D6211FAE2D0023EC45 /* AuthorRankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B0D5211FAE2D0023EC45 /* AuthorRankModel.swift */; };
 		41B3B0D9212037CE0023EC45 /* MirkoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B0D8212037CE0023EC45 /* MirkoService.swift */; };
 		41B3B0DB212043FF0023EC45 /* WypokTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B0DA212043FF0023EC45 /* WypokTableViewCell.swift */; };
@@ -80,7 +80,6 @@
 		41C37FE421067CA600150BFE /* WypokBestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C37FE321067CA600150BFE /* WypokBestsViewController.swift */; };
 		41C37FE621067CBF00150BFE /* WypokBestsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C37FE521067CBF00150BFE /* WypokBestsViewState.swift */; };
 		41C37FE821067FB200150BFE /* WypokMirkoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C37FE721067FB200150BFE /* WypokMirkoViewController.swift */; };
-		41CABD48212085C400F94441 /* MirkoEmbedType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CABD47212085C300F94441 /* MirkoEmbedType.swift */; };
 		41D14F172124F383004578D4 /* WypokGlobalInjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D14F162124F383004578D4 /* WypokGlobalInjectionContainer.swift */; };
 		41D8C43E21447EAA00BBEF43 /* MirkoCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D8C43D21447EAA00BBEF43 /* MirkoCommentModel.swift */; };
 		41D8C4402144812300BBEF43 /* AuthorSexModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D8C43F2144812300BBEF43 /* AuthorSexModel.swift */; };
@@ -176,7 +175,7 @@
 		41B3B0CD211F9D580023EC45 /* MirkoItemDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoItemDto.swift; sourceTree = "<group>"; };
 		41B3B0CF211F9D7A0023EC45 /* MirkoCommentDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoCommentDto.swift; sourceTree = "<group>"; };
 		41B3B0D1211F9E590023EC45 /* MirkoAuthorDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoAuthorDto.swift; sourceTree = "<group>"; };
-		41B3B0D3211F9FEA0023EC45 /* MirkoEmbedDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoEmbedDto.swift; sourceTree = "<group>"; };
+		41B3B0D3211F9FEA0023EC45 /* EmbedDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedDto.swift; sourceTree = "<group>"; };
 		41B3B0D5211FAE2D0023EC45 /* AuthorRankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorRankModel.swift; sourceTree = "<group>"; };
 		41B3B0D8212037CE0023EC45 /* MirkoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoService.swift; sourceTree = "<group>"; };
 		41B3B0DA212043FF0023EC45 /* WypokTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokTableViewCell.swift; sourceTree = "<group>"; };
@@ -189,7 +188,6 @@
 		41C37FE321067CA600150BFE /* WypokBestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokBestsViewController.swift; sourceTree = "<group>"; };
 		41C37FE521067CBF00150BFE /* WypokBestsViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokBestsViewState.swift; sourceTree = "<group>"; };
 		41C37FE721067FB200150BFE /* WypokMirkoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokMirkoViewController.swift; sourceTree = "<group>"; };
-		41CABD47212085C300F94441 /* MirkoEmbedType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoEmbedType.swift; sourceTree = "<group>"; };
 		41D14F162124F383004578D4 /* WypokGlobalInjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokGlobalInjectionContainer.swift; sourceTree = "<group>"; };
 		41D8C43D21447EAA00BBEF43 /* MirkoCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoCommentModel.swift; sourceTree = "<group>"; };
 		41D8C43F2144812300BBEF43 /* AuthorSexModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorSexModel.swift; sourceTree = "<group>"; };
@@ -308,8 +306,7 @@
 				41B3B0CD211F9D580023EC45 /* MirkoItemDto.swift */,
 				41B3B0CF211F9D7A0023EC45 /* MirkoCommentDto.swift */,
 				41B3B0D1211F9E590023EC45 /* MirkoAuthorDto.swift */,
-				41B3B0D3211F9FEA0023EC45 /* MirkoEmbedDto.swift */,
-				41CABD47212085C300F94441 /* MirkoEmbedType.swift */,
+				41B3B0D3211F9FEA0023EC45 /* EmbedDto.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -434,7 +431,6 @@
 			children = (
 				41B3B0B6211F87570023EC45 /* WypokMirkoViewState.swift */,
 				41B3B0BE211F8E1F0023EC45 /* MirkoItemAction.swift */,
-				4121E83721435B070017CC91 /* WypokMirkoDetailsViewState.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -564,6 +560,7 @@
 		41D8C43C21447CB400BBEF43 /* MirkoDetails */ = {
 			isa = PBXGroup;
 			children = (
+				4121E83721435B070017CC91 /* WypokMirkoDetailsViewState.swift */,
 				4121E83121434D0B0017CC91 /* WypokMirkoDetailsViewController.swift */,
 				4121E8332143566A0017CC91 /* MirkoDetailsPresenter.swift */,
 				4121E83521435AD70017CC91 /* WypokMirkoDetailsPresenter.swift */,
@@ -844,12 +841,11 @@
 				41B3B0C3211F934F0023EC45 /* WypokMirkoInteractor.swift in Sources */,
 				412BAA0C212A13490024D4A9 /* MirkoEntityRepository.swift in Sources */,
 				411FEBCE2116F83400A150BE /* EdgeInsetLabel.swift in Sources */,
-				41CABD48212085C400F94441 /* MirkoEmbedType.swift in Sources */,
 				411FEBD3211754F500A150BE /* FrontPageArticleTableViewCell.swift in Sources */,
 				41B3B0DB212043FF0023EC45 /* WypokTableViewCell.swift in Sources */,
 				41B3B0C5211F93670023EC45 /* MirkoInteractor.swift in Sources */,
 				41B3B0C1211F8F320023EC45 /* WypokMirkoPresenter.swift in Sources */,
-				41B3B0D4211F9FEA0023EC45 /* MirkoEmbedDto.swift in Sources */,
+				41B3B0D4211F9FEA0023EC45 /* EmbedDto.swift in Sources */,
 				4101E31321151A2C0030C49B /* WypokService.swift in Sources */,
 				41363F18210A6EE000C6AB42 /* Presenter.swift in Sources */,
 				412BAA0521298B540024D4A9 /* MirkoEntity+CoreDataClass.swift in Sources */,

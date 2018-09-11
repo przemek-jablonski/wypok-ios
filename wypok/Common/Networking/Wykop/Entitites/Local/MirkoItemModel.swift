@@ -22,8 +22,9 @@ class MirkoItemModel: NSObject {
     let date: Date
     let commentCount: Int
     let upvoteCount: Int
+    let comments: [MirkoCommentModel]?
     
-    init(id: Int, content: String, embed: EmbedModel?, authorName: String, authorAvatarUrl: String, authorSexMale: Bool, authorRank: AuthorRankModel, application: String?, date: Date, under18Restriction: Bool, commentCount: Int, upvoteCount: Int) {
+    init(id: Int, content: String, embed: EmbedModel?, authorName: String, authorAvatarUrl: String, authorSexMale: Bool, authorRank: AuthorRankModel, application: String?, date: Date, under18Restriction: Bool, commentCount: Int, upvoteCount: Int, comments: [MirkoCommentModel]?) {
         self.id = id
         self.content = content
         self.embed = embed
@@ -35,5 +36,6 @@ class MirkoItemModel: NSObject {
         self.date = date
         self.commentCount = commentCount
         self.upvoteCount = upvoteCount
+        self.comments = comments
     }
 }

@@ -7,7 +7,7 @@
 //
 
 enum EmbedTypeModel {
-    case IMAGE
-    case VIDEO
-    case UNDEFINED
+    case image
+    case video
+    case undefined
 }

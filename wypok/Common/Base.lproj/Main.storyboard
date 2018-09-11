@@ -65,7 +65,7 @@
         <!--Navigation Controller-->
         <scene sceneID="pt9-If-ZNw">
             <objects>
-                <navigationController hidesBarsOnSwipe="YES" id="yyy-vd-ols" sceneMemberID="viewController">
+                <navigationController id="yyy-vd-ols" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZJT-Zb-31z">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -242,6 +242,10 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Hs1-C0-gpr" id="958-YX-gO7"/>
+                                    <outlet property="delegate" destination="Hs1-C0-gpr" id="bGc-rI-lFK"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

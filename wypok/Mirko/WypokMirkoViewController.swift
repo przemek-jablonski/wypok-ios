@@ -13,10 +13,11 @@ import IGListKit
 class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewState>, UITableViewDataSource, UITableViewDelegate {
     
     private var entries = [MirkoItemModel]()
-    
     @IBOutlet weak var listTypeControl: UISegmentedControl!
     @IBOutlet weak var entriesTableView: UITableView!
     @IBOutlet weak var upButton: UIButton!
+    
+    private var selectedEntryId: Int?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -40,8 +41,16 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //todo: this should be in presenter really
         //todo: magic string
-        performSegue(withIdentifier: "MirkoEntryDetailSegue", sender: self)
+        selectedEntryId = entries[indexPath.row].id
         tableView.cellForRow(at: indexPath)?.isSelected = false
+        performSegue(withIdentifier: "MirkoEntryDetailSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailsViewController = segue.destination as? WypokMirkoDetailsViewController, let entryId = selectedEntryId {
+            detailsViewController.receivedSelectedEntryId(entryId)
+        }
+        super.prepare(for: segue, sender: sender)
     }
     
     override func render(_ viewState: WypokMirkoViewState) {
@@ -86,9 +95,8 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         presenter?.onMirkoItemShownOnScreen(row: indexPath.row) //todo: ShownOnScreen -> Rendered
         return update(rowId: indexPath.row,
-                      cell: tableView.dequeueReusableCell(withIdentifier: MirkoEntryTableViewCell.REUSE_IDENTIFIER, for: indexPath) as! MirkoEntryTableViewCell,
-                      with: entries[indexPath.row]
-        )
+                      with: tableView.dequeueReusableCell(withIdentifier: MirkoEntryTableViewCell.REUSE_IDENTIFIER, for: indexPath) as! MirkoEntryTableViewCell,
+                      and: entries[indexPath.row])
     }
     
     private func calculateRowsToUpdate(between oldArray: [MirkoItemModel], and newArray: [MirkoItemModel]) -> (inserts: [IndexPath], updates: [IndexPath], deletes: [IndexPath], hasChanges: Bool) {
@@ -104,8 +112,9 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
     //todo: here, each time NSAttributedString is calculated (item.content.convertToAttributedString())
     //todo: it should be in the model (as a field) in order to reduce performance impact
     //todo: quite similarly with the images, they are being pulled from the memory (or disk lol) and put in place
-    private func update(rowId: Int, cell tableViewCell: MirkoEntryTableViewCell, with item: MirkoItemModel) -> MirkoEntryTableViewCell {
-        tableViewCell.updateContents(
+    //todo: convertToAttributedString is prolly used multiple times in single flow
+    private func update(rowId: Int, with cell: MirkoEntryTableViewCell, and item: MirkoItemModel) -> MirkoEntryTableViewCell {
+        cell.updateContents(
             DEBUGTEXTOLOL: String(item.id - 34857000) + " / " + String(rowId),
             authorImageUrl: item.authorAvatarUrl,
             authorName: item.authorName,
@@ -114,7 +123,7 @@ class WypokMirkoViewController: BaseView<WypokMirkoPresenter, WypokMirkoViewStat
             entryEmbedImageUrl: item.embed?.previewImageUrl,
             entryUpvotesCount: item.upvoteCount,
             entryCommentsCount: item.commentCount)
-        return tableViewCell
+        return cell
     }
     
 }

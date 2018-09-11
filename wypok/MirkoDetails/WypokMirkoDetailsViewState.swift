@@ -8,8 +8,8 @@
 
 enum WypokMirkoDetailsViewState: ViewState {
     
-    case ERROR
-    case LOADING
-    case CONTENT(model: [MirkoItemModel])
+    case error(Error?)
+    case loading
+    case content(MirkoItemModel)
     
 }

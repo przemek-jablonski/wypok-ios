@@ -17,6 +17,7 @@ class MirkoCommentModel {
     let parentEntryId: Int
     let upvoteCount: Int
     let embed: EmbedModel?
+    //todo: list of users who upvoted this comment
     
     init(id: Int, author: UserModel, date: Date, body: String, parentEntryId: Int, upvoteCount: Int, embed: EmbedModel?) {
         self.id = id

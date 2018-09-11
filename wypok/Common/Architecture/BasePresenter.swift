@@ -10,17 +10,15 @@ import Foundation
 
 class BasePresenter<VS: ViewState>: Presenter {
     
-    internal var view: View? = nil
-    internal var viewState: VS? = nil
+    internal var view: View?
+    internal var viewState: VS?
     
     final func attach(_ view: View) {
-//        print("BasePresenter, attach: \(view)")
         self.view = view
         onAttached(view: view)
     }
     
     final func detach(_ view: View) {
-//        print("BasePresenter, detach: \(view)")
         self.view = nil
         onDetached(view: view)
     }

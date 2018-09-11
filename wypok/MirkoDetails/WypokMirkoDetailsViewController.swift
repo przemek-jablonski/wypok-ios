@@ -16,7 +16,7 @@ class WypokMirkoDetailsViewController: BaseView<WypokMirkoDetailsPresenter, Wypo
     
     @IBOutlet weak var tableView: UITableView!
     
-    
+    //todo: why init like this is required?
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -27,12 +27,52 @@ class WypokMirkoDetailsViewController: BaseView<WypokMirkoDetailsPresenter, Wypo
         tableView.register(with: MirkoCommentViewTableViewCell.self.registerData)
     }
     
+    override func render(_ viewState: WypokMirkoDetailsViewState) {
+        switch viewState {
+        case .content(let entry):
+            reloadTableData(with: entry)
+            break
+        case .error(let error):
+            break
+        case .loading:
+            break
+        }
+    }
+    
+    func receivedSelectedEntryId(_ id: Int) {
+        presenter?.onSelectedEntryIdReceived(id)
+    }
+    
+    private func reloadTableData(with entry: MirkoItemModel) {
+        self.entry = entry
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        if (entry == nil) {
+            return 0
+        } else {
+            return 1 // + entry.commentcount
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "asdasd")!
+        return update(rowId: indexPath.row,
+                      with: tableView.dequeueReusableCell(withIdentifier: MirkoEntryTableViewCell.REUSE_IDENTIFIER, for: indexPath) as! MirkoEntryTableViewCell,
+                      and: entry!)
+    }
+    
+    private func update(rowId: Int, with cell: MirkoEntryTableViewCell, and item: MirkoItemModel) -> MirkoEntryTableViewCell {
+        cell.updateContents(
+            DEBUGTEXTOLOL: "asd",
+            authorImageUrl: item.authorAvatarUrl,
+            authorName: item.authorName,
+            authorDevice: item.application,
+            entryContent: item.content.convertToAttributedString().setFontFace(font: UIFont.systemFont(ofSize: 13)),
+            entryEmbedImageUrl: item.embed?.previewImageUrl,
+            entryUpvotesCount: item.upvoteCount,
+            entryCommentsCount: item.commentCount)
+        return cell
     }
     
 }

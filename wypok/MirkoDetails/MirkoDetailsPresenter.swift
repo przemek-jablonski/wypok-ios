@@ -8,4 +8,6 @@
 
 protocol MirkoDetailsPresenter: Presenter {
     
+    func onSelectedEntryIdReceived(_ id: Int)
+    
 }

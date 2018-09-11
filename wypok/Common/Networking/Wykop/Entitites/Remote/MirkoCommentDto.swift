@@ -26,7 +26,7 @@ class MirkoCommentDto : NSObject, NSCoding{
     var voteCount : Int!
     var userVote : Int!
     var voters : [MirkoAuthorDto]!
-    var embed : MirkoEmbedDto!
+    var embed : EmbedDto?
     var type : String!
     var app : String?
     
@@ -57,7 +57,7 @@ class MirkoCommentDto : NSObject, NSCoding{
         for voterJson in json["voters"].arrayValue {
             voters.append(MirkoAuthorDto(fromJson: voterJson))
         }
-        embed = MirkoEmbedDto(fromJson: json["embed"])
+        embed = EmbedDto(fromJson: json["embed"])
         type = json["type"].stringValue
         app = json["app"].string
     }
@@ -154,7 +154,7 @@ class MirkoCommentDto : NSObject, NSCoding{
         voteCount = aDecoder.decodeObject(forKey: "vote_count") as? Int
         userVote = aDecoder.decodeObject(forKey: "user_vote") as? Int
         voters = aDecoder.decodeObject(forKey: "voters") as? [MirkoAuthorDto]
-        embed = aDecoder.decodeObject(forKey: "embed") as? MirkoEmbedDto
+        embed = aDecoder.decodeObject(forKey: "embed") as? EmbedDto
         type = aDecoder.decodeObject(forKey: "type") as? String
         app = aDecoder.decodeObject(forKey: "app") as? String
     }

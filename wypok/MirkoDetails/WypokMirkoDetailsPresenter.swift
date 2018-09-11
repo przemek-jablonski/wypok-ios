@@ -24,4 +24,14 @@ class WypokMirkoDetailsPresenter: BasePresenter<WypokMirkoDetailsViewState>, Mir
         
     }
     
+    func onSelectedEntryIdReceived(_ id: Int) {
+        interactor.getMirkoItemDetails(
+            for: id,
+            fetchDidSucceed: { model in
+                self.view?.render(WypokMirkoDetailsViewState.content(model))
+        }, fetchDidFailed: { error in
+            self.view?.render(WypokMirkoDetailsViewState.error(error))
+        })
+    }
+    
 }

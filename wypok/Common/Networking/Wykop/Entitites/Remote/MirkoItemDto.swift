@@ -34,7 +34,7 @@ class MirkoItemDto : NSObject, NSCoding, RemoteEntity {
     var userFavorite : Bool!
     var voters : [MirkoAuthorDto]!
     var type : String!
-    var embed : MirkoEmbedDto?
+    var embed : EmbedDto?
     var deleted : Bool!
     var violationUrl : String?
     var canComment : Bool?
@@ -79,7 +79,7 @@ class MirkoItemDto : NSObject, NSCoding, RemoteEntity {
             voters.append(MirkoAuthorDto(fromJson: voterJson))
         }
         type = json["type"].stringValue
-        embed = MirkoEmbedDto(fromJson: json["embed"])
+        embed = EmbedDto(fromJson: json["embed"])
         deleted = json["deleted"].boolValue
         violationUrl = json["violation_url"].string
         canComment = json["can_comment"].bool
@@ -224,7 +224,7 @@ class MirkoItemDto : NSObject, NSCoding, RemoteEntity {
         userFavorite = aDecoder.decodeObject(forKey: "user_favorite") as? Bool
         voters = aDecoder.decodeObject(forKey: "voters") as? [MirkoAuthorDto]
         type = aDecoder.decodeObject(forKey: "type") as? String
-        embed = (aDecoder.decodeObject(forKey: "embed") as? MirkoEmbedDto)!
+        embed = (aDecoder.decodeObject(forKey: "embed") as? EmbedDto)!
         deleted = aDecoder.decodeObject(forKey: "deleted") as? Bool
         violationUrl = aDecoder.decodeObject(forKey: "violation_url") as? String
         canComment = aDecoder.decodeObject(forKey: "can_comment") as? Bool

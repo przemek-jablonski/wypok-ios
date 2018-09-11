@@ -10,6 +10,6 @@ protocol MirkoDetailsInteractor {
     
     typealias ItemFetchedClosure = (MirkoItemModel) -> ()
     
-    func getMirkoItemWithComments(fetchDidSucceed successClosure: @escaping ItemFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure)
+    func getMirkoItemDetails(for itemId: Int, fetchDidSucceed successClosure: @escaping ItemFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure)
     
 }

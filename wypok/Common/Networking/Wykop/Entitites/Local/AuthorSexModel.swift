@@ -7,15 +7,6 @@
 //
 
 enum AuthorSexModel {
-    
-    static func map(from sexString: String) -> AuthorSexModel {
-        switch sexString {
-        case "male": return .male
-        case "female": return .female
-        default: return .undefined
-        }
-    }
-    
     case male
     case female
     case undefined

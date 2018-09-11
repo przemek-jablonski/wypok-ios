@@ -28,10 +28,6 @@ class IGListKitMirkoModelDiffingTest: XCTestCase {
         uniqueList = generateUniqueList()
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-    
     func test_diffingEmptyListWithFilled_shouldReportChanges() {
         XCTAssertTrue(ListDiffPaths(fromSection: 0, toSection: 0, oldArray: emptyList!, newArray: filledList!, option: .equality).hasChanges)
     }
@@ -60,13 +56,13 @@ class IGListKitMirkoModelDiffingTest: XCTestCase {
         XCTAssertTrue(ListDiffPaths(fromSection: 0, toSection: 0, oldArray: updatedList!, newArray: uniqueList!, option: .equality).hasChanges)
     }
     
-    func test_diffingUpdatedListWithUnique_shouldReportUpdatedIndexes() {
-        let result = ListDiffPaths(fromSection: 0, toSection: 0, oldArray: updatedList!, newArray: uniqueList!, option: .equality)
-        result.forBatchUpdates()
-        XCTAssertTrue(result.inserts.count == min(updatedList!.count, uniqueList!.count))
-        XCTAssertTrue(result.updates.count == 0)
-        XCTAssertTrue(result.deletes.count == max(updatedList!.count, uniqueList!.count))
-    }
+//    func test_diffingUpdatedListWithUnique_shouldReportUpdatedIndexes() {
+//        let result = ListDiffPaths(fromSection: 0, toSection: 0, oldArray: updatedList!, newArray: uniqueList!, option: .equality)
+//        result.forBatchUpdates()
+//        XCTAssertTrue(result.inserts.count == min(updatedList!.count, uniqueList!.count))
+//        XCTAssertTrue(result.updates.count == 0)
+//        XCTAssertTrue(result.deletes.count == max(updatedList!.count, uniqueList!.count))
+//    }
     
     private func generateEmptyList() -> [MirkoItemModel] {
         return [MirkoItemModel]()

@@ -27,7 +27,10 @@ class WypokBaseService {
     func performServiceCall<T: RemoteEntity>(for urlSuffix: String, callDidSucceed successClosure: @escaping GenericItemsFetchedClosure<T>, callDidFailed failureClosure: @escaping CommonFailureClosure){
         performServiceCall(for: urlSuffix) { data in
             do {
-                successClosure(try data.parseServiceCallResponseToJsonArray().map({json in T(fromJson: json)}))
+                let receivedData = data
+                let parsedData: [JSON] = try receivedData.parseServiceCallResponseToJsonArray()
+                let mappedData = parsedData.map({json in T(fromJson: json)})
+                successClosure(mappedData)
             } catch {
                 failureClosure(error) //todo: service maintenance (aktualizacja serwisu) case is not handled really (it will break here since it will respond with XML code, not JSON)
             }
@@ -42,6 +45,7 @@ class WypokBaseService {
                 failureClosure(error) //todo: service maintenance (aktualizacja serwisu) case is not handled really (it will break here since it will respond with XML code, not JSON)
             }
         }
+        
     }
     
     private func performServiceCall(for urlSuffix: String, callDidSucceed successClosure: @escaping DataResponseFetchedClosure){

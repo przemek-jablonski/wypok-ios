@@ -53,6 +53,7 @@
 		416D79B4210534DD00683119 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 416D79B2210534DD00683119 /* LaunchScreen.storyboard */; };
 		416D79BF210534DE00683119 /* wypokTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D79BE210534DE00683119 /* wypokTests.swift */; };
 		416D79CA210534DE00683119 /* wypokUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D79C9210534DE00683119 /* wypokUITests.swift */; };
+		416D7CB9214877A7009252D9 /* WypokServiceJSONMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D7CB8214877A7009252D9 /* WypokServiceJSONMappingTests.swift */; };
 		418063EE210FC28E00B5455C /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 418063ED210FC28E00B5455C /* ApiKeys.plist */; };
 		418063F221112C9A00B5455C /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418063F121112C9A00B5455C /* ViewState.swift */; };
 		41B3B0B7211F87570023EC45 /* WypokMirkoViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B0B6211F87570023EC45 /* WypokMirkoViewState.swift */; };
@@ -89,6 +90,10 @@
 		41EA0202210543690091E9F9 /* WypokFrontPageViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EA0201210543690091E9F9 /* WypokFrontPageViewState.swift */; };
 		41F4879A213DE4070091D385 /* UserDetailsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F48799213DE4070091D385 /* UserDetailsRowView.swift */; };
 		41F4879C213DE4150091D385 /* UserDetailsRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F4879B213DE4150091D385 /* UserDetailsRowView.xib */; };
+		41F8230421487DFD00ECFADF /* mirko_hots_6h_fixture_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 41F8230221487DFD00ECFADF /* mirko_hots_6h_fixture_1.json */; };
+		41F8230521487DFD00ECFADF /* mirko_hots_6h_fixture_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 41F8230321487DFD00ECFADF /* mirko_hots_6h_fixture_2.json */; };
+		41F823092148892A00ECFADF /* frontpage_promoted_fixture_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 41F823082148892A00ECFADF /* frontpage_promoted_fixture_1.json */; };
+		41F8230B21488B3F00ECFADF /* WykopServiceJSONMappingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8230A21488B3F00ECFADF /* WykopServiceJSONMappingTest.swift */; };
 		41FA4058211A49B600EEA5FF /* FrontPageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FA4057211A49B500EEA5FF /* FrontPageAction.swift */; };
 		570BA3CF5591460F01AC9800 /* Pods_wypokUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F833BEB7C2A096254638DEB /* Pods_wypokUITests.framework */; };
 /* End PBXBuildFile section */
@@ -161,6 +166,7 @@
 		416D79C5210534DE00683119 /* wypokUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wypokUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		416D79C9210534DE00683119 /* wypokUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wypokUITests.swift; sourceTree = "<group>"; };
 		416D79CB210534DE00683119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		416D7CB8214877A7009252D9 /* WypokServiceJSONMappingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokServiceJSONMappingTests.swift; sourceTree = "<group>"; };
 		418063ED210FC28E00B5455C /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		418063F121112C9A00B5455C /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		41B3B0B6211F87570023EC45 /* WypokMirkoViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokMirkoViewState.swift; sourceTree = "<group>"; };
@@ -197,6 +203,10 @@
 		41EA0201210543690091E9F9 /* WypokFrontPageViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokFrontPageViewState.swift; sourceTree = "<group>"; };
 		41F48799213DE4070091D385 /* UserDetailsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsRowView.swift; sourceTree = "<group>"; };
 		41F4879B213DE4150091D385 /* UserDetailsRowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsRowView.xib; sourceTree = "<group>"; };
+		41F8230221487DFD00ECFADF /* mirko_hots_6h_fixture_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mirko_hots_6h_fixture_1.json; sourceTree = "<group>"; };
+		41F8230321487DFD00ECFADF /* mirko_hots_6h_fixture_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mirko_hots_6h_fixture_2.json; sourceTree = "<group>"; };
+		41F823082148892A00ECFADF /* frontpage_promoted_fixture_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = frontpage_promoted_fixture_1.json; sourceTree = "<group>"; };
+		41F8230A21488B3F00ECFADF /* WykopServiceJSONMappingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WykopServiceJSONMappingTest.swift; sourceTree = "<group>"; };
 		41FA4057211A49B500EEA5FF /* FrontPageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageAction.swift; sourceTree = "<group>"; };
 		55B58248F696786B40BF5389 /* Pods-wypokTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypokTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wypokTests/Pods-wypokTests.release.xcconfig"; sourceTree = "<group>"; };
 		70570478837AE9B36CABE0BB /* Pods-wypok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wypok.release.xcconfig"; path = "Pods/Target Support Files/Pods-wypok/Pods-wypok.release.xcconfig"; sourceTree = "<group>"; };
@@ -369,10 +379,12 @@
 		416D79BD210534DE00683119 /* wypokTests */ = {
 			isa = PBXGroup;
 			children = (
+				416D7CBA21487880009252D9 /* Common */,
 				4133EED82135346500A5ED68 /* WypokExtensionsTests.swift */,
 				416D79BE210534DE00683119 /* wypokTests.swift */,
 				416D79C0210534DE00683119 /* Info.plist */,
 				412BB7AF213B020A001138AD /* IGListKitMirkoModelDiffingTest.swift */,
+				416D7CB8214877A7009252D9 /* WypokServiceJSONMappingTests.swift */,
 			);
 			path = wypokTests;
 			sourceTree = "<group>";
@@ -415,6 +427,49 @@
 				41D14F162124F383004578D4 /* WypokGlobalInjectionContainer.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		416D7CBA21487880009252D9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				416D7CBB21487885009252D9 /* Networking */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		416D7CBB21487885009252D9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				416D7CBD21487C26009252D9 /* Fixtures */,
+				416D7CBC2148788B009252D9 /* Wykop */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		416D7CBC2148788B009252D9 /* Wykop */ = {
+			isa = PBXGroup;
+			children = (
+				41F8230A21488B3F00ECFADF /* WykopServiceJSONMappingTest.swift */,
+			);
+			path = Wykop;
+			sourceTree = "<group>";
+		};
+		416D7CBD21487C26009252D9 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				416D7CBE21487C4B009252D9 /* JSON */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		416D7CBE21487C4B009252D9 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				41F823082148892A00ECFADF /* frontpage_promoted_fixture_1.json */,
+				41F8230221487DFD00ECFADF /* mirko_hots_6h_fixture_1.json */,
+				41F8230321487DFD00ECFADF /* mirko_hots_6h_fixture_2.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		41B3B0B4211F87120023EC45 /* Misc */ = {
@@ -710,6 +765,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41F8230421487DFD00ECFADF /* mirko_hots_6h_fixture_1.json in Resources */,
+				41F8230521487DFD00ECFADF /* mirko_hots_6h_fixture_2.json in Resources */,
+				41F823092148892A00ECFADF /* frontpage_promoted_fixture_1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,7 +947,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4133EED92135346500A5ED68 /* WypokExtensionsTests.swift in Sources */,
+				416D7CB9214877A7009252D9 /* WypokServiceJSONMappingTests.swift in Sources */,
 				412BB7B0213B020A001138AD /* IGListKitMirkoModelDiffingTest.swift in Sources */,
+				41F8230B21488B3F00ECFADF /* WykopServiceJSONMappingTest.swift in Sources */,
 				416D79BF210534DE00683119 /* wypokTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,9 @@ import SwiftyJSON
 
 class WykopServiceJSONMappingTests: XCTestCase {
     
+    //todo: those jsons should be DATA instead
+    //todo: then, there can be DATA -> [JSON] parsing tests
+    //todo: which can fail with this project since Backend is sending some XML file when service is down (lolz?) 
     var mirkoHotPageFixture1: [JSON]!
     var mirkoHotPageFixture2: [JSON]!
     var frontPagePromotedFixture1: [JSON]!

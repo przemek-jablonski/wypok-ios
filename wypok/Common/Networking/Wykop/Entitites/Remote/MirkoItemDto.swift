@@ -6,7 +6,7 @@
 import Foundation
 import SwiftyJSON
 
-//todo: regenerate that dto 6with quicktype.io
+//todo: regenerate that dto with quicktype.io
 class MirkoItemDto : NSObject, NSCoding, RemoteEntity {
     
     var id : Int!
@@ -40,7 +40,7 @@ class MirkoItemDto : NSObject, NSCoding, RemoteEntity {
     var canComment : Bool?
     var app : String?
     var commentCount : Int!
-        
+    
     /**
      * Instantiate the instance using the passed json values to set the properties values
      */
@@ -79,7 +79,11 @@ class MirkoItemDto : NSObject, NSCoding, RemoteEntity {
             voters.append(MirkoAuthorDto(fromJson: voterJson))
         }
         type = json["type"].stringValue
-        embed = EmbedDto(fromJson: json["embed"])
+        if (json["embed"] != JSON.null) {
+            embed = EmbedDto(fromJson: json["embed"])
+        } else {
+            embed = nil
+        }
         deleted = json["deleted"].boolValue
         violationUrl = json["violation_url"].string
         canComment = json["can_comment"].bool

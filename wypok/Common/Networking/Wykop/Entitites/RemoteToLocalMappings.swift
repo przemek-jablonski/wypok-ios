@@ -30,6 +30,7 @@ extension MirkoCommentDto {
 
 extension EmbedDto {
     func map() -> EmbedModel {
+        let typemodel = type.mapToEmbedTypeModel()
         return EmbedModel(contentType: type.mapToEmbedTypeModel(), previewImageUrl: preview, contentUrl: url, under18RestrictedFlag: plus18)
     }
 }

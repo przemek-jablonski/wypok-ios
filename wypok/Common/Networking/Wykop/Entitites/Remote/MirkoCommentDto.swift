@@ -57,7 +57,11 @@ class MirkoCommentDto : NSObject, NSCoding{
         for voterJson in json["voters"].arrayValue {
             voters.append(MirkoAuthorDto(fromJson: voterJson))
         }
-        embed = EmbedDto(fromJson: json["embed"])
+        if (json["embed"] != JSON.null) {
+            embed = EmbedDto(fromJson: json["embed"])
+        } else {
+            embed = nil
+        }
         type = json["type"].stringValue
         app = json["app"].string
     }

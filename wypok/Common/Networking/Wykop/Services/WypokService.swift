@@ -10,7 +10,7 @@ import Foundation
 import SDWebImage
 
 class WypokService : WypokBaseService, FrontPageService, MirkoService {
-    
+        
     func getLinksPromoted(and successClosure: @escaping FrontPageService.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure) {
         performServiceCall(for: "/links/promoted", callDidSucceed: successClosure, callDidFailed: failureClosure)
     }

@@ -40,20 +40,23 @@ class WypokGlobalInjectionContainer {
         container.register(SDWebImagePrefetcher.self) { r in
             SDWebImagePrefetcher.shared()
             }.singleton()
+        container.register(ApiKeysProvider.self) { r in
+            WypokApiKeysProvider()
+            }.singleton()
     }
     
     private static func registerCoreData(_ container: inout Container) {
         container.register(NSManagedObjectContext.self) { r in
             get(AppDelegate.self).persistentContainer.viewContext
             }.singleton()
-//        container.register(MirkoEntityRepository.self) { r in
-//            MirkoEntityRepository<MirkoEntity, MirkoItemDto>(viewContext: get(NSManagedObjectContext.self), coreDataEntityName: "MirkoEntity")
-//            }.singleton()
+        //        container.register(MirkoEntityRepository.self) { r in
+        //            MirkoEntityRepository<MirkoEntity, MirkoItemDto>(viewContext: get(NSManagedObjectContext.self), coreDataEntityName: "MirkoEntity")
+        //            }.singleton()
     }
     
     private static func registerServices(_ container: inout Container) {
         container.register(WypokService.self) { r in
-            WypokService()
+            WypokService(apiKeysProvider: get(ApiKeysProvider.self))
             }.singleton()
         container.register(FrontPageService.self) { r in
             get(WypokService.self)

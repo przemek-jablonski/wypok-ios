@@ -18,18 +18,21 @@ class WykopServiceJSONMappingTests: XCTestCase {
     //todo: those jsons should be DATA instead
     //todo: then, there can be DATA -> [JSON] parsing tests
     //todo: which can fail with this project since Backend is sending some XML file when service is down (lolz?) 
-    var mirkoHotPageFixtures: [[JSON]]!
-    var mirkoSingleEntriesWithCommentsFixtures: [JSON]!
-    var frontPagePromotedFixture1: [JSON]!
+    var mirkoHotPageFixtures: [[JSON]]! = nil
+    var mirkoSingleEntriesWithCommentsFixtures: [JSON]! = nil
+    var frontPagePromotedFixture1: [JSON]! = nil
     
     override func setUp() {
         super.setUp()
         do {
+            if (mirkoHotPageFixtures == nil) {
             mirkoHotPageFixtures = try [
                 getJSONArrayFixture(fromFile: "mirko_hots_6h_fixture_1"),
                 getJSONArrayFixture(fromFile: "mirko_hots_6h_fixture_2"),
                 getJSONArrayFixture(fromFile: "mirko_hots_6h_fixture_3")
             ]
+            }
+            if (mirkoSingleEntriesWithCommentsFixtures == nil) {
             mirkoSingleEntriesWithCommentsFixtures = try [
                 getJSONFixture(fromFile: "mirko_single_entry_with_comments_fixture_1"),
                 getJSONFixture(fromFile: "mirko_single_entry_with_comments_fixture_2"),
@@ -37,7 +40,10 @@ class WykopServiceJSONMappingTests: XCTestCase {
                 getJSONFixture(fromFile: "mirko_single_entry_with_comments_fixture_4"),
                 getJSONFixture(fromFile: "mirko_single_entry_with_comments_fixture_5")
             ]
+            }
+            if (frontPagePromotedFixture1 == nil) {
             frontPagePromotedFixture1 = try getJSONArrayFixture(fromFile: "frontpage_promoted_fixture_1")
+            }
         } catch {
             fatalError()
         }

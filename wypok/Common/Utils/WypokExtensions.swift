@@ -140,3 +140,10 @@ extension ListIndexSetResult {
         return self.hasChanges
     }
 }
+
+extension String {
+    
+    enum RandomType { case UUID }
+    
+    
+}

@@ -16,7 +16,7 @@ class WypokMirkoDetailsInteractor: MirkoDetailsInteractor {
         self.service = service
     }
     
-    func getMirkoItemDetails(for itemId: Int, fetchDidSucceed successClosure: @escaping MirkoDetailsInteractor.ItemFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure) {
+    func getMirkoItemDetails(for itemId: Int, fetchDidSucceed successClosure: @escaping MirkoDetailsInteractor.ItemFetchedClosure, fetchDidFailed failureClosure: @escaping WypokBaseService.ServiceFailureClosure) {
         service.getMirkoItemWithComments(for: itemId, and: { dto in
             successClosure(dto.map())
         }, fetchDidFailed: { error in

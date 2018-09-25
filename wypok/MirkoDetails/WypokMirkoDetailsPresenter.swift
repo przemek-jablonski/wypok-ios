@@ -30,7 +30,9 @@ class WypokMirkoDetailsPresenter: BasePresenter<WypokMirkoDetailsViewState>, Mir
             fetchDidSucceed: { model in
                 self.view?.render(WypokMirkoDetailsViewState.content(model))
         }, fetchDidFailed: { error in
-            self.view?.render(WypokMirkoDetailsViewState.error(error))
+            //todo: not implemented
+            fatalError("TROL")
+//            self.view?.render(WypokMirkoDetailsViewState.error(error))
         })
     }
     

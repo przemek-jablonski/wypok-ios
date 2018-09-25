@@ -14,6 +14,7 @@ class WypokBaseService {
     
     typealias GenericSingleItemFetchedClosure <T: RemoteEntity> = (T) -> ()
     typealias GenericItemsFetchedClosure <T: RemoteEntity> = ([T]) -> ()
+    typealias ServiceFailureClosure = (WykopServiceError) -> ()
     typealias DataResponseFetchedClosure = (DataResponse<Any>) -> ()
     
     private static let WYKOP_API_BASE_URL = "https://a.wykop.pl"
@@ -26,7 +27,8 @@ class WypokBaseService {
         self.wypokApiKeysProvider = apiKeysProvider
     }
     
-    func performServiceCall<T: RemoteEntity>(for urlSuffix: String, callDidSucceed successClosure: @escaping GenericItemsFetchedClosure<T>, callDidFailed failureClosure: @escaping CommonFailureClosure){
+    //todo: this should be an array (<T : [RemoteEntity]>)
+    func performServiceCall<T: RemoteEntity>(for urlSuffix: String, callDidSucceed successClosure: @escaping GenericItemsFetchedClosure<T>, callDidFailed failureClosure: @escaping ServiceFailureClosure){
         performServiceCall(for: urlSuffix) { data in
             do {
                 let receivedData = data
@@ -34,17 +36,23 @@ class WypokBaseService {
                 let mappedData = parsedData.map({json in T(fromJson: json)})
                 successClosure(mappedData)
             } catch {
-                failureClosure(error) //todo: service maintenance (aktualizacja serwisu) case is not handled really (it will break here since it will respond with XML code, not JSON)
+                failureClosure(WykopServiceError.generalError(error)) //todo: service maintenance (aktualizacja serwisu) case is not handled really (it will break here since it will respond with XML code, not JSON)
             }
         }
     }
     
-    func performServiceCall<T: RemoteEntity>(for urlSuffix: String, callDidSucceed successClosure: @escaping GenericSingleItemFetchedClosure<T>, callDidFailed failureClosure: @escaping CommonFailureClosure){
+    func performServiceCall<T: RemoteEntity>(for urlSuffix: String, callDidSucceed successClosure: @escaping GenericSingleItemFetchedClosure<T>, callDidFailed failureClosure: @escaping ServiceFailureClosure){
         performServiceCall(for: urlSuffix) { data in
             do {
-                successClosure(try T(fromJson: data.parseServiceCallResponseToJson()))
+                let json = try data.parseServiceCallResponseToJson()
+                if (json.containsWykopApiError()) {
+//                    failureClosure()
+                } else {
+                    successClosure(T(fromJson: json))
+                }
             } catch {
-                failureClosure(error) //todo: service maintenance (aktualizacja serwisu) case is not handled really (it will break here since it will respond with XML code, not JSON)
+//                failureClosure(error)
+                //todo: service maintenance (aktualizacja serwisu) case is not handled really (it will break here since it will respond with XML code, not JSON)
             }
         }
         
@@ -73,4 +81,12 @@ fileprivate extension DataResponse where Value == Any {
     func parseServiceCallResponseToJsonArray() throws -> [JSON] {
         return try JSON(data: self.data!).array!
     }
+}
+
+fileprivate extension JSON {
+    
+    func containsWykopApiError() -> Bool {
+        return self["error"] != JSON.null
+    }
+    
 }

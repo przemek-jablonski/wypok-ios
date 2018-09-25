@@ -10,6 +10,7 @@ protocol FrontPageService {
     
     typealias ItemsFetchedClosure = ([FrontPageItemDto]) -> ()
     
-    func getLinksPromoted(and successClosure: @escaping ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure)
+    //todo: knows of WypokBaseService
+    func getLinksPromoted(and successClosure: @escaping ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping WypokBaseService.ServiceFailureClosure)
     
 }

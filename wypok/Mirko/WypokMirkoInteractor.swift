@@ -12,6 +12,7 @@ import Foundation
 
 class WypokMirkoInteractor: MirkoInteractor {
     
+    
     //todo: maybe service should be part of some baseInteractor? this will be everywhere anywa. The same for the repository (probably?)
     private let service: MirkoService
     private let prefetchingService: PrefetchingService
@@ -22,10 +23,13 @@ class WypokMirkoInteractor: MirkoInteractor {
         self.prefetchingService = prefetchingService
     }
     
-    func getMirkoRecents(and successClosure: @escaping MirkoInteractor.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure) {
+    //todo: not implemented
+    func getMirkoRecents(and successClosure: @escaping MirkoInteractor.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping WypokBaseService.ServiceFailureClosure) {
+        fatalError("not implemented")
     }
     
-    func getMirkoHots(and successClosure: @escaping MirkoInteractor.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure) {
+    //todo: BASE SERVICE IS HERE LOLOLOL
+    func getMirkoHots(and successClosure: @escaping MirkoInteractor.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping WypokBaseService.ServiceFailureClosure) {
         service.getMirkoHots(
             for: currentPage,
             and: 6,
@@ -40,9 +44,10 @@ class WypokMirkoInteractor: MirkoInteractor {
                         self.currentPage += 1
                         successClosure(models)
                 }, prefetchDidFailed: { error in
-                    failureClosure(error)
+                    failureClosure(.generalError(error))
                 })
         }, fetchDidFailed:  { error in
+            //todo: should map to some local error type (i guess)
             failureClosure(error)
         })
     }

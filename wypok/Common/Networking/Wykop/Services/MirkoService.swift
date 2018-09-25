@@ -11,10 +11,11 @@ protocol MirkoService {
     typealias ItemFetchedClosure = (MirkoItemDto) -> ()
     typealias ItemsFetchedClosure = ([MirkoItemDto]) -> ()
     
-    func getMirkoRecents(for page: Int, and successClosure: @escaping ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure)
+    //todo: this protocol knows about WypokBaseService!
+    func getMirkoRecents(for page: Int, and successClosure: @escaping ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping WypokBaseService.ServiceFailureClosure)
     
-    func getMirkoHots(for page: Int, and period: Int, and successClosure: @escaping ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure)
+    func getMirkoHots(for page: Int, and period: Int, and successClosure: @escaping ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping WypokBaseService.ServiceFailureClosure)
     
-    func getMirkoItemWithComments(for id: Int, and successClosure: @escaping ItemFetchedClosure, fetchDidFailed failureClosure: @escaping CommonFailureClosure)
+    func getMirkoItemWithComments(for id: Int, and successClosure: @escaping ItemFetchedClosure, fetchDidFailed failureClosure: @escaping WypokBaseService.ServiceFailureClosure)
     
 }

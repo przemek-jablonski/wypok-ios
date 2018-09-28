@@ -37,6 +37,14 @@ class MirkoServiceTests: XCTestCase {
             and: { dto in
                 XCTFail("Success closure called")
         }) { error in
+            switch error {
+            case .apiError(let errorCode, let message):
+                XCTAssert(errorCode == WykopApiErrorCode.entryDoesNotExist)
+                XCTAssertNotNil(message)
+                break
+            default:
+                XCTFail("Error is not of .apiError type")
+            }
             expectation.fulfill()
         }
         
@@ -50,9 +58,9 @@ class MirkoServiceTests: XCTestCase {
         service.getMirkoItemWithComments(
             for: id,
             and: { dto in
-                XCTAssert(dto != nil, "returned dto is nil")
-                XCTAssert(dto is MirkoItemDto, "returned dto is not MirkoItemDto")
-                XCTAssert(dto.id! == id, "returned dto's id is not equal to input id")
+                XCTAssertNotNil(dto)
+                XCTAssert(dto is MirkoItemDto)
+                XCTAssert(dto.id! == id)
                 XCTAssert(dto.author == "Kulturalny_Jegomosc90")
                 XCTAssert(dto.authorAvatar == "https://www.wykop.pl/cdn/c3397992/Kulturalny_Jegomosc90_yMdRZVS8WG,q60.jpg")
                 XCTAssert(dto.authorAvatarBig == "https://www.wykop.pl/cdn/c3397992/Kulturalny_Jegomosc90_yMdRZVS8WG,q150.jpg")
@@ -67,6 +75,10 @@ class MirkoServiceTests: XCTestCase {
             XCTFail("Failure closure called")
         }
         waitForExpectations(timeout: 2, handler: nil)
+    }
+    
+    private func assertEnumType() {
+        
     }
     
 }

@@ -9,6 +9,6 @@
 //todo: this should be more generic
 //todo: like ServiceError + _ code: ApiErrorCode etc...
 enum WykopServiceError {
-    case apiError(_ code: WykopApiErrorCode, _ message: String)
+    case apiError(_ code: WykopApiErrorCode, _ message: String?)
     case generalError(_ error: Error)
 }

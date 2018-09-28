@@ -24,6 +24,7 @@ class WypokMirkoInteractor: MirkoInteractor {
     }
     
     //todo: not implemented
+    //todo: BASE SERVICE IS HERE LOLOLOL
     func getMirkoRecents(and successClosure: @escaping MirkoInteractor.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping WypokBaseService.ServiceFailureClosure) {
         fatalError("not implemented")
     }

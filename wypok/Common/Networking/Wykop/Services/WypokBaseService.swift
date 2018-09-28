@@ -32,11 +32,12 @@ class WypokBaseService {
         performServiceCall(for: urlSuffix) { data in
             do {
                 let receivedData = data
-                let parsedData: [JSON] = try receivedData.parseServiceCallResponseToJsonArray()
-                let mappedData = parsedData.map({json in T(fromJson: json)})
-                successClosure(mappedData)
+                let errorFound = self.findAndHandleWykopApiErrors(from: data, ifFails: failureClosure)
+                if (!errorFound) {
+                    successClosure((try receivedData.parseServiceCallResponseToJsonArray()).mapToRemoteEntity())
+                }
             } catch {
-                failureClosure(WykopServiceError.generalError(error)) //todo: service maintenance (aktualizacja serwisu) case is not handled really (it will break here since it will respond with XML code, not JSON)
+                failureClosure(.generalError(error))
             }
         }
     }
@@ -45,13 +46,12 @@ class WypokBaseService {
         performServiceCall(for: urlSuffix) { data in
             do {
                 let json = try data.parseServiceCallResponseToJson()
-                if (json.containsWykopApiError()) {
-//                    failureClosure()
-                } else {
+                let errorFound = self.findAndHandleWykopApiErrors(from: data, ifFails: failureClosure)
+                if (!errorFound) {
                     successClosure(T(fromJson: json))
                 }
             } catch {
-//                failureClosure(error)
+                failureClosure(.generalError(error))
                 //todo: service maintenance (aktualizacja serwisu) case is not handled really (it will break here since it will respond with XML code, not JSON)
             }
         }
@@ -71,6 +71,33 @@ class WypokBaseService {
             .validate()
     }
     
+    private func findAndHandleWykopApiErrors(from rawData: DataResponse<Any>, ifFails failureClosure: @escaping ServiceFailureClosure) -> Bool {
+        do {
+            let json = try rawData.parseServiceCallResponseToJson()
+            return findAndHandleWykopApiErrors(from: json, ifFails: failureClosure)
+        } catch {
+            failureClosure(.generalError(ResponseDataParsingError()))
+            return true
+        }
+    }
+    
+    private func findAndHandleWykopApiErrors(from rawJson: JSON, ifFails failureClosure: @escaping ServiceFailureClosure) -> Bool {
+        if (!rawJson.containsWykopApiError()) {
+            return false
+        } else {
+            failureClosure(determineWykopApiError(from: rawJson))
+            return true
+        }
+    }
+    
+    private func determineWykopApiError(from rawJson: JSON) -> WykopServiceError {
+        guard let errorCode = WykopApiErrorCode.init(rawValue: rawJson.getWykopApiErrorCode())
+            else {
+                return .generalError(InvalidApiErrorCodeError())
+        }
+        return .apiError(errorCode, rawJson.getWykopApiErrorMessage())
+    }
+    
 }
 
 fileprivate extension DataResponse where Value == Any {
@@ -84,9 +111,23 @@ fileprivate extension DataResponse where Value == Any {
 }
 
 fileprivate extension JSON {
-    
     func containsWykopApiError() -> Bool {
         return self["error"] != JSON.null
+    }
+    
+    func getWykopApiErrorCode() -> Int {
+        return self["error"]["code"].intValue
+    }
+    
+    func getWykopApiErrorMessage() -> String? {
+        return self["error"]["message"].string
+    }
+}
+
+fileprivate extension Array where Element == JSON {
+    
+    func mapToRemoteEntity<T: RemoteEntity>() -> [T] {
+        return self.map({ json in T(fromJson: json) })
     }
     
 }

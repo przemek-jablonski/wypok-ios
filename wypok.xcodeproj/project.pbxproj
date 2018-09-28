@@ -47,6 +47,8 @@
 		416BE3F7214580190063F009 /* MirkoDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BE3F6214580190063F009 /* MirkoDetailsInteractor.swift */; };
 		416BE3F9214580C20063F009 /* WypokMirkoDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BE3F8214580C20063F009 /* WypokMirkoDetailsInteractor.swift */; };
 		416BE3FD21459BE10063F009 /* RemoteToLocalMappings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BE3FC21459BE10063F009 /* RemoteToLocalMappings.swift */; };
+		416D2C53215D6EF8007693E5 /* InvalidApiErrorCodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D2C52215D6EF8007693E5 /* InvalidApiErrorCodeError.swift */; };
+		416D2C55215D7449007693E5 /* ResponseDataParsingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D2C54215D7449007693E5 /* ResponseDataParsingError.swift */; };
 		416D79A7210534D400683119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D79A6210534D400683119 /* AppDelegate.swift */; };
 		416D79A9210534D400683119 /* WypokFrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D79A8210534D400683119 /* WypokFrontPageViewController.swift */; };
 		416D79AC210534D400683119 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 416D79AA210534D400683119 /* Main.storyboard */; };
@@ -166,6 +168,8 @@
 		416BE3F6214580190063F009 /* MirkoDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoDetailsInteractor.swift; sourceTree = "<group>"; };
 		416BE3F8214580C20063F009 /* WypokMirkoDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokMirkoDetailsInteractor.swift; sourceTree = "<group>"; };
 		416BE3FC21459BE10063F009 /* RemoteToLocalMappings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteToLocalMappings.swift; sourceTree = "<group>"; };
+		416D2C52215D6EF8007693E5 /* InvalidApiErrorCodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidApiErrorCodeError.swift; sourceTree = "<group>"; };
+		416D2C54215D7449007693E5 /* ResponseDataParsingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDataParsingError.swift; sourceTree = "<group>"; };
 		416D79A3210534D400683119 /* wypok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wypok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		416D79A6210534D400683119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		416D79A8210534D400683119 /* WypokFrontPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokFrontPageViewController.swift; sourceTree = "<group>"; };
@@ -327,6 +331,8 @@
 				4101E3082113D3460030C49B /* RemoteEntity.swift */,
 				419AB57F215A466200C8F7B0 /* WykopApiErrorCode.swift */,
 				411017E7215AD70C00F2C3D7 /* WykopServiceError.swift */,
+				416D2C52215D6EF8007693E5 /* InvalidApiErrorCodeError.swift */,
+				416D2C54215D7449007693E5 /* ResponseDataParsingError.swift */,
 				412BAA0F212CC35B0024D4A9 /* Remote */,
 				41B90E0521335C9B00627F41 /* Local */,
 			);
@@ -929,6 +935,7 @@
 			files = (
 				416BE3F7214580190063F009 /* MirkoDetailsInteractor.swift in Sources */,
 				41D8C43E21447EAA00BBEF43 /* MirkoCommentModel.swift in Sources */,
+				416D2C53215D6EF8007693E5 /* InvalidApiErrorCodeError.swift in Sources */,
 				4101E3092113D3460030C49B /* RemoteEntity.swift in Sources */,
 				412BAA0621298B540024D4A9 /* MirkoEntity+CoreDataProperties.swift in Sources */,
 				412BA9FA212987650024D4A9 /* WypokMirkoRepository.swift in Sources */,
@@ -972,6 +979,7 @@
 				41B3B0BB211F87CD0023EC45 /* MirkoItemModel.swift in Sources */,
 				4121E83821435B070017CC91 /* WypokMirkoDetailsViewState.swift in Sources */,
 				41D8C442214482DB00BBEF43 /* UserModel.swift in Sources */,
+				416D2C55215D7449007693E5 /* ResponseDataParsingError.swift in Sources */,
 				41C37FE621067CBF00150BFE /* WypokBestsViewState.swift in Sources */,
 				411017E6215AC3DE00F2C3D7 /* WykopApiErrorDto.swift in Sources */,
 				41C37FE22106780600150BFE /* WypokDigsiteViewState.swift in Sources */,

@@ -36,4 +36,5 @@ enum WykopApiErrorCode: Int {
     case invalidRequest = 999
     case apiDown = 1001
     case invalidQueryMethod = 1002
+    case invalidApiErrorCode = 9999
 }

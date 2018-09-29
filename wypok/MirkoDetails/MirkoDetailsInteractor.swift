@@ -9,7 +9,11 @@
 protocol MirkoDetailsInteractor {
     
     typealias ItemFetchedClosure = (MirkoItemModel) -> ()
+    typealias FetchingFailureClosure = (MirkoDetailsInteractorError) -> ()
     
-    func getMirkoItemDetails(for itemId: Int, fetchDidSucceed successClosure: @escaping ItemFetchedClosure, fetchDidFailed failureClosure: @escaping WypokBaseService.ServiceFailureClosure)
+    func getMirkoItemDetails(
+        for itemId: Int,
+        fetchDidSucceed successClosure: @escaping ItemFetchedClosure,
+        fetchDidFailed failureClosure: @escaping FetchingFailureClosure)
     
 }

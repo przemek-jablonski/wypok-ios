@@ -9,16 +9,16 @@
 import Foundation
 class Random {
     
-    enum StringRandomType {
-        case UUID
+    static func string() -> String {
+        return stringByRandomInt()
     }
     
+    static func stringByUUID() -> String {
+        return UUID().uuidString
+    }
     
-    static func string(by type: StringRandomType) -> String {
-        switch type {
-        case .UUID:
-            return UUID().uuidString.replacingOccurrences(of: "-", with: "")
-        }
+    static func stringByRandomInt() -> String {
+        return String(intMaxRange())
     }
     
     static func int() -> Int {

@@ -12,8 +12,6 @@ import Foundation
 
 class WypokMirkoInteractor: MirkoInteractor {
     
-    
-    //todo: maybe service should be part of some baseInteractor? this will be everywhere anywa. The same for the repository (probably?)
     private let service: MirkoService
     private let prefetchingService: PrefetchingService
     private var currentPage = 1
@@ -53,7 +51,6 @@ class WypokMirkoInteractor: MirkoInteractor {
         })
     }
     
-    
     private func map(_ dto: MirkoItemDto, to entity: inout MirkoEntity) {
         entity.id = Int64(dto.id)
         entity.application = dto.app ?? ""
@@ -65,8 +62,4 @@ class WypokMirkoInteractor: MirkoInteractor {
         entity.under18Restriction = dto.embed?.plus18 ?? false
         entity.upvoteCount = Int32(dto.voteCount)
     }
-    
-//    private func map(_ entity: MirkoEntity, to model: inout MirkoItemModel) {
-//
-//    }
 }

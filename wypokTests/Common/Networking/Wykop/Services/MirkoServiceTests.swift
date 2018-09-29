@@ -20,14 +20,6 @@ class MirkoServiceTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
-    func test_getMirkoRecents_negativePageIndex_producesFailure() {
-        
-    }
-    
-    func test_getMirkoHots_negativePageIndex_producesSuccess() {
-        
-    }
-    
     func test_getMirkoItemWithComments_invalidId_producesFailure() {
         let id = MirkoServiceTests.MIRKO_ITEM_ID_INVALID
         let expectation = self.expectation(description: "Failure closure called")
@@ -36,7 +28,7 @@ class MirkoServiceTests: XCTestCase {
             for: id,
             and: { dto in
                 XCTFail("Success closure called")
-        }) { error in
+        }, fetchDidFailed: { error in
             switch error {
             case .apiError(let errorCode, let message):
                 XCTAssert(errorCode == WykopApiErrorCode.entryDoesNotExist)
@@ -46,8 +38,7 @@ class MirkoServiceTests: XCTestCase {
                 XCTFail("Error is not of .apiError type")
             }
             expectation.fulfill()
-        }
-        
+        })
         waitForExpectations(timeout: 5, handler: nil)
     }
     
@@ -71,14 +62,9 @@ class MirkoServiceTests: XCTestCase {
                 XCTAssert(dto.userVote == 0)
                 XCTAssert(dto.commentCount == 0)
                 expectation.fulfill()
-        }) { error in
+        }, fetchDidFailed: { error in
             XCTFail("Failure closure called")
-        }
+        })
         waitForExpectations(timeout: 2, handler: nil)
     }
-    
-    private func assertEnumType() {
-        
-    }
-    
 }

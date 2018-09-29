@@ -16,12 +16,26 @@ class WypokMirkoDetailsInteractor: MirkoDetailsInteractor {
         self.service = service
     }
     
-    func getMirkoItemDetails(for itemId: Int, fetchDidSucceed successClosure: @escaping MirkoDetailsInteractor.ItemFetchedClosure, fetchDidFailed failureClosure: @escaping WypokBaseService.ServiceFailureClosure) {
+    func getMirkoItemDetails(
+        for itemId: Int,
+        fetchDidSucceed successClosure: @escaping ItemFetchedClosure,
+        fetchDidFailed failureClosure: @escaping FetchingFailureClosure) {
         service.getMirkoItemWithComments(for: itemId, and: { dto in
             successClosure(dto.map())
         }, fetchDidFailed: { error in
-            failureClosure(error)
+            failureClosure(error.map())
         })
+    }    
+}
+
+
+fileprivate extension WykopServiceError {
+    func map() -> MirkoDetailsInteractorError {
+        switch self {
+        case .apiError(let errorCode, let message):
+            return MirkoDetailsInteractorError.apiError(errorCode, message)
+        case .generalError(let error):
+            return MirkoDetailsInteractorError.undefinedApiError(error)
+        }
     }
-    
 }

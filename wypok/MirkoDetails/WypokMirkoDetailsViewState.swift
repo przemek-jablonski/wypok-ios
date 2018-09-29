@@ -8,7 +8,7 @@
 
 enum WypokMirkoDetailsViewState: ViewState {
     
-    case error(Error?)
+    case error(message: String?)
     case loading
     case content(MirkoItemModel)
     

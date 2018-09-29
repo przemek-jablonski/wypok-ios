@@ -20,6 +20,8 @@
 		4101E30D2113D7DF0030C49B /* FrontPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E30C2113D7DF0030C49B /* FrontPageService.swift */; };
 		4101E3112113D8560030C49B /* WypokBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E3102113D8560030C49B /* WypokBaseService.swift */; };
 		4101E31321151A2C0030C49B /* WypokService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E31221151A2C0030C49B /* WypokService.swift */; };
+		410F7C72215F8EF6005E9BAB /* WypokMirkoDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410F7C71215F8EF6005E9BAB /* WypokMirkoDetailsPresenterTests.swift */; };
+		410F7C76215FA9E2005E9BAB /* MirkoDetailsInteractorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410F7C75215FA9E2005E9BAB /* MirkoDetailsInteractorError.swift */; };
 		411017E6215AC3DE00F2C3D7 /* WykopApiErrorDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411017E5215AC3DE00F2C3D7 /* WykopApiErrorDto.swift */; };
 		411017E8215AD70C00F2C3D7 /* WykopServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411017E7215AD70C00F2C3D7 /* WykopServiceError.swift */; };
 		411FEBCC2116788F00A150BE /* FrontPageImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411FEBCB2116788F00A150BE /* FrontPageImageView.xib */; };
@@ -64,7 +66,6 @@
 		419AB5622156E47B00C8F7B0 /* mirko_single_entry_with_comments_fixture_3.json in Resources */ = {isa = PBXBuildFile; fileRef = 419AB55D2156E47B00C8F7B0 /* mirko_single_entry_with_comments_fixture_3.json */; };
 		419AB5632156E47B00C8F7B0 /* mirko_single_entry_with_comments_fixture_5.json in Resources */ = {isa = PBXBuildFile; fileRef = 419AB55E2156E47B00C8F7B0 /* mirko_single_entry_with_comments_fixture_5.json */; };
 		419AB5642156E47B00C8F7B0 /* mirko_single_entry_with_comments_fixture_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 419AB55F2156E47B00C8F7B0 /* mirko_single_entry_with_comments_fixture_2.json */; };
-		419AB5672156FF7500C8F7B0 /* WypokMirkoDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AB5662156FF7500C8F7B0 /* WypokMirkoDetailsPresenterTests.swift */; };
 		419AB56B2157044100C8F7B0 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AB56A2157044100C8F7B0 /* Random.swift */; };
 		419AB56D2157D7A600C8F7B0 /* WypokMirkoDetailsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AB56C2157D7A600C8F7B0 /* WypokMirkoDetailsInteractorTests.swift */; };
 		419AB576215981CE00C8F7B0 /* MirkoServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AB575215981CE00C8F7B0 /* MirkoServiceTests.swift */; };
@@ -141,6 +142,8 @@
 		4101E30C2113D7DF0030C49B /* FrontPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageService.swift; sourceTree = "<group>"; };
 		4101E3102113D8560030C49B /* WypokBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokBaseService.swift; sourceTree = "<group>"; };
 		4101E31221151A2C0030C49B /* WypokService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokService.swift; sourceTree = "<group>"; };
+		410F7C71215F8EF6005E9BAB /* WypokMirkoDetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokMirkoDetailsPresenterTests.swift; sourceTree = "<group>"; };
+		410F7C75215FA9E2005E9BAB /* MirkoDetailsInteractorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoDetailsInteractorError.swift; sourceTree = "<group>"; };
 		411017E5215AC3DE00F2C3D7 /* WykopApiErrorDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WykopApiErrorDto.swift; sourceTree = "<group>"; };
 		411017E7215AD70C00F2C3D7 /* WykopServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WykopServiceError.swift; sourceTree = "<group>"; };
 		411FEBCB2116788F00A150BE /* FrontPageImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FrontPageImageView.xib; sourceTree = "<group>"; };
@@ -190,7 +193,6 @@
 		419AB55D2156E47B00C8F7B0 /* mirko_single_entry_with_comments_fixture_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mirko_single_entry_with_comments_fixture_3.json; sourceTree = "<group>"; };
 		419AB55E2156E47B00C8F7B0 /* mirko_single_entry_with_comments_fixture_5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mirko_single_entry_with_comments_fixture_5.json; sourceTree = "<group>"; };
 		419AB55F2156E47B00C8F7B0 /* mirko_single_entry_with_comments_fixture_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mirko_single_entry_with_comments_fixture_2.json; sourceTree = "<group>"; };
-		419AB5662156FF7500C8F7B0 /* WypokMirkoDetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokMirkoDetailsPresenterTests.swift; sourceTree = "<group>"; };
 		419AB56A2157044100C8F7B0 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		419AB56C2157D7A600C8F7B0 /* WypokMirkoDetailsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokMirkoDetailsInteractorTests.swift; sourceTree = "<group>"; };
 		419AB575215981CE00C8F7B0 /* MirkoServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoServiceTests.swift; sourceTree = "<group>"; };
@@ -512,8 +514,8 @@
 		419AB5652156FF5900C8F7B0 /* MirkoDetails */ = {
 			isa = PBXGroup;
 			children = (
-				419AB5662156FF7500C8F7B0 /* WypokMirkoDetailsPresenterTests.swift */,
 				419AB56C2157D7A600C8F7B0 /* WypokMirkoDetailsInteractorTests.swift */,
+				410F7C71215F8EF6005E9BAB /* WypokMirkoDetailsPresenterTests.swift */,
 			);
 			path = MirkoDetails;
 			sourceTree = "<group>";
@@ -678,6 +680,7 @@
 				41D8C44421448EDB00BBEF43 /* MirkoCommentViewTableViewCell.xib */,
 				416BE3F6214580190063F009 /* MirkoDetailsInteractor.swift */,
 				416BE3F8214580C20063F009 /* WypokMirkoDetailsInteractor.swift */,
+				410F7C75215FA9E2005E9BAB /* MirkoDetailsInteractorError.swift */,
 			);
 			path = MirkoDetails;
 			sourceTree = "<group>";
@@ -972,6 +975,7 @@
 				412BAA0521298B540024D4A9 /* MirkoEntity+CoreDataClass.swift in Sources */,
 				416D79A9210534D400683119 /* WypokFrontPageViewController.swift in Sources */,
 				4101E2FE21126BE90030C49B /* FrontPageItemDto.swift in Sources */,
+				410F7C76215FA9E2005E9BAB /* MirkoDetailsInteractorError.swift in Sources */,
 				41FA4058211A49B600EEA5FF /* FrontPageAction.swift in Sources */,
 				416BE3FD21459BE10063F009 /* RemoteToLocalMappings.swift in Sources */,
 				4101E3052113C2170030C49B /* WypokApiKeysProvider.swift in Sources */,
@@ -1015,10 +1019,10 @@
 			files = (
 				419AB576215981CE00C8F7B0 /* MirkoServiceTests.swift in Sources */,
 				4133EED92135346500A5ED68 /* WypokExtensionsTests.swift in Sources */,
-				419AB5672156FF7500C8F7B0 /* WypokMirkoDetailsPresenterTests.swift in Sources */,
 				412BB7B0213B020A001138AD /* IGListKitMirkoModelDiffingTest.swift in Sources */,
 				419AB56D2157D7A600C8F7B0 /* WypokMirkoDetailsInteractorTests.swift in Sources */,
 				41F8230B21488B3F00ECFADF /* WykopServiceJSONMappingTest.swift in Sources */,
+				410F7C72215F8EF6005E9BAB /* WypokMirkoDetailsPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

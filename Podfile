@@ -13,6 +13,7 @@ target 'wypok' do
 
   target 'wypokTests' do
     inherit! :search_paths
+    pod "Cuckoo"
     # Pods for testing
   end
 

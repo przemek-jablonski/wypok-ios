@@ -20,10 +20,13 @@
 		4101E30D2113D7DF0030C49B /* FrontPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E30C2113D7DF0030C49B /* FrontPageService.swift */; };
 		4101E3112113D8560030C49B /* WypokBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E3102113D8560030C49B /* WypokBaseService.swift */; };
 		4101E31321151A2C0030C49B /* WypokService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4101E31221151A2C0030C49B /* WypokService.swift */; };
+		41031D2621602CB600945165 /* MirkoDetailsMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41031D2421602CB600945165 /* MirkoDetailsMocks.swift */; };
+		41031D2721602CB600945165 /* WykopServiceMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41031D2521602CB600945165 /* WykopServiceMocks.swift */; };
 		410F7C72215F8EF6005E9BAB /* WypokMirkoDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410F7C71215F8EF6005E9BAB /* WypokMirkoDetailsPresenterTests.swift */; };
 		410F7C76215FA9E2005E9BAB /* MirkoDetailsInteractorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410F7C75215FA9E2005E9BAB /* MirkoDetailsInteractorError.swift */; };
 		410F7C78215FC907005E9BAB /* MirkoDetailsInteractorTestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410F7C77215FC907005E9BAB /* MirkoDetailsInteractorTestUtils.swift */; };
 		410F7C7A215FC99C005E9BAB /* WypokTestingUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410F7C79215FC99C005E9BAB /* WypokTestingUtils.swift */; };
+		410F7C7C215FD1C3005E9BAB /* WypokMirkoDetailsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410F7C7B215FD1C3005E9BAB /* WypokMirkoDetailsInteractorTests.swift */; };
 		411017E6215AC3DE00F2C3D7 /* WykopApiErrorDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411017E5215AC3DE00F2C3D7 /* WykopApiErrorDto.swift */; };
 		411017E8215AD70C00F2C3D7 /* WykopServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411017E7215AD70C00F2C3D7 /* WykopServiceError.swift */; };
 		411FEBCC2116788F00A150BE /* FrontPageImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411FEBCB2116788F00A150BE /* FrontPageImageView.xib */; };
@@ -69,7 +72,6 @@
 		419AB5632156E47B00C8F7B0 /* mirko_single_entry_with_comments_fixture_5.json in Resources */ = {isa = PBXBuildFile; fileRef = 419AB55E2156E47B00C8F7B0 /* mirko_single_entry_with_comments_fixture_5.json */; };
 		419AB5642156E47B00C8F7B0 /* mirko_single_entry_with_comments_fixture_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 419AB55F2156E47B00C8F7B0 /* mirko_single_entry_with_comments_fixture_2.json */; };
 		419AB56B2157044100C8F7B0 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AB56A2157044100C8F7B0 /* Random.swift */; };
-		419AB56D2157D7A600C8F7B0 /* WypokMirkoDetailsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AB56C2157D7A600C8F7B0 /* WypokMirkoDetailsInteractorTests.swift */; };
 		419AB576215981CE00C8F7B0 /* MirkoServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AB575215981CE00C8F7B0 /* MirkoServiceTests.swift */; };
 		419AB580215A466200C8F7B0 /* WykopApiErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419AB57F215A466200C8F7B0 /* WykopApiErrorCode.swift */; };
 		41B3B0B7211F87570023EC45 /* WypokMirkoViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3B0B6211F87570023EC45 /* WypokMirkoViewState.swift */; };
@@ -103,6 +105,7 @@
 		41D8C442214482DB00BBEF43 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D8C441214482DB00BBEF43 /* UserModel.swift */; };
 		41D8C44521448EDB00BBEF43 /* MirkoCommentViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D8C44321448EDB00BBEF43 /* MirkoCommentViewTableViewCell.swift */; };
 		41D8C44621448EDB00BBEF43 /* MirkoCommentViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41D8C44421448EDB00BBEF43 /* MirkoCommentViewTableViewCell.xib */; };
+		41E227BE21602A60003C994D /* CommonArchitectureMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E227BD21602A60003C994D /* CommonArchitectureMocks.swift */; };
 		41EA0202210543690091E9F9 /* WypokFrontPageViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EA0201210543690091E9F9 /* WypokFrontPageViewState.swift */; };
 		41F4879A213DE4070091D385 /* UserDetailsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F48799213DE4070091D385 /* UserDetailsRowView.swift */; };
 		41F4879C213DE4150091D385 /* UserDetailsRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F4879B213DE4150091D385 /* UserDetailsRowView.xib */; };
@@ -144,10 +147,13 @@
 		4101E30C2113D7DF0030C49B /* FrontPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageService.swift; sourceTree = "<group>"; };
 		4101E3102113D8560030C49B /* WypokBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokBaseService.swift; sourceTree = "<group>"; };
 		4101E31221151A2C0030C49B /* WypokService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokService.swift; sourceTree = "<group>"; };
+		41031D2421602CB600945165 /* MirkoDetailsMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MirkoDetailsMocks.swift; sourceTree = "<group>"; };
+		41031D2521602CB600945165 /* WykopServiceMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WykopServiceMocks.swift; sourceTree = "<group>"; };
 		410F7C71215F8EF6005E9BAB /* WypokMirkoDetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokMirkoDetailsPresenterTests.swift; sourceTree = "<group>"; };
 		410F7C75215FA9E2005E9BAB /* MirkoDetailsInteractorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoDetailsInteractorError.swift; sourceTree = "<group>"; };
 		410F7C77215FC907005E9BAB /* MirkoDetailsInteractorTestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoDetailsInteractorTestUtils.swift; sourceTree = "<group>"; };
 		410F7C79215FC99C005E9BAB /* WypokTestingUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokTestingUtils.swift; sourceTree = "<group>"; };
+		410F7C7B215FD1C3005E9BAB /* WypokMirkoDetailsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokMirkoDetailsInteractorTests.swift; sourceTree = "<group>"; };
 		411017E5215AC3DE00F2C3D7 /* WykopApiErrorDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WykopApiErrorDto.swift; sourceTree = "<group>"; };
 		411017E7215AD70C00F2C3D7 /* WykopServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WykopServiceError.swift; sourceTree = "<group>"; };
 		411FEBCB2116788F00A150BE /* FrontPageImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FrontPageImageView.xib; sourceTree = "<group>"; };
@@ -198,7 +204,6 @@
 		419AB55E2156E47B00C8F7B0 /* mirko_single_entry_with_comments_fixture_5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mirko_single_entry_with_comments_fixture_5.json; sourceTree = "<group>"; };
 		419AB55F2156E47B00C8F7B0 /* mirko_single_entry_with_comments_fixture_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mirko_single_entry_with_comments_fixture_2.json; sourceTree = "<group>"; };
 		419AB56A2157044100C8F7B0 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
-		419AB56C2157D7A600C8F7B0 /* WypokMirkoDetailsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokMirkoDetailsInteractorTests.swift; sourceTree = "<group>"; };
 		419AB575215981CE00C8F7B0 /* MirkoServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoServiceTests.swift; sourceTree = "<group>"; };
 		419AB57F215A466200C8F7B0 /* WykopApiErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WykopApiErrorCode.swift; sourceTree = "<group>"; };
 		41B3B0B6211F87570023EC45 /* WypokMirkoViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokMirkoViewState.swift; sourceTree = "<group>"; };
@@ -232,6 +237,7 @@
 		41D8C441214482DB00BBEF43 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		41D8C44321448EDB00BBEF43 /* MirkoCommentViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirkoCommentViewTableViewCell.swift; sourceTree = "<group>"; };
 		41D8C44421448EDB00BBEF43 /* MirkoCommentViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MirkoCommentViewTableViewCell.xib; sourceTree = "<group>"; };
+		41E227BD21602A60003C994D /* CommonArchitectureMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonArchitectureMocks.swift; sourceTree = "<group>"; };
 		41EA0201210543690091E9F9 /* WypokFrontPageViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WypokFrontPageViewState.swift; sourceTree = "<group>"; };
 		41F48799213DE4070091D385 /* UserDetailsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsRowView.swift; sourceTree = "<group>"; };
 		41F4879B213DE4150091D385 /* UserDetailsRowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsRowView.xib; sourceTree = "<group>"; };
@@ -374,6 +380,16 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		413922BD216024EB005589D3 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				41E227BD21602A60003C994D /* CommonArchitectureMocks.swift */,
+				41031D2421602CB600945165 /* MirkoDetailsMocks.swift */,
+				41031D2521602CB600945165 /* WykopServiceMocks.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		416D799A210534D300683119 = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +432,7 @@
 		416D79BD210534DE00683119 /* wypokTests */ = {
 			isa = PBXGroup;
 			children = (
+				413922BD216024EB005589D3 /* Mocks */,
 				416D7CBA21487880009252D9 /* Common */,
 				419AB5652156FF5900C8F7B0 /* MirkoDetails */,
 				416D79C0210534DE00683119 /* Info.plist */,
@@ -519,9 +536,9 @@
 		419AB5652156FF5900C8F7B0 /* MirkoDetails */ = {
 			isa = PBXGroup;
 			children = (
-				419AB56C2157D7A600C8F7B0 /* WypokMirkoDetailsInteractorTests.swift */,
 				410F7C71215F8EF6005E9BAB /* WypokMirkoDetailsPresenterTests.swift */,
 				410F7C77215FC907005E9BAB /* MirkoDetailsInteractorTestUtils.swift */,
+				410F7C7B215FD1C3005E9BAB /* WypokMirkoDetailsInteractorTests.swift */,
 			);
 			path = MirkoDetails;
 			sourceTree = "<group>";
@@ -731,9 +748,11 @@
 			buildConfigurationList = 416D79D1210534DF00683119 /* Build configuration list for PBXNativeTarget "wypokTests" */;
 			buildPhases = (
 				25A301E2063F5168713B44F1 /* [CP] Check Pods Manifest.lock */,
+				413922BA216021DC005589D3 /* ShellScript */,
 				416D79B6210534DE00683119 /* Sources */,
 				416D79B7210534DE00683119 /* Frameworks */,
 				416D79B8210534DE00683119 /* Resources */,
+				5046370A0C335406C62DFDD1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -867,6 +886,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		413922BA216021DC005589D3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\n#OUTPUT_FILE=\"$PROJECT_DIR/${PROJECT_NAME}Tests/Mocks/GeneratedMocks.swift\"\n#echo \"Generated Mocks File = $OUTPUT_FILE\"\n#INPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\n#echo \"Mocks Input Directory = $INPUT_DIR\"\n\n#\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"$PROJECT_NAME\" \\\n#--output \"${OUTPUT_FILE}\" \\\n";
+		};
+		5046370A0C335406C62DFDD1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-wypokTests/Pods-wypokTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cuckoo/Cuckoo.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cuckoo.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wypokTests/Pods-wypokTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5A0817F200185873D2B3E248 /* [CP] Check Pods Manifest.lock */ = {
@@ -1023,12 +1081,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E227BE21602A60003C994D /* CommonArchitectureMocks.swift in Sources */,
+				41031D2621602CB600945165 /* MirkoDetailsMocks.swift in Sources */,
 				410F7C78215FC907005E9BAB /* MirkoDetailsInteractorTestUtils.swift in Sources */,
+				410F7C7C215FD1C3005E9BAB /* WypokMirkoDetailsInteractorTests.swift in Sources */,
 				419AB576215981CE00C8F7B0 /* MirkoServiceTests.swift in Sources */,
 				4133EED92135346500A5ED68 /* WypokExtensionsTests.swift in Sources */,
 				410F7C7A215FC99C005E9BAB /* WypokTestingUtils.swift in Sources */,
+				41031D2721602CB600945165 /* WykopServiceMocks.swift in Sources */,
 				412BB7B0213B020A001138AD /* IGListKitMirkoModelDiffingTest.swift in Sources */,
-				419AB56D2157D7A600C8F7B0 /* WypokMirkoDetailsInteractorTests.swift in Sources */,
 				41F8230B21488B3F00ECFADF /* WykopServiceJSONMappingTest.swift in Sources */,
 				410F7C72215F8EF6005E9BAB /* WypokMirkoDetailsPresenterTests.swift in Sources */,
 			);

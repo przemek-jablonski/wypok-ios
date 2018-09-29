@@ -29,3 +29,29 @@ internal class MirkoDetailsInteractorMock: MirkoDetailsInteractor {
     }
     
 }
+
+
+//MARK: MirkoDetails: Service
+
+
+
+//internal class MirkoServiceMock: MirkoService {
+//
+//
+//
+//    func getMirkoRecents(for page: Int, and successClosure: @escaping Self.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping WypokBaseService.ServiceFailureClosure) {
+//        <#code#>
+//    }
+//
+//    func getMirkoHots(for page: Int, and period: Int, and successClosure: @escaping Self.ItemsFetchedClosure, fetchDidFailed failureClosure: @escaping WypokBaseService.ServiceFailureClosure) {
+//        <#code#>
+//    }
+//
+//    func getMirkoItemWithComments(for id: Int, and successClosure: @escaping Self.ItemFetchedClosure, fetchDidFailed failureClosure: @escaping WypokBaseService.ServiceFailureClosure) {
+//        <#code#>
+//    }
+//
+//
+//
+//
+//}
